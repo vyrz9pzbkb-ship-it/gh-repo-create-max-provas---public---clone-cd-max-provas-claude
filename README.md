@@ -10,28 +10,21 @@ HTML + CSS + JavaScript vanilla, sem build, pronto para o GitHub Pages.
 
 ---
 
-## ✅ TODO — dados por preencher
+## ✅ Estado dos dados (verificado em 30/10/2026)
 
-Os campos abaixo estão a `null` em [`data/races.json`](data/races.json) de propósito: **não foram inventados**. Preencha-os com a informação oficial de cada prova.
+As datas foram pesquisadas apenas em fontes oficiais (site da prova ou organizador). Cada prova tem o campo `fonte` com o link de onde a data foi tirada. Quando a próxima edição ainda não tem data divulgada, `data` fica `null` — nada foi inventado.
 
-| id | Prova | Preencher |
-|----|-------|-----------|
-| `descobrimentos` | Corrida dos Descobrimentos | `data`, `distancia`, `urlOficial`, `urlInscricao` — confirmar `nome` oficial e `local` |
-| `sao-silvestre-lidl` | São Silvestre Lidl | `data`, `local`, `distancia`, `urlOficial`, `urlInscricao` |
-| `meia-cascais` | Meia Maratona de Cascais | `data`, `urlOficial`, `urlInscricao` |
-| `setubal-triathlon` | Setúbal Triathlon | `data`, `distancia` (sprint/olímpico/…), `urlOficial`, `urlInscricao` |
-| `caminha` | Caminha | `data`, `distancia`, `urlOficial`, `urlInscricao` — confirmar `nome` e `modalidade` |
-| `triton-lisboa` | TRITON Lisboa | `data`, `distancia`, `urlOficial`, `urlInscricao` |
-| `t100-sines` | T100 Sines | `data`, `urlOficial`, `urlInscricao` |
-| `ironman-703-cascais` | IRONMAN 70.3 Cascais | `data`, `urlOficial`, `urlInscricao` |
+Ainda por fazer / confirmar:
 
-Em todas as provas:
-
-- [ ] `statusInscricao` está como `"aguardando"` por defeito — atualize para `"aberta"` ou `"esgotada"` conforme o caso.
+- [ ] **Triatlo Longo de Caminha** — data de 2027 ainda não divulgada.
+- [ ] **TRITON 1 Lisboa** — o calendário de 2027 só será anunciado em novembro de 2026.
+- [ ] **Sines Triathlon** — data de 2027 ainda não divulgada. (Nota: não é uma etapa oficial do circuito T100; é o triatlo de 100 km da HMS Sports em Sines.)
+- [ ] **IRONMAN 70.3 Portugal-Cascais** — `urlOficial`/`urlInscricao` apontam para a página oficial do IRONMAN Portugal no Facebook; trocar pela página do evento em ironman.com.
+- [ ] **Estados de inscrição** — confirmar no site: a Meia dos Descobrimentos e a São Silvestre mostravam "inscrições abertas" na página inicial e "esgotada" na página de inscrições; o IRONMAN 70.3 foi anunciado como aberto, mas a imprensa já fala em esgotado.
 - [ ] `objetivoTempo` — opcional, preencha quando definir a meta.
 - [ ] `resultado` — preencha depois de cada prova.
 
-Enquanto a `data` estiver a `null`, a prova aparece em **"Data a confirmar"**, sem contagem regressiva, e o botão **Adicionar à agenda** fica desativado. Sem `urlInscricao`, o botão **Inscrever-me** fica desativado.
+Enquanto a `data` estiver a `null`, a prova aparece em **"Data a confirmar"**, sem contagem regressiva, e o botão **Adicionar à agenda** fica desativado.
 
 ---
 
@@ -45,11 +38,14 @@ O ficheiro é uma lista (`[...]`) de provas. Cada prova tem este formato:
   "nome": "Meia Maratona de Cascais",
   "local": "Cascais",
   "modalidade": "Corrida",
-  "data": "2027-03-14",
+  "data": "2027-02-07",
+  "dataConfirmada": true,
   "distancia": "21,1 km",
   "statusInscricao": "aberta",
   "urlOficial": "https://…",
   "urlInscricao": "https://…",
+  "fonte": "https://…",
+  "verificadoEm": "2026-10-30",
   "objetivoTempo": "1:45:00",
   "resultado": null
 }
@@ -62,17 +58,20 @@ O ficheiro é uma lista (`[...]`) de provas. Cada prova tem este formato:
 | `local` | texto ou `null` | Cidade/local. |
 | `modalidade` | texto | Ex.: `"Corrida"`, `"Triatlo"`. Qualquer texto com "tri" mostra os ícones de triatlo. |
 | `data` | `"YYYY-MM-DD"` ou `null` | Dia da prova. |
+| `dataConfirmada` | `true` / `false` | `false` mostra a etiqueta discreta **"data prevista"**. |
 | `distancia` | texto ou `null` | Texto livre, ex.: `"10 km"`, `"Sprint (750 m · 20 km · 5 km)"`. |
 | `statusInscricao` | `"aberta"` \| `"aguardando"` \| `"esgotada"` | 🟢 / 🟡 / 🔴 |
 | `urlOficial` | URL ou `null` | Link "Site oficial". |
-| `urlInscricao` | URL ou `null` | Aberto pelo botão **Inscrever-me**. |
+| `urlInscricao` | URL ou `null` | Aberto pelo botão **Inscrever-me**. Se a inscrição ainda não abriu, use o mesmo link do `urlOficial`. |
+| `fonte` | URL | Página oficial de onde tirou a data (link "Fonte da data" no card). |
+| `verificadoEm` | `"YYYY-MM-DD"` | Quando conferiu os dados. A mais recente aparece no rodapé: "Atualizado em …". |
 | `objetivoTempo` | texto (opcional) | Formato `h:mm:ss` ou `mm:ss` para comparar com o resultado. |
 | `resultado` | texto (opcional) | Tempo final, ex.: `"1:42:31"`. Aparece no Histórico. |
 
 Dicas:
 
 - JSON não aceita comentários nem vírgula depois do último elemento. Valide em <https://jsonlint.com> ou com `python3 -m json.tool data/races.json`.
-- A ordem no ficheiro não importa: a app ordena por data.
+- A ordem no ficheiro não importa: a app mostra primeiro as provas com inscrição aberta, depois ordena por data; provas sem data ficam no fim.
 - Uma prova passa para o **Histórico** automaticamente no dia seguinte à `data`.
 - Para acrescentar uma prova, copie um bloco `{ … }`, cole-o na lista (separado por vírgula) e mude o `id`.
 

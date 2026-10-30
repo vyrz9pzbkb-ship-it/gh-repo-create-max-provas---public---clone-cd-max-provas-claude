@@ -19,6 +19,7 @@ const VIEWS = {
 };
 
 const fmtLong = new Intl.DateTimeFormat('pt-PT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+const fmtDate = new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' });
 const fmtShort = new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'short' });
 
 let races = [];
@@ -42,10 +43,10 @@ function daysBetween(a, b) {
   return Math.round((b - a) / DAY_MS);
 }
 
-function countdownText(days) {
-  if (days === 0) return 'é hoje! 🔥';
-  if (days === 1) return 'é amanhã';
-  return `faltam ${days} dias`;
+function countdownHTML(days) {
+  if (days === 0) return '<strong>é hoje!</strong> 🔥';
+  if (days === 1) return '<strong>é amanhã</strong>';
+  return `faltam <strong>${days}</strong> dias`;
 }
 
 function weeksText(days) {
@@ -104,9 +105,11 @@ function partition() {
     else if (r._date < t) past.push(r);
     else upcoming.push(r);
   }
-  upcoming.sort((a, b) => a._date - b._date);
+  // Inscrições abertas primeiro; depois por data (sem data fica sempre no fim, em `undated`).
+  const openFirst = (a, b) => (b.statusInscricao === 'aberta') - (a.statusInscricao === 'aberta');
+  upcoming.sort((a, b) => openFirst(a, b) || a._date - b._date);
   past.sort((a, b) => b._date - a._date);
-  undated.sort((a, b) => String(a.nome).localeCompare(String(b.nome), 'pt'));
+  undated.sort((a, b) => openFirst(a, b) || String(a.nome).localeCompare(String(b.nome), 'pt'));
   return { upcoming, undated, past, today: t };
 }
 
@@ -120,7 +123,8 @@ function badge(status) {
 
 function metaLine(r) {
   const parts = [];
-  parts.push(`<span>📅 ${r._date ? esc(fmtLong.format(r._date)) : 'Data a confirmar'}</span>`);
+  const prevista = r._date && r.dataConfirmada === false ? ' <span class="tag">data prevista</span>' : '';
+  parts.push(`<span>📅 ${r._date ? esc(fmtLong.format(r._date)) : 'Data a confirmar'}${prevista}</span>`);
   if (r.local) parts.push(`<span>📍 ${esc(r.local)}</span>`);
   const kind = [r.modalidade, r.distancia].filter(Boolean).map(esc).join(' · ');
   if (kind) parts.push(`<span>${isTri(r) ? '🏊‍♂️🚴‍♂️🏃‍♂️' : '🏃‍♂️'} ${kind}</span>`);
@@ -130,9 +134,12 @@ function metaLine(r) {
 function upcomingCard(r, t) {
   const inscricao = safeUrl(r.urlInscricao);
   const oficial = safeUrl(r.urlOficial);
-  const countdown = r._date
-    ? `<span class="countdown">${countdownText(daysBetween(t, r._date))}</span>`
-    : '<span class="countdown muted">sem data</span>';
+  const fonte = safeUrl(r.fonte);
+  const countdown = r._date ? `<p class="countdown">${countdownHTML(daysBetween(t, r._date))}</p>` : '';
+  const links = [
+    oficial && `<a href="${esc(oficial)}" target="_blank" rel="noopener">Site oficial ↗</a>`,
+    fonte && fonte !== oficial && `<a class="muted" href="${esc(fonte)}" target="_blank" rel="noopener">Fonte da data ↗</a>`
+  ].filter(Boolean);
 
   const signup = inscricao
     ? `<a class="btn primary" href="${esc(inscricao)}" target="_blank" rel="noopener">Inscrever-me</a>`
@@ -142,12 +149,13 @@ function upcomingCard(r, t) {
 
   return `
     <article class="card">
-      <div class="card-top">${badge(r.statusInscricao)}${countdown}</div>
+      <div class="card-top">${badge(r.statusInscricao)}</div>
       <h2>${esc(r.nome)}</h2>
+      ${countdown}
       ${metaLine(r)}
       ${r.objetivoTempo ? `<p class="goal">🎯 Objetivo: <strong>${esc(r.objetivoTempo)}</strong></p>` : ''}
       <div class="actions">${signup}${ics}</div>
-      ${oficial ? `<div class="link-row"><a href="${esc(oficial)}" target="_blank" rel="noopener">Site oficial ↗</a></div>` : ''}
+      ${links.length ? `<div class="link-row">${links.join('')}</div>` : ''}
     </article>`;
 }
 
@@ -200,7 +208,14 @@ function renderUpcoming(view, sub) {
   if (undated.length) {
     html += `<h2 class="section-title">Data a confirmar</h2><div class="list">${undated.map((r) => upcomingCard(r, t)).join('')}</div>`;
   }
+  html += updatedFooter();
   view.innerHTML = html;
+}
+
+// Data de verificação mais recente entre as provas (campo verificadoEm).
+function updatedFooter() {
+  const latest = races.map((r) => parseDate(r.verificadoEm)).filter(Boolean).sort((a, b) => b - a)[0];
+  return latest ? `<p class="updated">Atualizado em ${esc(fmtDate.format(latest))}</p>` : '';
 }
 
 function renderSeason(view, sub) {
