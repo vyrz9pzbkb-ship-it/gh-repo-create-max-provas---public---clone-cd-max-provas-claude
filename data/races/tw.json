@@ -1,0 +1,17 @@
+[
+  {
+    "id": "challenge-taiwan-2027",
+    "nome": "Challenge Taiwan",
+    "local": "Taitung",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2027-04-24",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
+    "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  }
+]

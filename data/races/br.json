@@ -1,0 +1,17 @@
+[
+  {
+    "id": "challenge-florianopolis-2026",
+    "nome": "Challenge Florianópolis",
+    "local": "Florianópolis",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2026-11-29",
+    "dataConfirmada": true,
+    "distancia": "Média distância e sprint",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
+    "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
+    "verificadoEm": "2026-10-30"
+  }
+]

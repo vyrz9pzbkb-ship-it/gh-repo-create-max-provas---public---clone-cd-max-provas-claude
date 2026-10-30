@@ -1,0 +1,17 @@
+[
+  {
+    "id": "challenge-roth-2027",
+    "nome": "DATEV Challenge Roth",
+    "local": "Roth",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2027-07-04",
+    "dataConfirmada": true,
+    "distancia": "Distância longa (3,8 km · 180 km · 42,2 km)",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
+    "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  }
+]

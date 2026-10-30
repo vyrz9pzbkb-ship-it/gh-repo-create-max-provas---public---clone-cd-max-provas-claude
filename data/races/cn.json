@@ -1,0 +1,17 @@
+[
+  {
+    "id": "challenge-xiamen-2026",
+    "nome": "Challenge Xiamen",
+    "local": "Xiamen",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2026-11-07",
+    "dataConfirmada": true,
+    "distancia": "Média distância, olímpico, sprint e duatlo",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "verificadoEm": "2026-10-30"
+  }
+]

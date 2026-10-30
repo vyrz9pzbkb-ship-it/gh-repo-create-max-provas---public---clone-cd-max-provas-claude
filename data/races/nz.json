@@ -1,0 +1,17 @@
+[
+  {
+    "id": "challenge-wanaka-2027",
+    "nome": "Challenge Wānaka",
+    "local": "Wānaka",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2027-02-20",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
+    "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  }
+]

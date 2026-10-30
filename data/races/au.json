@@ -1,0 +1,32 @@
+[
+  {
+    "id": "challenge-canberra-2026",
+    "nome": "Challenge Canberra",
+    "local": "Canberra",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2026-11-22",
+    "dataConfirmada": true,
+    "distancia": "Média distância, olímpico, sprint e supersprint",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
+    "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "t100-gold-coast-2027",
+    "nome": "Gold Coast T100 Triathlon",
+    "local": "Gold Coast",
+    "modalidade": "Triatlo",
+    "serie": "T100",
+    "data": "2027-03-20",
+    "dataConfirmada": true,
+    "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 20 a 21/03",
+    "statusInscricao": null,
+    "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
+    "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
+    "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
+    "verificadoEm": "2026-10-30"
+  }
+]
