@@ -1,6 +1,6 @@
 // Service worker do Max Provas.
 // Ao alterar ficheiros da app (HTML/CSS/JS/ícones), incremente CACHE_VERSION.
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const CACHE = `max-provas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -19,7 +19,12 @@ const APP_SHELL = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((c) => c.addAll(APP_SHELL)).then(() => self.skipWaiting()));
+  // cache: 'reload' ignora a cache HTTP do browser, para a versão nova não herdar ficheiros antigos.
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((c) => c.addAll(APP_SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {

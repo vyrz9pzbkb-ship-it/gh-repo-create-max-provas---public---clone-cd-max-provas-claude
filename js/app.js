@@ -211,7 +211,7 @@ function serieTag(r) {
 function metaLine(r) {
   const parts = [];
   const prevista = r._date && r.dataConfirmada === false ? ' <span class="tag">data prevista</span>' : '';
-  parts.push(`<span>📅 ${r._date ? esc(fmtLong.format(r._date)) : 'Data a confirmar'}${prevista}</span>`);
+  parts.push(`<span>📅 ${r._date ? esc(fmtLong.format(r._date)) : 'Próxima edição a anunciar'}${prevista}</span>`);
   const c = countryOf(r._pais);
   const flag = c && selected.length > 1 ? `${c.bandeira} ` : '';
   if (r.local || flag) parts.push(`<span>📍 ${flag}${esc(r.local || c.pais)}</span>`);
@@ -297,7 +297,7 @@ function renderUpcoming(view, sub) {
     html += `<div class="list">${upcoming.map((r) => upcomingCard(r, t)).join('')}</div>`;
   }
   if (undated.length) {
-    html += `<h2 class="section-title">Data a confirmar</h2><div class="list">${undated.map((r) => upcomingCard(r, t)).join('')}</div>`;
+    html += `<h2 class="section-title">Próxima edição a anunciar</h2><div class="list">${undated.map((r) => upcomingCard(r, t)).join('')}</div>`;
   }
   html += updatedFooter();
   view.innerHTML = html;
@@ -314,7 +314,7 @@ function renderSeason(view, sub) {
 
   if (!upcoming.length) {
     sub.textContent = '';
-    view.innerHTML = filterBar() + `<p class="empty">Ainda não há provas com data definida.${undated.length ? `<br>${undated.length} ${undated.length === 1 ? 'prova aguarda' : 'provas aguardam'} data.` : ''}</p>`;
+    view.innerHTML = filterBar() + `<p class="empty">Ainda não há provas com data anunciada.${undated.length ? `<br>${undated.length} ${undated.length === 1 ? 'prova aguarda' : 'provas aguardam'} data.` : ''}</p>`;
     return;
   }
 
@@ -355,7 +355,7 @@ function renderSeason(view, sub) {
 
   html += `<p class="legend">Intervalos inferiores a 4 semanas aparecem destacados a laranja.</p>`;
   if (undated.length) {
-    html += `<h2 class="section-title">Data a confirmar</h2><p class="legend" style="margin-top:0">${undated.map((r) => esc(r.nome)).join(' · ')}</p>`;
+    html += `<h2 class="section-title">Próxima edição a anunciar</h2><p class="legend" style="margin-top:0">${undated.map((r) => esc(r.nome)).join(' · ')}</p>`;
   }
   view.innerHTML = html;
 }
@@ -607,6 +607,15 @@ document.addEventListener('visibilitychange', () => {
   }
 
   if ('serviceWorker' in navigator) {
+    // Quando uma versão nova do service worker assume o controlo, recarrega uma vez para a mostrar.
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController && !reloaded) {
+        reloaded = true;
+        location.reload();
+      }
+    });
     navigator.serviceWorker.register('sw.js').catch((err) => console.warn('SW:', err));
   }
 })();

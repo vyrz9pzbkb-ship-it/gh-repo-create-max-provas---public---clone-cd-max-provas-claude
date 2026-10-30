@@ -129,6 +129,25 @@
     "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
+    "id": "ironman-703-cascais-2026",
+    "nome": "IRONMAN 70.3 Portugal-Cascais",
+    "favorita": true,
+    "local": "Cascais",
+    "modalidade": "Triatlo",
+    "serie": "IRONMAN 70.3",
+    "data": "2026-10-17",
+    "dataConfirmada": true,
+    "distancia": "70.3 mi (1,9 km natação · 90 km ciclismo · 21,1 km corrida)",
+    "statusInscricao": "esgotada",
+    "statusMotivo": "Edição esgotada (informação do utilizador; não verificada no site oficial)",
+    "urlOficial": "https://www.facebook.com/IRONMANPortugal/",
+    "urlInscricao": null,
+    "fonte": "https://www.facebook.com/IRONMANPortugal/videos/ironman-ironman-703-portugal-cascais-2026-have-officially-started-the-ironman-vi/29126556363698153/",
+    "verificadoEm": "2026-10-30",
+    "objetivoTempo": null,
+    "resultado": null
+  },
+  {
     "id": "ironman-703-cascais",
     "nome": "IRONMAN 70.3 Portugal-Cascais",
     "favorita": true,
