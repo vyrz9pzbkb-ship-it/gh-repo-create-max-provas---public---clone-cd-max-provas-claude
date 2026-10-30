@@ -13,5 +13,20 @@
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "oetztaler-radmarathon-2027",
+    "nome": "Ötztaler Radmarathon",
+    "local": "Sölden",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-08-29",
+    "dataConfirmada": false,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://oetztaler-radmarathon.com/home.html",
+    "urlInscricao": "https://oetztaler-radmarathon.com/home.html",
+    "fonte": "https://oetztaler-radmarathon.com/home.html",
+    "verificadoEm": "2026-10-30"
   }
 ]

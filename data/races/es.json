@@ -1,5 +1,20 @@
 [
   {
+    "id": "ugfws-la-nucia-2026",
+    "nome": "Gran Fondo La Nucía",
+    "local": "La Nucía",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-11-07",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": "https://ucigranfondoworldseries.com/en/vuelta-champions-mas-and-blasi-headline-uci-gran-fondo-world-series-debut-in-la-nucia/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "maraton-valencia-2026",
     "nome": "Maratón Valencia Trinidad Alfonso Zurich",
     "local": "Valência",
@@ -90,6 +105,21 @@
     "verificadoEm": "2026-10-30"
   },
   {
+    "id": "mallorca-312-2027",
+    "nome": "Mallorca 312",
+    "local": "Platja de Muro (Maiorca)",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-04-24",
+    "dataConfirmada": true,
+    "distancia": "312, 226 ou 167 km",
+    "statusInscricao": null,
+    "urlOficial": "https://mallorca312.com/en/",
+    "urlInscricao": "https://mallorca312.com/en/",
+    "fonte": "https://mallorca312.com/en/rules/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "challenge-salou-2027",
     "nome": "Challenge Salou-Costa Daurada",
     "local": "Salou",
@@ -102,6 +132,21 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "quebrantahuesos-2027",
+    "nome": "Quebrantahuesos",
+    "local": "Sabiñánigo",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-06-19",
+    "dataConfirmada": false,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://www.quebrantahuesos.com/en/home/",
+    "urlInscricao": "https://www.quebrantahuesos.com/en/home/",
+    "fonte": "https://www.quebrantahuesos.com/en/quebrantahuesos-en/",
     "verificadoEm": "2026-10-30"
   },
   {

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "we-ride-flanders-2027",
+    "nome": "We Ride Flanders (Ronde van Vlaanderen Cyclo)",
+    "local": "Bruges / Oudenaarde",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-04-03",
+    "dataConfirmada": true,
+    "distancia": "80, 130, 160 ou 240 km",
+    "statusInscricao": "aberta",
+    "urlOficial": "https://www.rondevanvlaanderen.be/en",
+    "urlInscricao": "https://www.rondevanvlaanderen.be/en",
+    "fonte": "https://www.rondevanvlaanderen.be/en/news/registrations-for-we-ride-flanders-2027-are-open",
+    "verificadoEm": "2026-10-30"
+  }
+]

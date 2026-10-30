@@ -15,6 +15,21 @@
     "verificadoEm": "2026-10-30"
   },
   {
+    "id": "ugfws-guadeloupe-2026",
+    "nome": "Granfondo La Guadeloupe",
+    "local": "Guadalupe (território francês)",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-12-06",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "t100-french-riviera-2027",
     "nome": "French Riviera T100 Triathlon",
     "local": "Fréjus-Saint-Raphaël",
@@ -27,6 +42,36 @@
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/triathlon-world-tour-announces-31-more-races-for-2027/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "etape-du-tour-2027",
+    "nome": "L'Étape du Tour de France",
+    "local": "Alpes (percurso a anunciar)",
+    "modalidade": "Ciclismo",
+    "serie": "L'Étape",
+    "data": "2027-07-11",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": "aguardando",
+    "urlOficial": "https://www.letapebytourdefrance.com/",
+    "urlInscricao": "https://www.letapebytourdefrance.com/",
+    "fonte": "https://www.letapebytourdefrance.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "ugf-world-championships-2027",
+    "nome": "UCI Gran Fondo World Championships",
+    "local": "Haute-Savoie (Thônes – La Clusaz)",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2027-08-24",
+    "dataConfirmada": true,
+    "distancia": "Contrarrelógio a 22/08, gran fondo a 24/08 (só com qualificação)",
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/",
+    "fonte": "https://ucigranfondoworldseries.com/en/haute-savoie-mont-blanc-2027-reveals-gran-fondo-world-championship-courses/",
     "verificadoEm": "2026-10-30"
   },
   {

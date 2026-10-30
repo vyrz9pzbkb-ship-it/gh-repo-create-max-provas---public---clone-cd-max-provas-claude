@@ -15,6 +15,21 @@
     "verificadoEm": "2026-10-30"
   },
   {
+    "id": "ugfws-abu-dhabi-2026",
+    "nome": "AD Ports Group Gran Fondo Abu Dhabi",
+    "local": "Al Ain → Abu Dhabi",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-12-20",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "challenge-sir-bani-yas-2027",
     "nome": "Challenge Sir Bani Yas",
     "local": "Sir Bani Yas (Abu Dhabi)",

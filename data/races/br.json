@@ -1,5 +1,20 @@
 [
   {
+    "id": "ugfws-brazil-2026",
+    "nome": "Granfondo Brazil",
+    "local": "Timbó (SC)",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-11-08",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "challenge-florianopolis-2026",
     "nome": "Challenge Florianópolis",
     "local": "Florianópolis",

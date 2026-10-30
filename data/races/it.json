@@ -73,5 +73,35 @@
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "nove-colli-2027",
+    "nome": "Nove Colli",
+    "local": "Cesenatico",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-05-23",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": "aguardando",
+    "urlOficial": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
+    "urlInscricao": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
+    "fonte": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "maratona-dles-dolomites-2027",
+    "nome": "Maratona dles Dolomites",
+    "local": "Alta Badia",
+    "modalidade": "Ciclismo",
+    "serie": null,
+    "data": "2027-07-04",
+    "dataConfirmada": true,
+    "distancia": "138, 106 ou 55 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.maratona.it/en/",
+    "urlInscricao": "https://www.maratona.it/en/",
+    "fonte": "https://www.maratona.it/en/conditionsofentry-2027",
+    "verificadoEm": "2026-10-30"
   }
 ]
