@@ -1,6 +1,6 @@
 // Service worker do Max Provas.
 // Ao alterar ficheiros da app (HTML/CSS/JS/ícones), incremente CACHE_VERSION.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE = `max-provas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -8,7 +8,8 @@ const APP_SHELL = [
   'index.html',
   'css/styles.css',
   'js/app.js',
-  'data/races.json',
+  'data/countries.json',
+  'data/races/pt.json',
   'manifest.json',
   'icons/apple-touch-icon.png',
   'icons/favicon-32.png',
@@ -35,8 +36,9 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  // Dados: rede primeiro (para ver logo as edições do races.json), cache se offline.
-  if (url.pathname.endsWith('/data/races.json')) {
+  // Dados (countries.json e races/*.json): rede primeiro, para ver logo as edições;
+  // cada país consultado fica guardado e continua disponível offline.
+  if (url.pathname.includes('/data/')) {
     event.respondWith(networkFirst(req));
     return;
   }

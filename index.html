@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Max Provas</title>
-  <meta name="description" content="Acompanhe as suas provas de corrida e triatlo em Portugal.">
+  <meta name="description" content="Provas de corrida, triatlo, ciclismo e natação no mundo todo.">
 
   <!-- PWA / iOS -->
   <link rel="manifest" href="manifest.json">
@@ -23,7 +23,7 @@
 </head>
 <body>
   <header class="topbar">
-    <h1 id="view-title">Minhas provas</h1>
+    <h1 id="view-title">Provas</h1>
     <p id="view-subtitle" class="subtitle"></p>
   </header>
 
@@ -36,6 +36,21 @@
     <a href="#temporada" data-tab="temporada"><span aria-hidden="true">📈</span>Temporada</a>
     <a href="#historico" data-tab="historico"><span aria-hidden="true">🏅</span>Histórico</a>
   </nav>
+
+  <dialog id="country-sheet" class="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-head">
+      <div>
+        <p class="sheet-step">Passo 1 · País</p>
+        <h2 id="sheet-title">Onde quer competir?</h2>
+      </div>
+      <button type="button" class="sheet-x" data-close aria-label="Fechar">✕</button>
+    </div>
+    <div class="sheet-body"></div>
+    <div class="sheet-foot">
+      <button type="button" class="btn" data-clear>Limpar</button>
+      <button type="button" class="btn primary" data-apply>Ver provas</button>
+    </div>
+  </dialog>
 
   <div id="toast" class="toast" role="status" hidden></div>
 
