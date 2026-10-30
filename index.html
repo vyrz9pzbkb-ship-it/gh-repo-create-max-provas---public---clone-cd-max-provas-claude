@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Max Provas</title>
+  <meta name="description" content="Acompanhe as suas provas de corrida e triatlo em Portugal.">
+
+  <!-- PWA / iOS -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f6f5f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111015" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Max Provas">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="view-title">Minhas provas</h1>
+    <p id="view-subtitle" class="subtitle"></p>
+  </header>
+
+  <main id="view" class="view" aria-live="polite">
+    <p class="empty">A carregar…</p>
+  </main>
+
+  <nav class="tabbar" aria-label="Navegação principal">
+    <a href="#provas" data-tab="provas"><span aria-hidden="true">🏁</span>Provas</a>
+    <a href="#temporada" data-tab="temporada"><span aria-hidden="true">📈</span>Temporada</a>
+    <a href="#historico" data-tab="historico"><span aria-hidden="true">🏅</span>Histórico</a>
+  </nav>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
