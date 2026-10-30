@@ -15,6 +15,21 @@
     "verificadoEm": "2026-10-30"
   },
   {
+    "id": "oceanman-cordoba-2027",
+    "nome": "OCEANMAN Córdoba",
+    "local": "Córdoba",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": "2027-03-05",
+    "dataConfirmada": true,
+    "distancia": "Evento de 5 a 7/03",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/",
+    "urlInscricao": "https://oceanmanswim.com/",
+    "fonte": "https://oceanmanswim.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "maraton-buenos-aires-2027",
     "nome": "Maratón de Buenos Aires",
     "local": "Buenos Aires",

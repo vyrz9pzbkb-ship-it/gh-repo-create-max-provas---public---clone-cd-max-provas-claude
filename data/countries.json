@@ -46,7 +46,7 @@
     "pais": "Itália",
     "continente": "Europa",
     "bandeira": "🇮🇹",
-    "provas": 7
+    "provas": 8
   },
   {
     "codigo": "nl",
@@ -67,7 +67,7 @@
     "pais": "Portugal",
     "continente": "Europa",
     "bandeira": "🇵🇹",
-    "provas": 11
+    "provas": 12
   },
   {
     "codigo": "gb",
@@ -75,6 +75,13 @@
     "continente": "Europa",
     "bandeira": "🇬🇧",
     "provas": 5
+  },
+  {
+    "codigo": "se",
+    "pais": "Suécia",
+    "continente": "Europa",
+    "bandeira": "🇸🇪",
+    "provas": 1
   },
   {
     "codigo": "tr",
@@ -95,14 +102,14 @@
     "pais": "Argentina",
     "continente": "América do Sul",
     "bandeira": "🇦🇷",
-    "provas": 3
+    "provas": 4
   },
   {
     "codigo": "br",
     "pais": "Brasil",
     "continente": "América do Sul",
     "bandeira": "🇧🇷",
-    "provas": 6
+    "provas": 7
   },
   {
     "codigo": "cl",
@@ -126,6 +133,13 @@
     "provas": 1
   },
   {
+    "codigo": "pe",
+    "pais": "Peru",
+    "continente": "América do Sul",
+    "bandeira": "🇵🇪",
+    "provas": 1
+  },
+  {
     "codigo": "ca",
     "pais": "Canadá",
     "continente": "América do Norte",
@@ -133,11 +147,25 @@
     "provas": 8
   },
   {
+    "codigo": "cr",
+    "pais": "Costa Rica",
+    "continente": "América do Norte",
+    "bandeira": "🇨🇷",
+    "provas": 1
+  },
+  {
     "codigo": "us",
     "pais": "Estados Unidos",
     "continente": "América do Norte",
     "bandeira": "🇺🇸",
     "provas": 9
+  },
+  {
+    "codigo": "do",
+    "pais": "República Dominicana",
+    "continente": "América do Norte",
+    "bandeira": "🇩🇴",
+    "provas": 1
   },
   {
     "codigo": "sa",
@@ -189,11 +217,25 @@
     "provas": 1
   },
   {
+    "codigo": "mv",
+    "pais": "Maldivas",
+    "continente": "Ásia",
+    "bandeira": "🇲🇻",
+    "provas": 1
+  },
+  {
     "codigo": "sg",
     "pais": "Singapura",
     "continente": "Ásia",
     "bandeira": "🇸🇬",
     "provas": 1
+  },
+  {
+    "codigo": "th",
+    "pais": "Tailândia",
+    "continente": "Ásia",
+    "bandeira": "🇹🇭",
+    "provas": 2
   },
   {
     "codigo": "tw",

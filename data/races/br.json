@@ -88,5 +88,20 @@
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "travessia-mar-grande-salvador",
+    "nome": "Travessia Mar Grande–Salvador",
+    "local": "Mar Grande → Salvador",
+    "modalidade": "Natação",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "≈12,5 km",
+    "statusInscricao": null,
+    "urlOficial": null,
+    "urlInscricao": null,
+    "fonte": null,
+    "verificadoEm": "2026-10-30"
   }
 ]

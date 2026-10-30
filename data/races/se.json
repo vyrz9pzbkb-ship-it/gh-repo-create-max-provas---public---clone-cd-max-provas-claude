@@ -1,0 +1,17 @@
+[
+  {
+    "id": "vansbrosimningen-2027",
+    "nome": "Vansbrosimningen",
+    "local": "Vansbro",
+    "modalidade": "Natação",
+    "serie": null,
+    "data": "2027-07-10",
+    "dataConfirmada": true,
+    "distancia": "3 km (rio)",
+    "statusInscricao": "aberta",
+    "urlOficial": "https://vansbrosimningen.se/",
+    "urlInscricao": "https://vansbrosimningen.se/",
+    "fonte": "https://vansbrosimningen.se/vara-lopp/vansbrosimningen/",
+    "verificadoEm": "2026-10-30"
+  }
+]

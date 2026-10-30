@@ -1,0 +1,17 @@
+[
+  {
+    "id": "oceanman-lima-2027",
+    "nome": "OCEANMAN Lima",
+    "local": "Lima",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": "2027-03-18",
+    "dataConfirmada": true,
+    "distancia": "Evento de 18 a 20/03",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/",
+    "urlInscricao": "https://oceanmanswim.com/",
+    "fonte": "https://oceanmanswim.com/",
+    "verificadoEm": "2026-10-30"
+  }
+]

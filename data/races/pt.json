@@ -98,6 +98,21 @@
     "resultado": null
   },
   {
+    "id": "oceanman-algarve-2027",
+    "nome": "OCEANMAN Algarve",
+    "local": "Algarve",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": "2027-06-06",
+    "dataConfirmada": true,
+    "distancia": "Evento de 4 a 6/06 · OCEANMAN a 6/06",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/races/algarve-portugal-2027",
+    "urlInscricao": "https://oceanmanswim.com/races/algarve-portugal-2027",
+    "fonte": "https://oceanmanswim.com/races/algarve-portugal-2027",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "ironman-703-cascais",
     "nome": "IRONMAN 70.3 Portugal-Cascais",
     "local": "Cascais",

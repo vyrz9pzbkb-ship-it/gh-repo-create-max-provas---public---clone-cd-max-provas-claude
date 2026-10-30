@@ -90,6 +90,21 @@
     "verificadoEm": "2026-10-30"
   },
   {
+    "id": "oceanman-lago-dorta-2027",
+    "nome": "OCEANMAN Lago d'Orta",
+    "local": "Lago d'Orta",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": "2027-06-13",
+    "dataConfirmada": true,
+    "distancia": "Sprint a 12/06 · OCEANMAN a 13/06",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/lagodorta-italy/",
+    "urlInscricao": "https://oceanmanswim.com/lagodorta-italy/",
+    "fonte": "https://oceanmanswim.com/lagodorta-italy/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "maratona-dles-dolomites-2027",
     "nome": "Maratona dles Dolomites",
     "local": "Alta Badia",
