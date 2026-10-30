@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cape-town-marathon-2027",
+    "nome": "Sanlam Cape Town Marathon",
+    "local": "Cidade do Cabo",
+    "modalidade": "Corrida",
+    "serie": "Marathon Majors",
+    "data": "2027-05-23",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.worldmarathonmajors.com/cape-town-major",
+    "urlInscricao": "https://www.worldmarathonmajors.com/cape-town-major",
+    "fonte": "https://www.worldmarathonmajors.com/content-hub/sanlam-cape-town-marathon-becomes-a-major",
+    "verificadoEm": "2026-10-30"
+  }
+]

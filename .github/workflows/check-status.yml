@@ -1,0 +1,72 @@
+name: Verificar status das inscrições
+
+on:
+  schedule:
+    # O cron do GitHub é em UTC. 07:00 em Madrid = 05:00 UTC no verão (CEST) e 06:00 UTC no inverno (CET).
+    # Corre às duas horas e o primeiro job deixa passar só a que corresponde às 07:00 de Madrid nesse dia.
+    - cron: '0 5 * * *'
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: check-status
+  cancel-in-progress: false
+
+jobs:
+  horario:
+    runs-on: ubuntu-latest
+    outputs:
+      correr: ${{ steps.hora.outputs.correr }}
+    steps:
+      - id: hora
+        name: Confirmar 07:00 em Madrid
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "correr=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          offset=$(TZ=Europe/Madrid date +%z)
+          agendado="${{ github.event.schedule }}"
+          if { [ "$offset" = "+0200" ] && [ "$agendado" = "0 5 * * *" ]; } || \
+             { [ "$offset" = "+0100" ] && [ "$agendado" = "0 6 * * *" ]; }; then
+            echo "correr=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "correr=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  verificar:
+    needs: horario
+    if: needs.horario.outputs.correr == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Playwright e Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Verificar páginas de inscrição
+        id: check
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node scripts/check-status.js
+
+      - name: Validar dados
+        run: python3 tools/atualizar_paises.py
+
+      - name: Commit (só se algum status mudou)
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Status das inscrições: ${{ steps.check.outputs.count }} mudança(s) em $(TZ=Europe/Madrid date +%F)"
+          git push

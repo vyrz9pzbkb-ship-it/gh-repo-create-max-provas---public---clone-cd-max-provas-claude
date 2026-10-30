@@ -1,0 +1,17 @@
+[
+  {
+    "id": "maraton-santiago-2027",
+    "nome": "Gatorade Maratón de Santiago",
+    "local": "Santiago",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-05-16",
+    "dataConfirmada": true,
+    "distancia": "42,195 km (também 21 km e 10 km)",
+    "statusInscricao": "aberta",
+    "urlOficial": "https://maratondesantiago.cl/en/",
+    "urlInscricao": "https://maratondesantiago.cl/en/",
+    "fonte": "https://maratondesantiago.cl/wp-content/uploads/2026/10/BASES-MDS-2027.pdf",
+    "verificadoEm": "2026-10-30"
+  }
+]

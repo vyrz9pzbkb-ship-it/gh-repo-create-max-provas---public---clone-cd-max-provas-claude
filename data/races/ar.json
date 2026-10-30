@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ugfws-villa-la-angostura-2026",
+    "nome": "Gran Fondo Villa La Angostura",
+    "local": "Villa La Angostura",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-11-21",
+    "dataConfirmada": true,
+    "distancia": "Evento de 21 a 22/11",
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "oceanman-cordoba-2027",
+    "nome": "OCEANMAN Córdoba",
+    "local": "Córdoba",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": "2027-03-05",
+    "dataConfirmada": true,
+    "distancia": "Evento de 5 a 7/03",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/",
+    "urlInscricao": "https://oceanmanswim.com/",
+    "fonte": "https://oceanmanswim.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "maraton-buenos-aires-2027",
+    "nome": "Maratón de Buenos Aires",
+    "local": "Buenos Aires",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.maratondebuenosaires.com/",
+    "urlInscricao": "https://www.maratondebuenosaires.com/",
+    "fonte": "https://www.maratondebuenosaires.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "medio-maraton-buenos-aires-2027",
+    "nome": "Medio Maratón de Buenos Aires",
+    "local": "Buenos Aires",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "urlInscricao": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "fonte": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "verificadoEm": "2026-10-30"
+  }
+]

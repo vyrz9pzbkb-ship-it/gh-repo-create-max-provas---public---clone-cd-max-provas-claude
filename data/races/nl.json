@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cpc-den-haag-2027",
+    "nome": "NN CPC Loop Den Haag",
+    "local": "Haia",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-03-14",
+    "dataConfirmada": false,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://nnmarathonrotterdam.nl/en/register/",
+    "urlInscricao": "https://nnmarathonrotterdam.nl/en/register/",
+    "fonte": "https://nnmarathonrotterdam.nl/en/register/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "marathon-rotterdam-2027",
+    "nome": "NN Marathon Rotterdam",
+    "local": "Roterdão",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-04-11",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": "aguardando",
+    "urlOficial": "https://nnmarathonrotterdam.nl/en/",
+    "urlInscricao": "https://nnmarathonrotterdam.nl/en/",
+    "fonte": "https://nnmarathonrotterdam.nl/nn-marathon-rotterdam-2027-zet-in-op-meer-rotterdammers-en-opent-gratis-pre-registratie/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "challenge-almere-amsterdam-2027",
+    "nome": "Challenge Almere-Amsterdam",
+    "local": "Almere",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2027-09-11",
+    "dataConfirmada": true,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
+    "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "marathon-amsterdam-2027",
+    "nome": "TCS Amsterdam Marathon",
+    "local": "Amesterdão",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-10-31",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": "aguardando",
+    "urlOficial": "https://www.tcsamsterdammarathon.nl/",
+    "urlInscricao": "https://www.tcsamsterdammarathon.nl/",
+    "fonte": "https://www.tcsamsterdammarathon.nl/programma",
+    "verificadoEm": "2026-10-30"
+  }
+]

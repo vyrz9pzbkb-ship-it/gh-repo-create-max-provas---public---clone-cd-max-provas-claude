@@ -1,0 +1,32 @@
+[
+  {
+    "id": "challenge-xiamen-2026",
+    "nome": "Challenge Xiamen",
+    "local": "Xiamen",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2026-11-07",
+    "dataConfirmada": true,
+    "distancia": "Média distância, olímpico, sprint e duatlo",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "ugfws-hainan-2026",
+    "nome": "UCI Gran Fondo Hainan",
+    "local": "Hainan",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": "2026-12-18",
+    "dataConfirmada": true,
+    "distancia": "Evento de 18 a 20/12",
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/hainan-2026/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/hainan-2026/",
+    "fonte": "https://ucigranfondoworldseries.com/en/calendar-update-two-date-changes-and-one-new-event-added-to-the-2026-uci-gran-fondo-world-series/",
+    "verificadoEm": "2026-10-30"
+  }
+]

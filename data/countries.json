@@ -1,0 +1,275 @@
+[
+  {
+    "codigo": "de",
+    "pais": "Alemanha",
+    "continente": "Europa",
+    "bandeira": "🇩🇪",
+    "provas": 5
+  },
+  {
+    "codigo": "at",
+    "pais": "Áustria",
+    "continente": "Europa",
+    "bandeira": "🇦🇹",
+    "provas": 2
+  },
+  {
+    "codigo": "be",
+    "pais": "Bélgica",
+    "continente": "Europa",
+    "bandeira": "🇧🇪",
+    "provas": 1
+  },
+  {
+    "codigo": "sk",
+    "pais": "Eslováquia",
+    "continente": "Europa",
+    "bandeira": "🇸🇰",
+    "provas": 1
+  },
+  {
+    "codigo": "es",
+    "pais": "Espanha",
+    "continente": "Europa",
+    "bandeira": "🇪🇸",
+    "provas": 13
+  },
+  {
+    "codigo": "fr",
+    "pais": "França",
+    "continente": "Europa",
+    "bandeira": "🇫🇷",
+    "provas": 8
+  },
+  {
+    "codigo": "gr",
+    "pais": "Grécia",
+    "continente": "Europa",
+    "bandeira": "🇬🇷",
+    "provas": 1
+  },
+  {
+    "codigo": "it",
+    "pais": "Itália",
+    "continente": "Europa",
+    "bandeira": "🇮🇹",
+    "provas": 8
+  },
+  {
+    "codigo": "nl",
+    "pais": "Países Baixos",
+    "continente": "Europa",
+    "bandeira": "🇳🇱",
+    "provas": 4
+  },
+  {
+    "codigo": "pl",
+    "pais": "Polónia",
+    "continente": "Europa",
+    "bandeira": "🇵🇱",
+    "provas": 1
+  },
+  {
+    "codigo": "pt",
+    "pais": "Portugal",
+    "continente": "Europa",
+    "bandeira": "🇵🇹",
+    "provas": 12
+  },
+  {
+    "codigo": "gb",
+    "pais": "Reino Unido",
+    "continente": "Europa",
+    "bandeira": "🇬🇧",
+    "provas": 5
+  },
+  {
+    "codigo": "se",
+    "pais": "Suécia",
+    "continente": "Europa",
+    "bandeira": "🇸🇪",
+    "provas": 1
+  },
+  {
+    "codigo": "tr",
+    "pais": "Turquia",
+    "continente": "Europa",
+    "bandeira": "🇹🇷",
+    "provas": 1
+  },
+  {
+    "codigo": "ar",
+    "pais": "Argentina",
+    "continente": "América do Sul",
+    "bandeira": "🇦🇷",
+    "provas": 4
+  },
+  {
+    "codigo": "br",
+    "pais": "Brasil",
+    "continente": "América do Sul",
+    "bandeira": "🇧🇷",
+    "provas": 7
+  },
+  {
+    "codigo": "cl",
+    "pais": "Chile",
+    "continente": "América do Sul",
+    "bandeira": "🇨🇱",
+    "provas": 1
+  },
+  {
+    "codigo": "co",
+    "pais": "Colômbia",
+    "continente": "América do Sul",
+    "bandeira": "🇨🇴",
+    "provas": 1
+  },
+  {
+    "codigo": "ec",
+    "pais": "Equador",
+    "continente": "América do Sul",
+    "bandeira": "🇪🇨",
+    "provas": 1
+  },
+  {
+    "codigo": "pe",
+    "pais": "Peru",
+    "continente": "América do Sul",
+    "bandeira": "🇵🇪",
+    "provas": 1
+  },
+  {
+    "codigo": "ca",
+    "pais": "Canadá",
+    "continente": "América do Norte",
+    "bandeira": "🇨🇦",
+    "provas": 8
+  },
+  {
+    "codigo": "cr",
+    "pais": "Costa Rica",
+    "continente": "América do Norte",
+    "bandeira": "🇨🇷",
+    "provas": 1
+  },
+  {
+    "codigo": "us",
+    "pais": "Estados Unidos",
+    "continente": "América do Norte",
+    "bandeira": "🇺🇸",
+    "provas": 9
+  },
+  {
+    "codigo": "do",
+    "pais": "República Dominicana",
+    "continente": "América do Norte",
+    "bandeira": "🇩🇴",
+    "provas": 1
+  },
+  {
+    "codigo": "sa",
+    "pais": "Arábia Saudita",
+    "continente": "Ásia",
+    "bandeira": "🇸🇦",
+    "provas": 2
+  },
+  {
+    "codigo": "qa",
+    "pais": "Catar",
+    "continente": "Ásia",
+    "bandeira": "🇶🇦",
+    "provas": 2
+  },
+  {
+    "codigo": "cn",
+    "pais": "China",
+    "continente": "Ásia",
+    "bandeira": "🇨🇳",
+    "provas": 2
+  },
+  {
+    "codigo": "kr",
+    "pais": "Coreia do Sul",
+    "continente": "Ásia",
+    "bandeira": "🇰🇷",
+    "provas": 1
+  },
+  {
+    "codigo": "ae",
+    "pais": "Emirados Árabes Unidos",
+    "continente": "Ásia",
+    "bandeira": "🇦🇪",
+    "provas": 3
+  },
+  {
+    "codigo": "il",
+    "pais": "Israel",
+    "continente": "Ásia",
+    "bandeira": "🇮🇱",
+    "provas": 1
+  },
+  {
+    "codigo": "jp",
+    "pais": "Japão",
+    "continente": "Ásia",
+    "bandeira": "🇯🇵",
+    "provas": 1
+  },
+  {
+    "codigo": "mv",
+    "pais": "Maldivas",
+    "continente": "Ásia",
+    "bandeira": "🇲🇻",
+    "provas": 1
+  },
+  {
+    "codigo": "sg",
+    "pais": "Singapura",
+    "continente": "Ásia",
+    "bandeira": "🇸🇬",
+    "provas": 1
+  },
+  {
+    "codigo": "th",
+    "pais": "Tailândia",
+    "continente": "Ásia",
+    "bandeira": "🇹🇭",
+    "provas": 2
+  },
+  {
+    "codigo": "tw",
+    "pais": "Taiwan",
+    "continente": "Ásia",
+    "bandeira": "🇹🇼",
+    "provas": 1
+  },
+  {
+    "codigo": "uz",
+    "pais": "Uzbequistão",
+    "continente": "Ásia",
+    "bandeira": "🇺🇿",
+    "provas": 1
+  },
+  {
+    "codigo": "au",
+    "pais": "Austrália",
+    "continente": "Oceania",
+    "bandeira": "🇦🇺",
+    "provas": 3
+  },
+  {
+    "codigo": "nz",
+    "pais": "Nova Zelândia",
+    "continente": "Oceania",
+    "bandeira": "🇳🇿",
+    "provas": 1
+  },
+  {
+    "codigo": "za",
+    "pais": "África do Sul",
+    "continente": "África",
+    "bandeira": "🇿🇦",
+    "provas": 1
+  }
+]

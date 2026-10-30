@@ -1,0 +1,17 @@
+[
+  {
+    "id": "the-championship-2027",
+    "nome": "The Championship (Challenge Family)",
+    "local": "Šamorín",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": "2027-05-23",
+    "dataConfirmada": true,
+    "distancia": "Média distância",
+    "statusInscricao": null,
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
+    "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  }
+]
