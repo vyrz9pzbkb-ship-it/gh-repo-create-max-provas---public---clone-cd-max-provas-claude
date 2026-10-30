@@ -7,6 +7,13 @@
     "provas": 5
   },
   {
+    "codigo": "at",
+    "pais": "Áustria",
+    "continente": "Europa",
+    "bandeira": "🇦🇹",
+    "provas": 2
+  },
+  {
     "codigo": "be",
     "pais": "Bélgica",
     "continente": "Europa",
@@ -89,13 +96,6 @@
     "continente": "Europa",
     "bandeira": "🇹🇷",
     "provas": 1
-  },
-  {
-    "codigo": "at",
-    "pais": "Áustria",
-    "continente": "Europa",
-    "bandeira": "🇦🇹",
-    "provas": 2
   },
   {
     "codigo": "ar",

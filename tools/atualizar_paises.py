@@ -10,6 +10,7 @@ e, se o código ainda não estiver em PAISES abaixo, acrescente-o.
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -58,6 +59,10 @@ OBRIGATORIOS = ["id", "nome", "local", "modalidade", "data", "dataConfirmada", "
 DATA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
+def sem_acentos(texto):
+    return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode()
+
+
 def bandeira(codigo):
     return "".join(chr(0x1F1E6 + ord(c) - ord("a")) for c in codigo.lower())
 
@@ -101,7 +106,7 @@ def main():
         print("\n".join(erros))
         sys.exit(1)
 
-    paises.sort(key=lambda p: (ORDEM_CONTINENTES.index(p["continente"]), p["pais"]))
+    paises.sort(key=lambda p: (ORDEM_CONTINENTES.index(p["continente"]), sem_acentos(p["pais"])))
     COUNTRIES.write_text(json.dumps(paises, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     total = sum(p["provas"] for p in paises)
     print(f"OK: {len(paises)} países, {total} provas → data/countries.json")
