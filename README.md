@@ -77,11 +77,14 @@ Cada ficheiro `data/races/{pais}.json` é uma lista (`[...]`) de provas:
 | `data` | `"YYYY-MM-DD"` ou `null` | Dia da prova (num evento de vários dias, o primeiro; os outros dias vão em `distancia`). |
 | `dataConfirmada` | `true` / `false` | `false` mostra a etiqueta **"data prevista"**. |
 | `distancia` | texto ou `null` | Texto livre. |
-| `statusInscricao` | `"aberta"` \| `"aguardando"` \| `"esgotada"` \| `null` | 🟢 / 🟡 / 🔴 / "ver site". |
+| `statusInscricao` | `"aberta"` \| `"aguardando"` \| `"esgotada"` \| `"nao_verificado"` \| `null` | 🟢 / 🟡 / 🔴 / ⚪ / "ver site". Atualizado pelo robô diário. |
+| `statusMotivo` | texto ou `null` | Frase encontrada na página (máx. 100 caracteres). Aparece ao tocar no status. Escrito pelo robô. |
+| `ultimoStatusVerificado` | texto | Último estado lido com sucesso; serve para não alertar por falhas pontuais. Escrito pelo robô. |
+| `favorita` | `true` (opcional) | Mostra ⭐, entra no filtro "Favoritas" e gera alertas no telemóvel quando o status muda. |
 | `urlOficial` | URL ou `null` | Link "Site oficial". |
 | `urlInscricao` | URL ou `null` | Botão **Inscrever-me**. Se a inscrição ainda não abriu, use o `urlOficial`. |
 | `fonte` | URL | Página oficial de onde tirou a data (obrigatório quando há `data`). |
-| `verificadoEm` | `"YYYY-MM-DD"` | Quando conferiu os dados. A mais recente aparece no rodapé. |
+| `verificadoEm` | `"YYYY-MM-DD"` ou `"YYYY-MM-DDTHH:MM:SSZ"` | Última verificação (o robô grava data e hora). Card: "verificado há X horas". |
 | `objetivoTempo` | texto (opcional) | `h:mm:ss` ou `mm:ss`, comparado com o resultado. |
 | `resultado` | texto (opcional) | Tempo final. Aparece no Histórico. |
 
@@ -98,6 +101,32 @@ Dicas:
 - JSON não aceita comentários nem vírgula depois do último elemento.
 - A ordem no ficheiro não importa: a app mostra primeiro as inscrições abertas, depois ordena por data; provas sem data ficam no fim.
 - Uma prova passa para o **Histórico** no dia seguinte à `data`.
+
+---
+
+## 🤖 Atualização automática do status
+
+O script [`scripts/check-status.js`](scripts/check-status.js) (Node + Playwright) abre a `urlInscricao` de cada prova futura e procura palavras-chave em PT, ES, EN, FR, IT e DE:
+
+| Status | Exemplos de palavras-chave |
+|--------|----------------------------|
+| 🔴 `esgotada` | sold out, esgotado, agotado, complet, ausverkauft, waitlist, lista de espera |
+| 🟢 `aberta` | register now, inscreva-se, inscríbete, inscriptions ouvertes, entries open |
+| 🟡 `aguardando` | coming soon, em breve, próximamente, opens on |
+| ⚪ `nao_verificado` | erro, timeout, captcha, bloqueio por robots.txt, nenhuma palavra-chave ou palavras de mais de um estado |
+
+O script nunca escolhe um estado quando a página é ambígua. É gentil com os sites: no máximo 1 pedido a cada 3 segundos, user-agent `MaxProvasStatusBot/1.0`, timeout de 20 s, respeita o `robots.txt`, não descarrega imagens nem vídeos, e páginas partilhadas por várias provas são abertas uma única vez. As mudanças do dia ficam em `data/status-log.json` (prova, de → para).
+
+```bash
+npm install && npx playwright install chromium
+npm run check-status:dry      # só mostra o resultado
+npm run check-status          # grava nos ficheiros
+node scripts/check-status.js --pais=pt,es
+```
+
+O workflow [`.github/workflows/check-status.yml`](.github/workflows/check-status.yml) corre **todos os dias às 07:00 de Madrid** (e no botão **Run workflow** do separador Actions), e só faz commit se algum status mudou. Os agendamentos do GitHub só correm no branch principal (`main`).
+
+**Alertas no telemóvel:** se o secret `NTFY_TOPIC` existir, cada prova com `"favorita": true` que mude de status envia uma notificação ntfy, ex.: `🟢 Inscrições abertas: Meia de Cascais`.
 
 ---
 
@@ -146,5 +175,8 @@ python3 -m http.server 8000
 ├── data/countries.json   # países com provas (gerado pelo script)
 ├── data/races/*.json     # ← provas, um ficheiro por país
 ├── tools/atualizar_paises.py  # valida dados e recalcula contagens
+├── scripts/check-status.js    # robô de verificação do status das inscrições
+├── .github/workflows/check-status.yml  # corre o robô todos os dias às 07:00 (Madrid)
+├── package.json          # só para o robô (Playwright); a app não tem build
 └── icons/                # ícones PWA + apple-touch-icon
 ```

@@ -12,8 +12,10 @@ const SHORT_GAP_DAYS = 28; // intervalos < 4 semanas são destacados
 const STATUS = {
   aberta: { emoji: '🟢', label: 'Inscrições abertas' },
   aguardando: { emoji: '🟡', label: 'Aguardando abertura' },
-  esgotada: { emoji: '🔴', label: 'Esgotada' }
+  esgotada: { emoji: '🔴', label: 'Esgotada' },
+  nao_verificado: { emoji: '⚪', label: 'Não verificado' }
 };
+const FAVORITES = '__favoritas'; // valor especial do filtro de série
 
 const MODALITY_ICON = { Corrida: '🏃‍♂️', Triatlo: '🏊‍♂️🚴‍♂️🏃‍♂️', Ciclismo: '🚴‍♂️', 'Natação': '🏊‍♂️' };
 
@@ -135,10 +137,12 @@ async function loadSelected() {
     return fileCache.get(codigo);
   }));
   races = lists.flat();
-  if (serieFilter && !races.some((r) => r.serie === serieFilter)) serieFilter = '';
+  if (serieFilter && serieFilter !== FAVORITES && !races.some((r) => r.serie === serieFilter)) serieFilter = '';
+  if (serieFilter === FAVORITES && !races.some((r) => r.favorita)) serieFilter = '';
 }
 
 function visible() {
+  if (serieFilter === FAVORITES) return races.filter((r) => r.favorita);
   return serieFilter ? races.filter((r) => r.serie === serieFilter) : races;
 }
 
@@ -162,10 +166,42 @@ function partition() {
 
 /* ---------- Componentes ---------- */
 
-function badge(status) {
+// verificadoEm: "YYYY-MM-DD" (verificação manual) ou "YYYY-MM-DDTHH:MM:SSZ" (script automático).
+function parseStamp(s) {
+  if (typeof s !== 'string') return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return parseDate(s);
+  const d = new Date(s);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function checkedAgo(r) {
+  const d = parseStamp(r.verificadoEm);
+  if (!d) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(r.verificadoEm)) {
+    const days = daysBetween(d, today());
+    return days <= 0 ? 'verificado hoje' : days === 1 ? 'verificado ontem' : `verificado há ${days} dias`;
+  }
+  const hours = Math.floor((Date.now() - d) / 3600000);
+  if (hours < 1) return 'verificado há menos de 1 hora';
+  if (hours < 48) return `verificado há ${hours} ${hours === 1 ? 'hora' : 'horas'}`;
+  return `verificado há ${Math.floor(hours / 24)} dias`;
+}
+
+// Badge de estado. Com statusMotivo, é um botão que mostra a frase encontrada na página.
+function badge(r) {
+  const status = r.statusInscricao;
   const s = STATUS[status];
-  if (!s) return '<span class="badge unknown">Inscrições: ver site</span>';
-  return `<span class="badge ${status}"><span aria-hidden="true">${s.emoji}</span>${s.label}</span>`;
+  const inner = s ? `<span aria-hidden="true">${s.emoji}</span>${s.label}` : 'Inscrições: ver site';
+  const cls = `badge ${s ? status : 'unknown'}`;
+  if (!r.statusMotivo) return `<span class="${cls}">${inner}</span>`;
+  return `<button type="button" class="${cls}" data-motivo aria-expanded="false" title="Ver o que foi encontrado na página">${inner} <span class="info" aria-hidden="true">ⓘ</span></button>`;
+}
+
+function statusDetails(r) {
+  const ago = checkedAgo(r);
+  return `
+    ${ago ? `<p class="checked">${esc(ago)}</p>` : ''}
+    ${r.statusMotivo ? `<p class="motivo" hidden>“${esc(r.statusMotivo)}”</p>` : ''}`;
 }
 
 function serieTag(r) {
@@ -202,8 +238,9 @@ function upcomingCard(r, t) {
 
   return `
     <article class="card">
-      <div class="card-top">${badge(r.statusInscricao)}${serieTag(r)}</div>
-      <h2>${esc(r.nome)}</h2>
+      <div class="card-top">${badge(r)}${serieTag(r)}</div>
+      ${statusDetails(r)}
+      <h2>${r.favorita ? '<span class="fav" title="Favorita">⭐</span> ' : ''}${esc(r.nome)}</h2>
       ${countdown}
       ${metaLine(r)}
       ${r.objetivoTempo ? `<p class="goal">🎯 Objetivo: <strong>${esc(r.objetivoTempo)}</strong></p>` : ''}
@@ -268,7 +305,7 @@ function renderUpcoming(view, sub) {
 
 // Data de verificação mais recente entre as provas (campo verificadoEm).
 function updatedFooter() {
-  const latest = visible().map((r) => parseDate(r.verificadoEm)).filter(Boolean).sort((a, b) => b - a)[0];
+  const latest = visible().map((r) => parseStamp(r.verificadoEm)).filter(Boolean).sort((a, b) => b - a)[0];
   return latest ? `<p class="updated">Atualizado em ${esc(fmtDate.format(latest))}</p>` : '';
 }
 
@@ -347,13 +384,14 @@ function filterBar() {
   const counts = new Map();
   for (const r of races) if (r.serie) counts.set(r.serie, (counts.get(r.serie) || 0) + 1);
   const series = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const favs = races.filter((r) => r.favorita).length;
   const chip = (value, text) =>
     `<button type="button" class="chip" data-serie="${esc(value)}" aria-pressed="${serieFilter === value}">${text}</button>`;
 
   return `
     <div class="filters">
       <button type="button" class="country-btn" data-open-countries>🌍 ${label} <span aria-hidden="true">▾</span></button>
-      ${series.length ? `<div class="chips" role="group" aria-label="Filtrar por série">${chip('', 'Todas as séries')}${series.map(([s, n]) => chip(s, `${esc(s)} · ${n}`)).join('')}</div>` : ''}
+      ${series.length || favs ? `<div class="chips" role="group" aria-label="Filtrar por série">${chip('', 'Todas as séries')}${favs ? chip(FAVORITES, `⭐ Favoritas · ${favs}`) : ''}${series.map(([s, n]) => chip(s, `${esc(s)} · ${n}`)).join('')}</div>` : ''}
     </div>`;
 }
 
@@ -504,6 +542,15 @@ function render() {
 document.addEventListener('click', (e) => {
   const ics = e.target.closest('[data-ics]');
   if (ics) return downloadICS(ics.dataset.ics);
+
+  const motivo = e.target.closest('[data-motivo]');
+  if (motivo) {
+    const p = motivo.closest('.card').querySelector('.motivo');
+    const open = p.hidden;
+    p.hidden = !open;
+    motivo.setAttribute('aria-expanded', String(open));
+    return;
+  }
 
   const chip = e.target.closest('[data-serie]');
   if (chip) {

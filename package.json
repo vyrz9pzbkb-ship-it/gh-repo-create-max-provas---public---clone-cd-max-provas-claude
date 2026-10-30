@@ -1,0 +1,15 @@
+{
+  "name": "max-provas",
+  "private": true,
+  "description": "Ferramentas de manutenção do Max Provas (a app em si não tem build).",
+  "scripts": {
+    "check-status": "node scripts/check-status.js",
+    "check-status:dry": "node scripts/check-status.js --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

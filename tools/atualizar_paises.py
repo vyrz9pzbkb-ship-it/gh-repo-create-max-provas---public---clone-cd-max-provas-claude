@@ -52,11 +52,12 @@ PAISES = {
 }
 
 ORDEM_CONTINENTES = [EUR, AS, AN, ASI, OCE, AFR]
-STATUS = {"aberta", "aguardando", "esgotada", None}
+STATUS = {"aberta", "aguardando", "esgotada", "nao_verificado", None}
 MODALIDADES = {"Corrida", "Triatlo", "Ciclismo", "Natação"}
 OBRIGATORIOS = ["id", "nome", "local", "modalidade", "data", "dataConfirmada", "statusInscricao",
                 "urlOficial", "urlInscricao", "fonte", "verificadoEm"]
 DATA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+CARIMBO_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?Z)?$")
 
 
 def sem_acentos(texto):
@@ -89,9 +90,14 @@ def main():
             if r.get("id") in ids:
                 erros.append(f"{onde}: id repetido (também em {ids[r['id']]})")
             ids[r.get("id")] = f.name
-            for campo in ("data", "verificadoEm"):
-                if r.get(campo) is not None and not DATA_RE.match(str(r[campo])):
-                    erros.append(f"{onde}: '{campo}' deve ser YYYY-MM-DD")
+            if r.get("data") is not None and not DATA_RE.match(str(r["data"])):
+                erros.append(f"{onde}: 'data' deve ser YYYY-MM-DD")
+            if r.get("verificadoEm") is not None and not CARIMBO_RE.match(str(r["verificadoEm"])):
+                erros.append(f"{onde}: 'verificadoEm' deve ser YYYY-MM-DD ou YYYY-MM-DDTHH:MM:SSZ")
+            if "favorita" in r and not isinstance(r["favorita"], bool):
+                erros.append(f"{onde}: 'favorita' deve ser true ou false")
+            if len(r.get("statusMotivo") or "") > 100:
+                erros.append(f"{onde}: 'statusMotivo' tem mais de 100 caracteres")
             if r.get("statusInscricao") not in STATUS:
                 erros.append(f"{onde}: statusInscricao inválido")
             if r.get("modalidade") not in MODALIDADES:

@@ -259,6 +259,26 @@ body {
 .link-row a.muted { color: var(--muted); font-weight: 500; }
 
 .badge.unknown { color: var(--muted); background: var(--surface-2); }
+.badge.nao_verificado { color: var(--muted); background: var(--surface-2); }
+button.badge { border: 0; font-family: inherit; cursor: pointer; }
+.badge .info { font-size: 11px; opacity: 0.7; }
+
+.checked {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.motivo {
+  margin: 6px 0 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  background: var(--surface-2);
+  overflow-wrap: anywhere;
+}
+.fav { font-size: 0.85em; }
 
 .serie {
   display: inline-block;
