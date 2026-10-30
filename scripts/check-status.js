@@ -13,6 +13,11 @@
  *   node scripts/check-status.js              # verifica tudo e grava
  *   node scripts/check-status.js --dry-run    # só mostra o resultado
  *   node scripts/check-status.js --pais=pt,es # só alguns países
+ *   node scripts/check-status.js --id=ironman-703-cascais --verbose   # uma prova, com detalhe
+ *
+ * Regra de edições: quando a data de uma prova já passou, ela fica no Histórico e, se ainda não
+ * existir, é criado o registo da próxima edição (data null = "Próxima edição a anunciar").
+ * Se nenhuma página responder (sem rede), nada é gravado.
  *
  * Variáveis de ambiente opcionais:
  *   NTFY_TOPIC   tópico do ntfy.sh para alertas de provas favoritas
@@ -37,6 +42,8 @@ const NTFY_TOPIC = process.env.NTFY_TOPIC || '';
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
 const ONLY = (args.find((a) => a.startsWith('--pais=')) || '').slice(7).split(',').filter(Boolean);
+const ONLY_IDS = (args.find((a) => a.startsWith('--id=')) || '').slice(5).split(',').filter(Boolean);
+const VERBOSE = args.includes('--verbose');
 
 const STATUS_LABEL = {
   aberta: '🟢 Inscrições abertas',
@@ -50,7 +57,11 @@ const KEYWORDS = {
   esgotada: [
     /sold[\s-]?out/i, /\besgotad[oa]s?\b/i, /\bagotad[oa]s?\b/i, /\bcomplets?\b/i, /\bausverkauft\b/i,
     /\bausgebucht\b/i, /\besaurit[oiae]\b/i, /\bwait[\s-]?list\b/i, /lista de espera/i,
-    /liste d['’]attente/i, /\bwarteliste\b/i, /lista d['’]attesa/i
+    /liste d['’]attente/i, /\bwarteliste\b/i, /lista d['’]attesa/i,
+    // Inscrições fechadas: já não é possível inscrever-se.
+    /registration (is )?closed/i, /entries (are )?closed/i, /inscri[çc][õo]es encerradas/i,
+    /inscripciones cerradas/i, /inscriptions? (closes|ferm[ée]es|cl[ôo]tur[ée]es)/i, /iscrizioni chiuse/i,
+    /anmeldung (ist )?geschlossen/i, /anmeldeschluss erreicht/i
   ],
   aberta: [
     /register now/i, /inscreva-se/i, /inscr[ií]bete/i, /inscriptions? ouvertes?/i, /entries (are )?open/i,
@@ -63,6 +74,9 @@ const KEYWORDS = {
     /\bprossimamente\b/i, /iscrizioni apriranno/i, /\bdemn[äa]chst\b/i, /anmeldung startet/i
   ]
 };
+
+// Num botão/link isolado, estes textos também indicam inscrições abertas.
+const BUTTON_OPEN = /^(register|register here|sign up|enter now|inscrever|inscri[çc][ãa]o|inscribirse|inscr[ií]bete|s['’]inscrire|iscriviti|anmelden)$/i;
 
 // Páginas de verificação/bloqueio: não dá para ler o estado real.
 const BLOQUEIO = /captcha|verify you are human|are you a robot|just a moment\.\.\.|checking your browser|attention required|access denied|cf-browser-verification|log in to facebook|log into facebook/i;
@@ -80,6 +94,20 @@ function phraseAround(text, index, length) {
   if (line.length <= MOTIVO_MAX) return line;
   const pos = Math.max(0, index - start - 30);
   return clip(line.slice(pos).trim());
+}
+
+// Botões, links e badges (ex.: "Sold Out", "Waitlist", "Registration Closed") têm prioridade:
+// são o elemento que o site usa para mostrar o estado da inscrição.
+function classifyButtons(labels) {
+  const found = {};
+  for (const label of labels) {
+    for (const [status, patterns] of Object.entries(KEYWORDS)) {
+      if (!found[status] && patterns.some((re) => re.test(label))) found[status] = label;
+    }
+    if (!found.aberta && BUTTON_OPEN.test(label)) found.aberta = label;
+  }
+  const hits = Object.keys(found);
+  return hits.length === 1 ? { status: hits[0], motivo: clip(`[botão] ${found[hits[0]]}`) } : null;
 }
 
 function classify(text) {
@@ -180,10 +208,26 @@ async function checkUrl(context, url, throttle) {
     const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
     if (!res) return { status: 'nao_verificado', motivo: 'Sem resposta do servidor' };
     if (res.status() >= 400) return { status: 'nao_verificado', motivo: `Erro HTTP ${res.status()}` };
-    // Dá tempo ao JavaScript da página, sem passar dos 20 s no total.
+    // Espera o carregamento completo (JavaScript e pedidos da página), sem passar dos 20 s no total.
     const left = TIMEOUT_MS - (Date.now() - started);
-    if (left > 0) await page.waitForLoadState('networkidle', { timeout: Math.min(left, 8000) }).catch(() => {});
-    const read = async () => classify((await page.evaluate(() => (document.body ? document.body.innerText : ''))) || '');
+    if (left > 0) await page.waitForLoadState('networkidle', { timeout: left }).catch(() => {});
+    const read = async () => {
+      const { text, labels } = await page.evaluate(() => {
+        const sel = 'button, a, [role="button"], input[type="submit"], input[type="button"], '
+          + '[class*="badge" i], [class*="status" i], [class*="pill" i], [class*="tag" i], [class*="label" i]';
+        const labels = new Set();
+        for (const el of document.querySelectorAll(sel)) {
+          for (const t of [el.innerText, el.value, el.getAttribute('aria-label'), el.getAttribute('title')]) {
+            const v = (t || '').replace(/\s+/g, ' ').trim();
+            if (v && v.length <= 60) labels.add(v);
+          }
+        }
+        return { text: document.body ? document.body.innerText : '', labels: [...labels] };
+      });
+      const blocked = classify(text || '');
+      if (blocked.motivo.startsWith('Página de verificação')) return { ...blocked, labels, text };
+      return { ...(classifyButtons(labels) || classify(text || '')), labels, text };
+    };
     let result = await read();
     // Páginas que só escrevem o conteúdo depois de carregar: espera um pouco e volta a ler.
     const remaining = TIMEOUT_MS - (Date.now() - started);
@@ -191,16 +235,117 @@ async function checkUrl(context, url, throttle) {
       await sleep(Math.min(remaining - 500, 4000));
       result = await read();
     }
-    return result;
+    const { labels, text, ...out } = result;
+    if (VERBOSE) {
+      console.log(`  URL aberta: ${url}${page.url() !== url ? ` → ${page.url()}` : ''} (HTTP ${res.status()})`);
+      console.log(`  Botões/badges (${labels.length}): ${labels.slice(0, 15).map((l) => `“${l}”`).join(', ')}`);
+      console.log(`  Texto (início): ${clip(text.replace(/\s+/g, ' ').trim(), 300)}`);
+    }
+    return out;
   } catch (err) {
     const msg = String(err.message || err).split('\n')[0];
-    return { status: 'nao_verificado', motivo: clip(/timeout/i.test(msg) ? 'Timeout (20 s)' : `Erro: ${msg}`) };
+    if (VERBOSE) console.log(`  URL aberta: ${url} — falhou: ${msg}`);
+    return {
+      status: 'nao_verificado',
+      motivo: clip(/timeout/i.test(msg) ? 'Timeout (20 s)' : `Erro: ${msg}`),
+      redeFalhou: /net::ERR_(TUNNEL|PROXY|NAME_NOT_RESOLVED|INTERNET_DISCONNECTED|NETWORK|ADDRESS_UNREACHABLE)/.test(msg)
+    };
   } finally {
     await page.close().catch(() => {});
   }
 }
 
 /* ---------- Dados ---------- */
+
+const isIronmanHost = (u) => { try { return /(^|\.)ironman\.com$/i.test(new URL(u).hostname); } catch { return false; } };
+
+const IRONMAN_CALENDAR = 'https://www.ironman.com/races';
+let ironmanLinks = null;
+
+// Lê uma vez o calendário oficial da IRONMAN e guarda os links das provas.
+async function ironmanCalendar(context, throttle) {
+  if (ironmanLinks) return ironmanLinks;
+  ironmanLinks = [];
+  const page = await context.newPage();
+  try {
+    await throttle();
+    const res = await page.goto(IRONMAN_CALENDAR, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+    if (res && res.status() < 400) {
+      await page.waitForLoadState('networkidle', { timeout: TIMEOUT_MS }).catch(() => {});
+      ironmanLinks = await page.evaluate(() => [...document.querySelectorAll('a[href]')]
+        .map((a) => ({ href: a.href, text: (a.innerText || '').replace(/\s+/g, ' ').trim() })));
+    }
+  } catch (err) {
+    if (VERBOSE) console.log(`  Calendário IRONMAN: ${String(err.message || err).split('\n')[0]}`);
+  } finally {
+    await page.close().catch(() => {});
+  }
+  return ironmanLinks;
+}
+
+const normalize = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+// Procura no calendário oficial o link do evento: tem de ser do mesmo tipo (70.3 / full)
+// e conter o nome do local. Só aceita quando há exatamente um candidato.
+function matchIronman(links, r) {
+  const is703 = /70\.3/.test(r.serie || r.nome);
+  const places = normalize(`${r.nome} ${r.local || ''}`).replace(/ironman|70\.3/g, ' ')
+    .split(/[^a-z]+/).filter((w) => w.length > 3);
+  const candidates = new Set(links
+    .filter((l) => isIronmanHost(l.href))
+    .filter((l) => {
+      const h = normalize(`${l.href} ${l.text}`);
+      const kindOk = is703 ? /im703|70\.3/.test(h) : !/im703|70\.3/.test(h) && /\/(races\/)?im-/.test(h);
+      return kindOk && places.some((w) => h.includes(w));
+    })
+    .map((l) => l.href.split(/[?#]/)[0]));
+  return candidates.size === 1 ? [...candidates][0] : null;
+}
+
+async function findIronmanEventUrl(context, r, throttle) {
+  return matchIronman(await ironmanCalendar(context, throttle), r);
+}
+
+// Página a verificar. Nas provas IRONMAN, a página oficial do evento em ironman.com tem prioridade;
+// se ainda não a temos, procura-a no calendário oficial.
+async function urlToCheck(context, r, throttle, changes, pais) {
+  if (/^IRONMAN/i.test(r.serie || '')) {
+    const official = [r.urlInscricao, r.urlOficial].find((u) => u && isIronmanHost(u));
+    if (official) return official;
+    const found = await findIronmanEventUrl(context, r, throttle);
+    if (found) {
+      changes.push({ id: r.id, pais, prova: r.nome, de: r.urlOficial, para: found, motivo: 'Página oficial encontrada no calendário ironman.com' });
+      r.urlOficial = found;
+      r.urlInscricao = found;
+      return found;
+    }
+  }
+  return r.urlInscricao || null;
+}
+
+const eventKey = (r) => r.evento || String(r.id).replace(/-\d{4}$/, '');
+
+// Regra de edições: prova passada sem edição seguinte registada → cria a próxima (data por anunciar).
+function ensureNextEditions(races, today, pais, log) {
+  const added = [];
+  for (const r of races) {
+    if (!r.data || r.data >= today) continue;
+    const key = eventKey(r);
+    const hasNext = races.concat(added).some((o) => o !== r && eventKey(o) === key && (!o.data || o.data >= today));
+    if (hasNext) continue;
+    const year = Number(r.data.slice(0, 4)) + 1;
+    const next = {
+      id: `${key}-${year}`, nome: r.nome, ...(r.favorita ? { favorita: true } : {}), local: r.local,
+      modalidade: r.modalidade, serie: r.serie ?? null, data: null, dataConfirmada: false, distancia: r.distancia ?? null,
+      statusInscricao: null, urlOficial: r.urlOficial ?? null, urlInscricao: r.urlInscricao ?? r.urlOficial ?? null,
+      fonte: null, verificadoEm: today, edicaoAnterior: r.id
+    };
+    added.push(next);
+    log.push({ id: next.id, pais, prova: r.nome, de: `edição de ${r.data} (Histórico)`, para: 'próxima edição a anunciar', motivo: 'A data da prova já passou' });
+  }
+  races.push(...added);
+  return added.length;
+}
 
 function todayIn(tz) {
   return new Intl.DateTimeFormat('en-CA', { timeZone: tz }).format(new Date()); // YYYY-MM-DD
@@ -263,19 +408,26 @@ async function main() {
   const changes = [];
   const counts = { aberta: 0, aguardando: 0, esgotada: 0, nao_verificado: 0 };
   const alerts = [];
+  const pending = []; // ficheiros a gravar no fim (só se houve rede)
+  let networkFailures = 0;
 
   for (const file of files) {
     const pais = file.slice(0, -5);
     const fullPath = path.join(RACES_DIR, file);
     const races = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
-    let touched = false;
+    let touched = !ONLY_IDS.length && ensureNextEditions(races, today, pais, changes) > 0;
 
     for (const r of races) {
-      if (!r.urlInscricao) continue;
-      if (r.data && r.data < today) continue; // prova já passou
+      if (ONLY_IDS.length && !ONLY_IDS.includes(r.id)) continue;
+      if (r.data && r.data < today) continue; // prova já passou: fica no Histórico
+      if (!r.urlInscricao && !/^IRONMAN/i.test(r.serie || '')) continue;
+      const url = await urlToCheck(context, r, throttle, changes, pais);
+      if (!url) continue;
 
-      if (!byUrl.has(r.urlInscricao)) byUrl.set(r.urlInscricao, await checkUrl(context, r.urlInscricao, throttle));
-      const { status, motivo } = byUrl.get(r.urlInscricao);
+      if (VERBOSE) console.log(`\n${pais}  ${r.nome} (${r.id})`);
+      if (!byUrl.has(url)) byUrl.set(url, await checkUrl(context, url, throttle));
+      const { status, motivo, redeFalhou } = byUrl.get(url);
+      if (redeFalhou) networkFailures++;
       counts[status]++;
       console.log(`${pais}  ${STATUS_LABEL[status].padEnd(24)} ${r.nome} — ${motivo}`);
 
@@ -294,13 +446,35 @@ async function main() {
       touched = true;
     }
 
-    if (touched && !DRY_RUN) {
-      fs.writeFileSync(fullPath, `${JSON.stringify(races.map(orderKeys), null, 2)}\n`);
-    }
+    if (touched) pending.push([fullPath, races]);
   }
   await browser.close();
 
-  if (!DRY_RUN) {
+  // Sem rede nenhuma (ex.: firewall, falha do runner): gravar "não verificado" em tudo seria um palpite.
+  const checked = Object.values(counts).reduce((a, b) => a + b, 0);
+  const noNetwork = checked > 0 && networkFailures === checked;
+  if (noNetwork) {
+    console.warn(`\n⚠️  Nenhuma página respondeu (${networkFailures} falhas de rede). Nenhum status foi alterado.`);
+    changes.splice(0, changes.length, ...changes.filter((c) => c.para === 'próxima edição a anunciar'));
+    alerts.length = 0;
+    // A regra de edições não depende da rede: aplica-a sobre os ficheiros originais.
+    if (!DRY_RUN && !ONLY_IDS.length) {
+      for (const [fullPath] of pending) {
+        const races = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+        if (ensureNextEditions(races, today, path.basename(fullPath, '.json'), [])) {
+          fs.writeFileSync(fullPath, `${JSON.stringify(races.map(orderKeys), null, 2)}\n`);
+        }
+      }
+      if (changes.length) {
+        fs.writeFileSync(LOG_FILE, `${JSON.stringify({ data: today, geradoEm: nowIso, mudancas: changes }, null, 2)}\n`);
+      }
+    }
+  }
+
+  if (!DRY_RUN && !noNetwork) {
+    for (const [fullPath, races] of pending) {
+      fs.writeFileSync(fullPath, `${JSON.stringify(races.map(orderKeys), null, 2)}\n`);
+    }
     for (const [race, status] of alerts) await notify(race, status);
     if (changes.length) {
       fs.writeFileSync(LOG_FILE, `${JSON.stringify({ data: today, geradoEm: nowIso, mudancas: changes }, null, 2)}\n`);
@@ -316,7 +490,7 @@ async function main() {
   }
 }
 
-module.exports = { classify, checkUrl, parseRobots, robotsAllows };
+module.exports = { classify, classifyButtons, checkUrl, matchIronman, parseRobots, robotsAllows };
 
 if (require.main === module) {
   main().catch((err) => {

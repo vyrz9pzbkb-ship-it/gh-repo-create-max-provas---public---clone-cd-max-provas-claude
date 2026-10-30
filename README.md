@@ -110,19 +110,22 @@ O script [`scripts/check-status.js`](scripts/check-status.js) (Node + Playwright
 
 | Status | Exemplos de palavras-chave |
 |--------|----------------------------|
-| 🔴 `esgotada` | sold out, esgotado, agotado, complet, ausverkauft, waitlist, lista de espera |
+| 🔴 `esgotada` | sold out, esgotado, agotado, complet, ausverkauft, waitlist, lista de espera, registration closed, inscrições encerradas |
 | 🟢 `aberta` | register now, inscreva-se, inscríbete, inscriptions ouvertes, entries open |
 | 🟡 `aguardando` | coming soon, em breve, próximamente, opens on |
 | ⚪ `nao_verificado` | erro, timeout, captcha, bloqueio por robots.txt, nenhuma palavra-chave ou palavras de mais de um estado |
 
-O script nunca escolhe um estado quando a página é ambígua. É gentil com os sites: no máximo 1 pedido a cada 3 segundos, user-agent `MaxProvasStatusBot/1.0`, timeout de 20 s, respeita o `robots.txt`, não descarrega imagens nem vídeos, e páginas partilhadas por várias provas são abertas uma única vez. As mudanças do dia ficam em `data/status-log.json` (prova, de → para).
+Espera o carregamento completo da página (`networkidle`, até 20 s) e lê **primeiro os botões e badges** (ex.: "Sold Out", "Waitlist", "Registration Closed", "Register"); só se não forem conclusivos usa o texto da página. Nas provas **IRONMAN**, a página oficial do evento em ironman.com é a fonte prioritária: se a prova ainda não tiver esse link, o script procura-o no calendário oficial (`ironman.com/races`) e grava-o. O script nunca escolhe um estado quando a página é ambígua, e **se nenhuma página responder (sem rede) não grava nenhum status**. É gentil com os sites: no máximo 1 pedido a cada 3 segundos, user-agent `MaxProvasStatusBot/1.0`, timeout de 20 s, respeita o `robots.txt`, não descarrega imagens nem vídeos, e páginas partilhadas por várias provas são abertas uma única vez. As mudanças do dia ficam em `data/status-log.json` (prova, de → para).
 
 ```bash
 npm install && npx playwright install chromium
 npm run check-status:dry      # só mostra o resultado
 npm run check-status          # grava nos ficheiros
 node scripts/check-status.js --pais=pt,es
+node scripts/check-status.js --id=ironman-703-cascais --verbose   # mostra URL, botões e texto lidos
 ```
+
+**Regra de edições:** cada registo é uma edição. Quando a data passa, a prova vai para o **Histórico**; se não existir ainda um registo para a edição seguinte, o script cria-o (`id` com o ano seguinte, `data: null`, `edicaoAnterior`) e a app mostra **"Próxima edição a anunciar"** até a data ser publicada no site oficial.
 
 O workflow [`.github/workflows/check-status.yml`](.github/workflows/check-status.yml) corre **todos os dias às 07:00 de Madrid** (e no botão **Run workflow** do separador Actions), e só faz commit se algum status mudou. Os agendamentos do GitHub só correm no branch principal (`main`).
 
