@@ -1,5 +1,35 @@
 [
   {
+    "id": "berliner-halbmarathon-2027",
+    "nome": "GENERALI Berliner Halbmarathon",
+    "local": "Berlim",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-04-04",
+    "dataConfirmada": true,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.generali-berliner-halbmarathon.de/",
+    "urlInscricao": "https://www.generali-berliner-halbmarathon.de/",
+    "fonte": "https://www.generali-berliner-halbmarathon.de/en/registration/registration-information",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "marathon-hamburg-2027",
+    "nome": "Haspa Marathon Hamburg",
+    "local": "Hamburgo",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-04-25",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": "esgotada",
+    "urlOficial": "https://haspa-marathon-hamburg.de/",
+    "urlInscricao": "https://haspa-marathon-hamburg.de/",
+    "fonte": "https://haspa-marathon-hamburg.de/haspa-marathon/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "challenge-roth-2027",
     "nome": "DATEV Challenge Roth",
     "local": "Roth",
@@ -12,6 +42,36 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "berlin-marathon-2027",
+    "nome": "GENERALI Berlin-Marathon",
+    "local": "Berlim",
+    "modalidade": "Corrida",
+    "serie": "Marathon Majors",
+    "data": "2027-09-26",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.generali-berliner-halbmarathon.de/en/news-media/news/detail/generali-becomes-new-title-partner-of-the-berlin-marathon",
+    "urlInscricao": "https://www.generali-berliner-halbmarathon.de/en/news-media/news/detail/generali-becomes-new-title-partner-of-the-berlin-marathon",
+    "fonte": "https://www.worldmarathonmajors.com/races",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "frankfurt-marathon-2027",
+    "nome": "Mainova Frankfurt Marathon",
+    "local": "Frankfurt",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-10-31",
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
+    "urlInscricao": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
+    "fonte": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
     "verificadoEm": "2026-10-30"
   }
 ]

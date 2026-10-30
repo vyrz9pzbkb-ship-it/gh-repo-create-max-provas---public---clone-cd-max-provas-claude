@@ -1,5 +1,35 @@
 [
   {
+    "id": "ottawa-half-2027",
+    "nome": "Tamarack Ottawa Half Marathon",
+    "local": "Otava",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-05-29",
+    "dataConfirmada": true,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.runottawa.ca/",
+    "urlInscricao": "https://www.runottawa.ca/",
+    "fonte": "https://www.runottawa.ca/races-and-events/ottawa-marathon/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "ottawa-marathon-2027",
+    "nome": "Tamarack Ottawa International Marathon",
+    "local": "Otava",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-05-30",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.runottawa.ca/races-and-events/ottawa-marathon/",
+    "urlInscricao": "https://www.runottawa.ca/races-and-events/ottawa-marathon/",
+    "fonte": "https://www.runottawa.ca/races-and-events/ottawa-marathon/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "challenge-quebec-2027",
     "nome": "Challenge Québec",
     "local": "Québec",
@@ -42,6 +72,51 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "toronto-waterfront-half-2027",
+    "nome": "TCS Toronto Waterfront Half Marathon",
+    "local": "Toronto",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-10-17",
+    "dataConfirmada": true,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.torontowaterfrontmarathon.com/",
+    "urlInscricao": "https://www.torontowaterfrontmarathon.com/",
+    "fonte": "https://www.torontowaterfrontmarathon.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "toronto-waterfront-marathon-2027",
+    "nome": "TCS Toronto Waterfront Marathon",
+    "local": "Toronto",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2027-10-17",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.torontowaterfrontmarathon.com/",
+    "urlInscricao": "https://www.torontowaterfrontmarathon.com/",
+    "fonte": "https://www.torontowaterfrontmarathon.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "vancouver-marathon-2027",
+    "nome": "BMO Vancouver Marathon",
+    "local": "Vancouver",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://bmovanmarathon.ca/",
+    "urlInscricao": "https://bmovanmarathon.ca/",
+    "fonte": "https://bmovanmarathon.ca/",
     "verificadoEm": "2026-10-30"
   }
 ]

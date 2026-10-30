@@ -1,5 +1,20 @@
 [
   {
+    "id": "marathon-nice-cannes-2026",
+    "nome": "Marathon des Alpes-Maritimes Nice-Cannes",
+    "local": "Nice → Cannes",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": "2026-11-08",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": "esgotada",
+    "urlOficial": "https://www.marathon06.com/2026/AN/",
+    "urlInscricao": "https://www.marathon06.com/2026/AN/",
+    "fonte": "https://www.marathon06.com/2026/epreuves/marathon/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
     "id": "t100-french-riviera-2027",
     "nome": "French Riviera T100 Triathlon",
     "local": "Fréjus-Saint-Raphaël",
@@ -27,6 +42,36 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "marathon-paris-2027",
+    "nome": "ASICS Marathon de Paris",
+    "local": "Paris",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": null,
+    "urlInscricao": null,
+    "fonte": null,
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "semi-paris-2027",
+    "nome": "Hoka Semi de Paris",
+    "local": "Paris",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": null,
+    "urlInscricao": null,
+    "fonte": null,
     "verificadoEm": "2026-10-30"
   }
 ]

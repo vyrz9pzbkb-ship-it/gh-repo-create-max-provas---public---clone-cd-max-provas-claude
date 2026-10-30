@@ -1,0 +1,32 @@
+[
+  {
+    "id": "maraton-buenos-aires-2027",
+    "nome": "Maratón de Buenos Aires",
+    "local": "Buenos Aires",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.maratondebuenosaires.com/",
+    "urlInscricao": "https://www.maratondebuenosaires.com/",
+    "fonte": "https://www.maratondebuenosaires.com/",
+    "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "medio-maraton-buenos-aires-2027",
+    "nome": "Medio Maratón de Buenos Aires",
+    "local": "Buenos Aires",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "21,1 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "urlInscricao": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "fonte": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
+    "verificadoEm": "2026-10-30"
+  }
+]

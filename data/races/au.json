@@ -28,5 +28,20 @@
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "sydney-marathon-2027",
+    "nome": "TCS Sydney Marathon",
+    "local": "Sydney",
+    "modalidade": "Corrida",
+    "serie": "Marathon Majors",
+    "data": "2027-08-29",
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.worldmarathonmajors.com/races",
+    "urlInscricao": "https://www.worldmarathonmajors.com/races",
+    "fonte": "https://www.worldmarathonmajors.com/races",
+    "verificadoEm": "2026-10-30"
   }
 ]

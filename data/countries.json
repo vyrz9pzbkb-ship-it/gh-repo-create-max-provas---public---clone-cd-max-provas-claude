@@ -4,7 +4,7 @@
     "pais": "Alemanha",
     "continente": "Europa",
     "bandeira": "🇩🇪",
-    "provas": 1
+    "provas": 5
   },
   {
     "codigo": "sk",
@@ -18,28 +18,28 @@
     "pais": "Espanha",
     "continente": "Europa",
     "bandeira": "🇪🇸",
-    "provas": 4
+    "provas": 10
   },
   {
     "codigo": "fr",
     "pais": "França",
     "continente": "Europa",
     "bandeira": "🇫🇷",
-    "provas": 2
+    "provas": 5
   },
   {
     "codigo": "it",
     "pais": "Itália",
     "continente": "Europa",
     "bandeira": "🇮🇹",
-    "provas": 1
+    "provas": 5
   },
   {
     "codigo": "nl",
     "pais": "Países Baixos",
     "continente": "Europa",
     "bandeira": "🇳🇱",
-    "provas": 1
+    "provas": 4
   },
   {
     "codigo": "pl",
@@ -53,7 +53,14 @@
     "pais": "Portugal",
     "continente": "Europa",
     "bandeira": "🇵🇹",
-    "provas": 8
+    "provas": 11
+  },
+  {
+    "codigo": "gb",
+    "pais": "Reino Unido",
+    "continente": "Europa",
+    "bandeira": "🇬🇧",
+    "provas": 5
   },
   {
     "codigo": "at",
@@ -63,10 +70,24 @@
     "provas": 1
   },
   {
+    "codigo": "ar",
+    "pais": "Argentina",
+    "continente": "América do Sul",
+    "bandeira": "🇦🇷",
+    "provas": 2
+  },
+  {
     "codigo": "br",
     "pais": "Brasil",
     "continente": "América do Sul",
     "bandeira": "🇧🇷",
+    "provas": 5
+  },
+  {
+    "codigo": "cl",
+    "pais": "Chile",
+    "continente": "América do Sul",
+    "bandeira": "🇨🇱",
     "provas": 1
   },
   {
@@ -74,14 +95,14 @@
     "pais": "Canadá",
     "continente": "América do Norte",
     "bandeira": "🇨🇦",
-    "provas": 3
+    "provas": 8
   },
   {
     "codigo": "us",
     "pais": "Estados Unidos",
     "continente": "América do Norte",
     "bandeira": "🇺🇸",
-    "provas": 1
+    "provas": 9
   },
   {
     "codigo": "sa",
@@ -126,6 +147,13 @@
     "provas": 1
   },
   {
+    "codigo": "jp",
+    "pais": "Japão",
+    "continente": "Ásia",
+    "bandeira": "🇯🇵",
+    "provas": 1
+  },
+  {
     "codigo": "sg",
     "pais": "Singapura",
     "continente": "Ásia",
@@ -151,13 +179,20 @@
     "pais": "Austrália",
     "continente": "Oceania",
     "bandeira": "🇦🇺",
-    "provas": 2
+    "provas": 3
   },
   {
     "codigo": "nz",
     "pais": "Nova Zelândia",
     "continente": "Oceania",
     "bandeira": "🇳🇿",
+    "provas": 1
+  },
+  {
+    "codigo": "za",
+    "pais": "África do Sul",
+    "continente": "África",
+    "bandeira": "🇿🇦",
     "provas": 1
   }
 ]

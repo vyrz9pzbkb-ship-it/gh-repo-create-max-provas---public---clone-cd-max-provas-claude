@@ -1,0 +1,17 @@
+[
+  {
+    "id": "tokyo-marathon-2027",
+    "nome": "Tokyo Marathon",
+    "local": "Tóquio",
+    "modalidade": "Corrida",
+    "serie": "Marathon Majors",
+    "data": "2027-03-07",
+    "dataConfirmada": true,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.worldmarathonmajors.com/races",
+    "urlInscricao": "https://www.worldmarathonmajors.com/races",
+    "fonte": "https://www.worldmarathonmajors.com/content-hub/agwc-heads-to-tokyo",
+    "verificadoEm": "2026-10-30"
+  }
+]
