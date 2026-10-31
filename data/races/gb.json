@@ -8,11 +8,12 @@
     "data": "2027-04-04",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.londonmarathonevents.co.uk/brighton-marathon-weekend/brighton-marathon",
     "urlInscricao": "https://www.londonmarathonevents.co.uk/brighton-marathon-weekend/brighton-marathon",
     "fonte": "https://www.londonmarathonevents.co.uk/brighton-marathon-weekend/brighton-marathon",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "manchester-marathon-2027",
@@ -23,11 +24,12 @@
     "data": "2027-04-18",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "esgotada",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.manchestermarathon.co.uk/",
     "urlInscricao": "https://www.manchestermarathon.co.uk/",
     "fonte": "https://www.manchestermarathon.co.uk/event-updates/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "london-marathon-2027",
@@ -38,11 +40,12 @@
     "data": "2027-04-25",
     "dataConfirmada": true,
     "distancia": "42,195 km · em 2027 corre-se em dois dias (24 e 25/04)",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.londonmarathonevents.co.uk/london-marathon",
     "urlInscricao": "https://www.londonmarathonevents.co.uk/london-marathon",
     "fonte": "https://www.londonmarathonevents.co.uk/london-marathon",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "big-half-2027",
@@ -53,11 +56,12 @@
     "data": "2027-09-05",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.londonmarathonevents.co.uk/london-marathon-events/all-events",
     "urlInscricao": "https://www.londonmarathonevents.co.uk/london-marathon-events/all-events",
     "fonte": "https://www.londonmarathonevents.co.uk/london-marathon-events/all-events",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "great-north-run-2027",
@@ -68,10 +72,11 @@
     "data": "2027-09-12",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Erro HTTP 403",
     "urlOficial": "https://www.greatrun.org/events/great-north-run/",
     "urlInscricao": "https://www.greatrun.org/events/great-north-run/",
     "fonte": "https://www.greatrun.org/events/great-north-run/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

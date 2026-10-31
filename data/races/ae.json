@@ -8,11 +8,13 @@
     "data": "2026-11-13",
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 13 a 15/11",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://t100triathlon.com/dubai/participate/",
     "urlInscricao": "https://t100triathlon.com/dubai/participate/",
     "fonte": "https://t100triathlon.com/dubai/participate/event-info/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "ugfws-abu-dhabi-2026",
@@ -23,11 +25,12 @@
     "data": "2026-12-20",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-sir-bani-yas-2027",
@@ -38,10 +41,11 @@
     "data": "2027-01-30",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-sir-bani-yas/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-sir-bani-yas/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

@@ -8,11 +8,12 @@
     "data": "2026-11-21",
     "dataConfirmada": true,
     "distancia": "Evento de 21 a 22/11",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Erro HTTP 404",
     "urlOficial": "https://oceanmanswim.com/temporadas/2026/",
     "urlInscricao": "https://oceanmanswim.com/temporadas/2026/",
     "fonte": "https://oceanmanswim.com/temporadas/2026/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "oceanman-krabi-2027",
@@ -23,10 +24,11 @@
     "data": "2027-03-13",
     "dataConfirmada": true,
     "distancia": "Evento de 13 a 14/03",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://oceanmanswim.com/",
     "urlInscricao": "https://oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

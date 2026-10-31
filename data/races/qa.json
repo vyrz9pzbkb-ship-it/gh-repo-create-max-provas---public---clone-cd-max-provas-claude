@@ -8,11 +8,12 @@
     "data": "2026-12-10",
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 10 a 12/12",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Ambíguo (esgotada + aberta): “eady building after the event sold out in 2025. Don’t miss your chanc…",
     "urlOficial": "https://t100triathlon.com/qatar/participate/",
     "urlInscricao": "https://t100triathlon.com/qatar/participate/",
     "fonte": "https://t100triathlon.com/qatar/participate/event-info/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "t100-qatar-2027",
@@ -23,10 +24,12 @@
     "data": "2027-12-10",
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 10 a 11/12",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

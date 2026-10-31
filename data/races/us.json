@@ -8,11 +8,12 @@
     "data": "2026-11-01",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.nyrr.org/tcsnycmarathon",
     "urlInscricao": "https://www.nyrr.org/tcsnycmarathon",
     "fonte": "https://www.nyrr.org/races-and-events/2026/2026-tcs-new-york-city-marathon",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "philadelphia-marathon-2026",
@@ -24,10 +25,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "esgotada",
+    "statusMotivo": "THMAN ORTHOPAEDICS 8K ARE NOW SOLD OUT!",
+    "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://www.philadelphiamarathon.com/races/marathon/",
     "urlInscricao": "https://www.philadelphiamarathon.com/races/marathon/",
     "fonte": "https://www.philadelphiamarathon.com/2026-philadelphia-marathon-and-half-marathon-sell-out-in-record-time-2/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "honolulu-marathon-2026",
@@ -38,11 +41,13 @@
     "data": "2026-12-13",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "Registration is open for the April 11, 2027 Hapalua - Hawaii's Half Marathon.",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.honolulumarathon.org/",
     "urlInscricao": "https://www.honolulumarathon.org/",
     "fonte": "https://www.honolulumarathon.org/our-events/jal-honolulu-marathon",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "la-marathon-2027",
@@ -53,11 +58,13 @@
     "data": "2027-03-07",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.lamarathon.com/",
     "urlInscricao": "https://www.lamarathon.com/",
     "fonte": "https://www.lamarathon.com/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "nyc-half-2027",
@@ -68,11 +75,12 @@
     "data": "2027-03-21",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "aberta",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.nyrr.org/run/united-airlines-nyc-half",
     "urlInscricao": "https://www.nyrr.org/run/united-airlines-nyc-half",
     "fonte": "https://www.nyrr.org/races-and-events/2027/2027-united-airlines-nyc-half",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "boston-marathon-2027",
@@ -83,11 +91,12 @@
     "data": "2027-04-19",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.baa.org/races/boston-marathon/",
     "urlInscricao": "https://www.baa.org/races/boston-marathon/",
     "fonte": "https://www.baa.org/news/registration-updates-and-information-announced-for-2027-boston-marathon-presented-by-bank-of-america/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "t100-san-francisco-2027",
@@ -98,11 +107,13 @@
     "data": "2027-06-05",
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 5 a 6/06",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "chicago-marathon-2027",
@@ -113,11 +124,12 @@
     "data": "2027-10-10",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.chicagomarathon.com/",
     "urlInscricao": "https://www.chicagomarathon.com/",
     "fonte": "https://cdn.chicagomarathon.com/app/uploads/2026/09/14202638/091526_BACM-BAHM-BASS_2027-Event-Annmt-1.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "marine-corps-marathon-2027",
@@ -128,10 +140,11 @@
     "data": "2027-10-31",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Erro HTTP 404",
     "urlOficial": "https://www.marinemarathon.com/event/marine-corps-marathon/",
     "urlInscricao": "https://www.marinemarathon.com/event/marine-corps-marathon/",
     "fonte": "https://www.marinemarathon.com/event/marine-corps-marathon/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

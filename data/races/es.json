@@ -8,11 +8,12 @@
     "data": "2026-11-07",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/vuelta-champions-mas-and-blasi-headline-uci-gran-fondo-world-series-debut-in-la-nucia/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maraton-valencia-2026",
@@ -23,11 +24,12 @@
     "data": "2026-12-06",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "esgotada",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.valenciaciudaddelrunning.com/en/evento/maraton-valencia/",
     "urlInscricao": "https://www.valenciaciudaddelrunning.com/en/evento/maraton-valencia/",
     "fonte": "https://www.valenciaciudaddelrunning.com/en/marathon/regulations-valencia-marathon/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "mitja-barcelona-2027",
@@ -39,10 +41,12 @@
     "dataConfirmada": true,
     "distancia": "21,1 km",
     "statusInscricao": "esgotada",
+    "statusMotivo": "més 7 dies, confirmant un nou sold out històric. La prova, que se celebrarà el 14 de febrer de 2027…",
+    "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://mitjabarcelona.com/",
     "urlInscricao": "https://mitjabarcelona.com/",
     "fonte": "https://mitjabarcelona.com/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maraton-sevilla-2027",
@@ -54,10 +58,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "esgotada",
+    "statusMotivo": "DORSALES AGOTADOS",
+    "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://www.zurichmaratonsevilla.es/",
     "urlInscricao": "https://www.zurichmaratonsevilla.es/",
     "fonte": "https://www.zurichmaratonsevilla.es/mse-reglamento",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "marato-barcelona-2027",
@@ -69,10 +75,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "aberta",
+    "statusMotivo": "INSCRÍBETE!",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://zurichmaratobarcelona.es/es/",
     "urlInscricao": "https://zurichmaratobarcelona.es/es/",
     "fonte": "https://zurichmaratobarcelona.es/es/soy-corredor-a/reglamento/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "medio-maraton-madrid-2027",
@@ -83,11 +91,12 @@
     "data": "2027-04-04",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "aberta",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.mediomaratonmadrid.es/",
     "urlInscricao": "https://www.mediomaratonmadrid.es/",
     "fonte": "https://www.mediomaratonmadrid.es/web-evento/13064-movistar-madrid-medio-maraton-2027",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-mogan-gran-canaria-2027",
@@ -98,11 +107,12 @@
     "data": "2027-04-17",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "mallorca-312-2027",
@@ -113,11 +123,12 @@
     "data": "2027-04-24",
     "dataConfirmada": true,
     "distancia": "312, 226 ou 167 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://mallorca312.com/en/",
     "urlInscricao": "https://mallorca312.com/en/",
     "fonte": "https://mallorca312.com/en/rules/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-salou-2027",
@@ -128,11 +139,12 @@
     "data": "2027-05-09",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "quebrantahuesos-2027",
@@ -143,11 +155,12 @@
     "data": "2027-06-19",
     "dataConfirmada": false,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.quebrantahuesos.com/en/home/",
     "urlInscricao": "https://www.quebrantahuesos.com/en/home/",
     "fonte": "https://www.quebrantahuesos.com/en/quebrantahuesos-en/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "t100-marbella-2027",
@@ -158,11 +171,13 @@
     "data": "2027-09-18",
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 18 a 19/09",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://t100triathlon.com/spain/participate/",
     "urlInscricao": "https://t100triathlon.com/spain/participate/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-peguera-mallorca-2027",
@@ -173,11 +188,12 @@
     "data": "2027-10-16",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "medio-maraton-valencia-2027",
@@ -188,10 +204,11 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.valenciaciudaddelrunning.com/en/half/half-marathon/",
     "urlInscricao": "https://www.valenciaciudaddelrunning.com/en/half/half-marathon/",
     "fonte": "https://www.valenciaciudaddelrunning.com/en/half/half-marathon/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

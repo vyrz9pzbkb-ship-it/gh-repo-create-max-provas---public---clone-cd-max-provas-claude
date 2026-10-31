@@ -8,11 +8,12 @@
     "data": "2026-11-21",
     "dataConfirmada": true,
     "distancia": "Evento de 21 a 22/11",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "oceanman-cordoba-2027",
@@ -23,11 +24,12 @@
     "data": "2027-03-05",
     "dataConfirmada": true,
     "distancia": "Evento de 5 a 7/03",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://oceanmanswim.com/",
     "urlInscricao": "https://oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maraton-buenos-aires-2027",
@@ -38,11 +40,12 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.maratondebuenosaires.com/",
     "urlInscricao": "https://www.maratondebuenosaires.com/",
     "fonte": "https://www.maratondebuenosaires.com/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "medio-maraton-buenos-aires-2027",
@@ -53,10 +56,11 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Erro HTTP 403",
     "urlOficial": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
     "urlInscricao": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
     "fonte": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

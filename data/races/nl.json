@@ -8,11 +8,12 @@
     "data": "2027-03-14",
     "dataConfirmada": false,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://nnmarathonrotterdam.nl/en/register/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/register/",
     "fonte": "https://nnmarathonrotterdam.nl/en/register/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "marathon-rotterdam-2027",
@@ -23,11 +24,13 @@
     "data": "2027-04-11",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "aberta",
+    "statusMotivo": "e to secure a race entry. Pre-registration is open until November 3 at 10:00 AM!",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://nnmarathonrotterdam.nl/en/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/",
     "fonte": "https://nnmarathonrotterdam.nl/nn-marathon-rotterdam-2027-zet-in-op-meer-rotterdammers-en-opent-gratis-pre-registratie/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-almere-amsterdam-2027",
@@ -38,11 +41,12 @@
     "data": "2027-09-11",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "marathon-amsterdam-2027",
@@ -53,10 +57,11 @@
     "data": "2027-10-31",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.tcsamsterdammarathon.nl/",
     "urlInscricao": "https://www.tcsamsterdammarathon.nl/",
     "fonte": "https://www.tcsamsterdammarathon.nl/programma",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

@@ -8,10 +8,11 @@
     "data": "2026-11-10",
     "dataConfirmada": true,
     "distancia": "Evento de 10 a 15/11",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://welcomeparade.oceanmanswim.com/",
     "urlInscricao": "https://welcomeparade.oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/temporadas/2026/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

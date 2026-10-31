@@ -8,11 +8,12 @@
     "data": "2026-11-29",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Ambíguo (esgotada + aberta): “42nd ESTRA Firenze Marathon SOLD OUT” / “REGISTRATION OPEN”",
     "urlOficial": "https://www.firenzemarathon.it/en/home-en/",
     "urlInscricao": "https://www.firenzemarathon.it/en/home-en/",
     "fonte": "https://www.firenzemarathon.it/en/marathon-regulation/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "roma-ostia-2027",
@@ -23,11 +24,13 @@
     "data": "2027-02-28",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "ISCRIVITI ORA →",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://romaostia.it/",
     "urlInscricao": "https://romaostia.it/",
     "fonte": "https://romaostia.it/regolamento/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maratona-roma-2027",
@@ -38,11 +41,13 @@
     "data": "2027-03-14",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "REGISTER NOW",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.runromethemarathon.com/en/home-2025-en-2/",
     "urlInscricao": "https://www.runromethemarathon.com/en/home-2025-en-2/",
     "fonte": "https://www.runromethemarathon.com/wp-content/uploads/2026/04/RRTM27-regolamento-italiano-23-4-2026.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "milano-marathon-2027",
@@ -54,10 +59,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "aberta",
+    "statusMotivo": "Register now Run for a Charity",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.milanomarathon.it/en/",
     "urlInscricao": "https://www.milanomarathon.it/en/",
     "fonte": "https://www.milanomarathon.it/en/marathon/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-cesenatico-2027",
@@ -68,11 +75,12 @@
     "data": "2027-05-16",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "nove-colli-2027",
@@ -83,11 +91,13 @@
     "data": "2027-05-23",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "aguardando",
+    "statusInscricao": "aberta",
+    "statusMotivo": "Nove Colli 2027: iscrizioni aperte dal 5 dicembre",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
     "urlInscricao": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
     "fonte": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "oceanman-lago-dorta-2027",
@@ -98,11 +108,12 @@
     "data": "2027-06-13",
     "dataConfirmada": true,
     "distancia": "Sprint a 12/06 · OCEANMAN a 13/06",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Erro HTTP 404",
     "urlOficial": "https://oceanmanswim.com/lagodorta-italy/",
     "urlInscricao": "https://oceanmanswim.com/lagodorta-italy/",
     "fonte": "https://oceanmanswim.com/lagodorta-italy/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maratona-dles-dolomites-2027",
@@ -113,10 +124,12 @@
     "data": "2027-07-04",
     "dataConfirmada": true,
     "distancia": "138, 106 ou 55 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "Pre-registration open until 10 November 2026",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.maratona.it/en/",
     "urlInscricao": "https://www.maratona.it/en/",
     "fonte": "https://www.maratona.it/en/conditionsofentry-2027",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   }
 ]

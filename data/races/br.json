@@ -8,11 +8,12 @@
     "data": "2026-11-08",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "challenge-florianopolis-2026",
@@ -23,11 +24,12 @@
     "data": "2026-11-29",
     "dataConfirmada": true,
     "distancia": "Média distância e sprint",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "meia-sp-2027",
@@ -38,11 +40,13 @@
     "data": "2027-01-24",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "Inscreva-se",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.yescom.com.br/meiasp/2027/index.asp",
     "urlInscricao": "https://www.yescom.com.br/meiasp/2027/index.asp",
     "fonte": "https://www.yescom.com.br/meiasp/2027/img/Regulamento_20aMeiaMaratonaIntldeSP2027_atualizadoem_05-10-2026.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maratona-sp-2027",
@@ -53,11 +57,13 @@
     "data": "2027-04-04",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "aberta",
+    "statusMotivo": "Inscreva-se",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.yescom.com.br/maratonasp/2027/index.asp",
     "urlInscricao": "https://www.yescom.com.br/maratonasp/2027/index.asp",
     "fonte": "https://www.yescom.com.br/maratonasp/2027/img/Regulamento_31aMaratonaSP2027_atualizadoem05-10-2026.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "meia-maratona-rio-2027",
@@ -68,11 +74,12 @@
     "data": "2027-05-29",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://maratonadorio.com.br/pt/corrida/21k-2027",
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/21k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "maratona-rio-2027",
@@ -83,11 +90,12 @@
     "data": "2027-05-30",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
+    "statusMotivo": "Ambíguo (esgotada + aberta): “42K - INSCRIÇÕES ESGOTADAS” / “Caso você tenha sido sorteado, INSCREV…",
     "urlOficial": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T08:28:21Z"
   },
   {
     "id": "travessia-mar-grande-salvador",
