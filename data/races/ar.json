@@ -24,7 +24,7 @@
     "modalidade": "Natação",
     "serie": "Oceanman",
     "data": "2027-03-05",
-    "dataConfirmada": true,
+    "dataConfirmada": false,
     "distancia": "Evento de 5 a 7/03",
     "statusInscricao": null,
     "statusMotivo": null,

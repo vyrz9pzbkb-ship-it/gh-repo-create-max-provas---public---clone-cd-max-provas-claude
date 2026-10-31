@@ -68,22 +68,26 @@ const KEYWORDS = {
     // Inscrições fechadas: já não é possível inscrever-se.
     /registration (is )?closed/i, /entries (are )?closed/i, /inscri[çc][õo]es encerradas/i,
     /inscripciones cerradas/i, /inscriptions? (closes|ferm[ée]es|cl[ôo]tur[ée]es)/i, /iscrizioni chiuse/i,
-    /anmeldung (ist )?geschlossen/i, /anmeldeschluss erreicht/i
+    /anmeldung (ist )?geschlossen/i, /anmeldeschluss erreicht/i,
+    /\bwaiting list\b/i,
+    /\b(registration|application|entries|entry|ballot|drawing|public places)\b[^.\n]{0,80}\b(is|are) (now )?(closed|at capacity)\b/i
   ],
   aberta: [
     /register now/i, /inscreva-se/i, /inscr[ií]bete/i, /inscriptions? ouvertes?/i, /entries (are )?open/i,
-    /registration (is )?(now )?open\b/i, /inscri[çc][õo]es abertas/i, /inscripciones abiertas/i,
+    /\bregist\w* (is |are )?(now )?open\b/i, /\bregistrations? for [^.\n]{0,60}\b(are|is) (now )?open\b/i,
+    /\bregister for 20\d\d\b/i, /\banm[äa]l dig\b/i, /\bentries? (is |are )?(now )?open\b/i, /inscri[çc][õo]es abertas/i, /inscripciones abiertas/i,
     /iscrizioni aperte/i, /\biscriviti\b/i, /jetzt anmelden/i, /anmeldung (ist )?(ge)?(ö|oe)ffnet/i
   ],
   aguardando: [
-    /coming soon/i, /\bem breve\b/i, /\bpr[óo]ximamente\b/i, /opens on/i, /registration opens/i,
+    /coming soon/i, /\bem breve\b/i, /registration coming/i, /registration (for 20\d\d )?available (from |on )?(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+    /inschrijving[^.\n]{0,60}van start/i, /\bpr[óo]ximamente\b/i, /opens on/i, /registration opens/i,
     /inscri[çc][õo]es abrem/i, /inscripciones se abren/i, /\bbient[ôo]t\b/i, /ouverture des inscriptions/i,
     /\bprossimamente\b/i, /iscrizioni apriranno/i, /\bdemn[äa]chst\b/i, /anmeldung startet/i
   ]
 };
 
 // Num botão/link isolado, estes textos também indicam inscrições abertas.
-const BUTTON_OPEN = /^(register|register here|sign up|enter now|inscrever|inscri[çc][ãa]o|inscribirse|inscr[ií]bete|s['’]inscrire|iscriviti|anmelden)$/i;
+const BUTTON_OPEN = /^(register|register here|sign up|enter now|inscrever|inscri[çc][ãa]o|inscribirse|inscr[ií]bete|s['’]inscrire|iscriviti|anmelden)$|^(registration|inscripci[oó]n|inscri[çc][ãa]o) (for|para) \S/i;
 
 // Páginas de verificação/bloqueio: não dá para ler o estado real.
 const BLOQUEIO = /captcha|verify you are human|are you a robot|just a moment\.\.\.|checking your browser|attention required|access denied|cf-browser-verification|log in to facebook|log into facebook/i;
@@ -364,6 +368,12 @@ async function findIronmanEventUrl(context, r, throttle) {
   const links = await ironmanCalendar(context, throttle);
   const found = matchIronman(links, r);
   console.log(`  Calendário IRONMAN (${IRONMAN_CALENDAR}): ${links.length} links lidos → ${found || 'nenhum candidato único'}`);
+  if (VERBOSE) {
+    const words = normalize(`${r.nome} ${r.local || ''}`).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && w !== 'ironman');
+    for (const l of links.filter((x) => words.some((w) => normalize(`${x.href} ${x.text}`).includes(w))).slice(0, 25)) {
+      console.log(`    link: ${l.href} — “${clip(l.text, 80)}”`);
+    }
+  }
   return found;
 }
 
@@ -592,7 +602,8 @@ async function main() {
   console.log(`  Páginas abertas: ${byUrl.size} · mudanças: ${changes.length} · alertas: ${alerts.length}${NTFY_TOPIC ? '' : ' (sem NTFY_TOPIC, não enviados)'}`);
 
   if (process.env.GITHUB_OUTPUT) {
-    fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changes.length > 0}\ncount=${changes.length}\n`);
+    const changed = !DRY_RUN && changes.length > 0;
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\ncount=${changed ? changes.length : 0}\n`);
   }
 }
 

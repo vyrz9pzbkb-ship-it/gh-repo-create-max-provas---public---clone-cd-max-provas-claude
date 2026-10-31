@@ -152,8 +152,8 @@
     "statusMotivo": "Status da pesquisa manual de 30/10/2026",
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Erro HTTP 404",
-    "urlOficial": "https://www.marinemarathon.com/event/marine-corps-marathon/",
-    "urlInscricao": "https://www.marinemarathon.com/event/marine-corps-marathon/",
+    "urlOficial": "https://www.marinemarathon.com/",
+    "urlInscricao": "https://www.marinemarathon.com/",
     "fonte": "https://www.marinemarathon.com/event/marine-corps-marathon/",
     "verificadoEm": "2026-10-30"
   }
