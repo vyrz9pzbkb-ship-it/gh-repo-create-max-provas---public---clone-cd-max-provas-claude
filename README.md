@@ -225,7 +225,13 @@ Todos os caminhos são relativos, por isso funciona tanto na raiz como num subca
 ### Atualizações e cache offline
 
 - Os ficheiros de `data/` são pedidos **primeiro à rede** — as edições aparecem na próxima abertura (com ligação). Cada país consultado fica em cache para uso offline.
-- Os restantes ficheiros (HTML/CSS/JS/ícones) vêm da cache e são atualizados em segundo plano. Se alterar código e quiser forçar a atualização, incremente `CACHE_VERSION` em [`sw.js`](sw.js).
+- HTML, JS e CSS vêm **sempre da rede** quando há ligação (a cache só é usada offline), para o `index.html` e os scripts serem sempre da mesma versão. Ícones e manifest vêm da cache e atualizam em segundo plano.
+- **Ao publicar uma alteração de código, suba a versão nos três sítios** (o mesmo valor, ex.: `v9` → `v10`):
+  1. `CACHE_VERSION` em [`sw.js`](sw.js);
+  2. `MAX_PROVAS_BUILD` e o `?v=` dos `<script>`/`<link>` em [`index.html`](index.html);
+  3. `MAX_PROVAS_APP_BUILD` em [`js/app.js`](js/app.js).
+
+  Se um telemóvel tiver um service worker antigo que sirva um `app.js` de outra versão, o `index.html` deteta a diferença, apaga as caches, remove o service worker antigo e recarrega uma vez.
 
 ### Testar localmente
 

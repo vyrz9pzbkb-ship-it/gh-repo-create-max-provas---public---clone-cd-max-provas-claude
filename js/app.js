@@ -2,6 +2,9 @@
 
 /* Max Provas — app em JS vanilla, sem dependências. */
 
+// Versão destes ficheiros: tem de ser igual a MAX_PROVAS_BUILD no index.html e a CACHE_VERSION no sw.js.
+window.MAX_PROVAS_APP_BUILD = 'v9';
+
 const COUNTRIES_URL = 'data/countries.json';
 const raceFileUrl = (codigo) => `data/races/${codigo}.json`;
 const STORE_KEY = 'maxprovas.filtro';
@@ -24,8 +27,18 @@ const MODALITY_ICON = { Corrida: '🏃‍♂️', Triatlo: '🏊‍♂️🚴‍
 const VIEWS = {
   provas: { title: 'Provas', render: renderUpcoming },
   temporada: { title: 'Temporada', render: renderSeason },
-  historico: { title: 'Histórico', render: renderHistory }
+  historico: { title: 'Histórico', render: renderHistory },
+  // Substituído por js/coach.js ao carregar. Se esse script falhar (ex.: versões misturadas
+  // durante uma atualização), a aba mostra este aviso em vez de voltar para Provas.
+  coach: { title: 'Coach', render: renderCoachIndisponivel }
 };
+
+function renderCoachIndisponivel(view, sub) {
+  sub.textContent = '';
+  view.innerHTML = `
+    <p class="empty">O Coach não carregou — provavelmente a app está a meio de uma atualização.<br><br>
+      <button type="button" class="btn primary" data-reload>Recarregar</button></p>`;
+}
 
 const fmtLong = new Intl.DateTimeFormat('pt-PT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 const fmtDate = new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -613,6 +626,7 @@ function render() {
 }
 
 document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-reload]')) return location.reload();
   const ics = e.target.closest('[data-ics]');
   if (ics) return downloadICS(ics.dataset.ics);
 

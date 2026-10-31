@@ -1,6 +1,11 @@
 // Service worker do Max Provas.
-// Ao alterar ficheiros da app (HTML/CSS/JS/ícones), incremente CACHE_VERSION.
-const CACHE_VERSION = 'v8';
+// Ao alterar ficheiros da app (HTML/CSS/JS/ícones), incremente CACHE_VERSION — e use o mesmo valor
+// em MAX_PROVAS_BUILD e no ?v= dos scripts/CSS (index.html) e em MAX_PROVAS_APP_BUILD (js/app.js).
+//
+// HTML, JS e CSS vêm sempre da rede quando há ligação (a cache só serve offline): assim o
+// index.html e os scripts são sempre da mesma versão. Servir o app.js antigo da cache com o
+// index.html novo fazia o coach.js falhar e a aba Coach voltar para Provas.
+const CACHE_VERSION = 'v9';
 const CACHE = `max-provas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -57,7 +62,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Restantes ficheiros: cache primeiro, atualiza em segundo plano.
+  // Código da app (JS/CSS): rede primeiro, para nunca misturar versões.
+  if (/\.(js|css)$/.test(url.pathname)) {
+    event.respondWith(networkFirst(req));
+    return;
+  }
+
+  // Restantes ficheiros (ícones, manifest): cache primeiro, atualiza em segundo plano.
   event.respondWith(staleWhileRevalidate(event, req));
 });
 

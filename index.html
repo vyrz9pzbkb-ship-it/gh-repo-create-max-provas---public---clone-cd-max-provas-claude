@@ -19,7 +19,26 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=9">
+
+  <script>
+    // Versão da app: igual a CACHE_VERSION (sw.js), MAX_PROVAS_APP_BUILD (js/app.js) e ao ?v= dos
+    // scripts/CSS abaixo (o ?v= muda o URL, para o browser não reutilizar a cópia antiga da cache HTTP).
+    // Este HTML vem sempre da rede; se um service worker antigo servir um app.js de outra
+    // versão, apaga as caches e recarrega uma vez, para não misturar ficheiros.
+    window.MAX_PROVAS_BUILD = 'v9';
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.MAX_PROVAS_APP_BUILD === window.MAX_PROVAS_BUILD) return;
+      try {
+        if (sessionStorage.getItem('maxprovas.recarregado') === window.MAX_PROVAS_BUILD) return;
+        sessionStorage.setItem('maxprovas.recarregado', window.MAX_PROVAS_BUILD);
+      } catch (e) { return; }
+      // Remove o service worker antigo e as caches dele; o app.js volta a registar o sw.js novo.
+      var limpar = window.caches ? caches.keys().then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); }) : Promise.resolve();
+      var remover = navigator.serviceWorker ? navigator.serviceWorker.getRegistrations().then(function (rs) { return Promise.all(rs.map(function (r) { return r.unregister(); })); }) : Promise.resolve();
+      Promise.all([limpar, remover]).then(function () { location.reload(); }, function () { location.reload(); });
+    });
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -55,9 +74,9 @@
 
   <div id="toast" class="toast" role="status" hidden></div>
 
-  <script src="js/config.js" defer></script>
-  <script src="js/app.js" defer></script>
-  <script src="js/coach.js" defer></script>
-  <script src="js/chat.js" defer></script>
+  <script src="js/config.js?v=9" defer></script>
+  <script src="js/app.js?v=9" defer></script>
+  <script src="js/coach.js?v=9" defer></script>
+  <script src="js/chat.js?v=9" defer></script>
 </body>
 </html>
