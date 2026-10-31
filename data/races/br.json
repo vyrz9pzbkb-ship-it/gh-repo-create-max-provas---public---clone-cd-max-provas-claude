@@ -8,12 +8,14 @@
     "data": "2026-11-08",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "challenge-florianopolis-2026",
@@ -24,12 +26,14 @@
     "data": "2026-11-29",
     "dataConfirmada": true,
     "distancia": "Média distância e sprint",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "meia-sp-2027",
@@ -74,12 +78,14 @@
     "data": "2027-05-29",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aguardando",
+    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://maratonadorio.com.br/pt/corrida/21k-2027",
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/21k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "maratona-rio-2027",
@@ -90,12 +96,14 @@
     "data": "2027-05-30",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Ambíguo (esgotada + aberta): “42K - INSCRIÇÕES ESGOTADAS” / “Caso você tenha sido sorteado, INSCREV…",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Ambíguo (esgotada + aberta): “42K - INSCRIÇÕES ESGOTADAS” / “Caso você tenha sido sorteado, INSCREV…",
     "urlOficial": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "travessia-mar-grande-salvador",

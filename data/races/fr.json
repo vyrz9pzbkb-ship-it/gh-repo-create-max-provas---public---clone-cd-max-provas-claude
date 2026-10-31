@@ -25,12 +25,14 @@
     "data": "2026-12-06",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "t100-french-riviera-2027",
@@ -58,12 +60,14 @@
     "data": "2027-07-11",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Erro: page.goto: net::ERR_CERT_DATE_INVALID at https://www.letapebytourdefrance.com/",
+    "statusInscricao": "aguardando",
+    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Erro: page.goto: net::ERR_CERT_DATE_INVALID at https://www.letapebytourdefrance.com/",
     "urlOficial": "https://www.letapebytourdefrance.com/",
     "urlInscricao": "https://www.letapebytourdefrance.com/",
     "fonte": "https://www.letapebytourdefrance.com/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "ugf-world-championships-2027",
@@ -74,12 +78,14 @@
     "data": "2027-08-24",
     "dataConfirmada": true,
     "distancia": "Contrarrelógio a 22/08, gran fondo a 24/08 (só com qualificação)",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/",
     "fonte": "https://ucigranfondoworldseries.com/en/haute-savoie-mont-blanc-2027-reveals-gran-fondo-world-championship-courses/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "challenge-vieux-boucau-2027",
@@ -90,12 +96,14 @@
     "data": "2027-10-02",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "marathon-paris-2027",

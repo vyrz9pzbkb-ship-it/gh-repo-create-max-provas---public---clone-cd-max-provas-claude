@@ -96,6 +96,10 @@ def main():
                 erros.append(f"{onde}: 'verificadoEm' deve ser YYYY-MM-DD ou YYYY-MM-DDTHH:MM:SSZ")
             if "favorita" in r and not isinstance(r["favorita"], bool):
                 erros.append(f"{onde}: 'favorita' deve ser true ou false")
+            if r.get("statusManual") not in {"aberta", "aguardando", "esgotada", None}:
+                erros.append(f"{onde}: statusManual deve ser aberta, aguardando, esgotada ou null")
+            if r.get("falhaDesde") is not None and not DATA_RE.match(str(r["falhaDesde"])):
+                erros.append(f"{onde}: 'falhaDesde' deve ser YYYY-MM-DD")
             if len(r.get("statusMotivo") or "") > 100:
                 erros.append(f"{onde}: 'statusMotivo' tem mais de 100 caracteres")
             if r.get("statusInscricao") not in STATUS:

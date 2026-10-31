@@ -8,11 +8,13 @@
     "data": "2027-04-08",
     "dataConfirmada": true,
     "distancia": "Evento de 8 a 10/04",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://oceanmanswim.com/",
     "urlInscricao": "https://oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

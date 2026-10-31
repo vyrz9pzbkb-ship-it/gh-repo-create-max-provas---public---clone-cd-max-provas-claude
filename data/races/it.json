@@ -8,12 +8,14 @@
     "data": "2026-11-29",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Ambíguo (esgotada + aberta): “42nd ESTRA Firenze Marathon SOLD OUT” / “REGISTRATION OPEN”",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Ambíguo (esgotada + aberta): “42nd ESTRA Firenze Marathon SOLD OUT” / “REGISTRATION OPEN”",
     "urlOficial": "https://www.firenzemarathon.it/en/home-en/",
     "urlInscricao": "https://www.firenzemarathon.it/en/home-en/",
     "fonte": "https://www.firenzemarathon.it/en/marathon-regulation/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "roma-ostia-2027",
@@ -75,12 +77,14 @@
     "data": "2027-05-16",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "nove-colli-2027",
@@ -108,12 +112,14 @@
     "data": "2027-06-13",
     "dataConfirmada": true,
     "distancia": "Sprint a 12/06 · OCEANMAN a 13/06",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Erro HTTP 404",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Erro HTTP 404",
     "urlOficial": "https://oceanmanswim.com/lagodorta-italy/",
     "urlInscricao": "https://oceanmanswim.com/lagodorta-italy/",
     "fonte": "https://oceanmanswim.com/lagodorta-italy/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "maratona-dles-dolomites-2027",

@@ -8,11 +8,13 @@
     "data": "2027-05-16",
     "dataConfirmada": true,
     "distancia": "42,195 km (também 21 km e 10 km)",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://maratondesantiago.cl/en/",
     "urlInscricao": "https://maratondesantiago.cl/en/",
     "fonte": "https://maratondesantiago.cl/wp-content/uploads/2026/10/BASES-MDS-2027.pdf",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

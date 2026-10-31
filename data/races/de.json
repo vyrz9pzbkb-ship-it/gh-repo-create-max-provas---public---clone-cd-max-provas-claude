@@ -8,12 +8,14 @@
     "data": "2027-04-04",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.generali-berliner-halbmarathon.de/",
     "urlInscricao": "https://www.generali-berliner-halbmarathon.de/",
     "fonte": "https://www.generali-berliner-halbmarathon.de/en/registration/registration-information",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "marathon-hamburg-2027",
@@ -41,12 +43,14 @@
     "data": "2027-07-04",
     "dataConfirmada": true,
     "distancia": "Distância longa (3,8 km · 180 km · 42,2 km)",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "berlin-marathon-2027",
@@ -57,12 +61,14 @@
     "data": "2027-09-26",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Ambíguo (aberta + aguardando): “Registration open from today” / “Registration opens for GENERALI BE…",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Ambíguo (aberta + aguardando): “Registration open from today” / “Registration opens for GENERALI BE…",
     "urlOficial": "https://www.generali-berliner-halbmarathon.de/en/news-media/news/detail/generali-becomes-new-title-partner-of-the-berlin-marathon",
     "urlInscricao": "https://www.generali-berliner-halbmarathon.de/en/news-media/news/detail/generali-becomes-new-title-partner-of-the-berlin-marathon",
     "fonte": "https://www.worldmarathonmajors.com/races",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "frankfurt-marathon-2027",
@@ -73,11 +79,13 @@
     "data": "2027-10-31",
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Erro HTTP 403",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Erro HTTP 403",
     "urlOficial": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
     "urlInscricao": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
     "fonte": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

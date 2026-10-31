@@ -8,11 +8,13 @@
     "data": "2027-03-07",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.worldmarathonmajors.com/races",
     "urlInscricao": "https://www.worldmarathonmajors.com/races",
     "fonte": "https://www.worldmarathonmajors.com/content-hub/agwc-heads-to-tokyo",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

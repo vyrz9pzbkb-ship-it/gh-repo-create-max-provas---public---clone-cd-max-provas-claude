@@ -8,11 +8,13 @@
     "data": "2026-11-01",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

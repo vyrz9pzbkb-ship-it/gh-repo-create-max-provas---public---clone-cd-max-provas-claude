@@ -7,6 +7,16 @@ on:
     - cron: '0 5 * * *'
     - cron: '0 6 * * *'
   workflow_dispatch:
+    inputs:
+      modo:
+        description: 'normal = verifica e grava; diagnostico = só lista as falhas (não grava)'
+        type: choice
+        options: [normal, diagnostico]
+        default: normal
+      provas:
+        description: 'Opcional: ids separados por vírgula (ex.: ironman-703-cascais), com detalhe'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -57,7 +67,16 @@ jobs:
         id: check
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: node scripts/check-status.js
+          MODO: ${{ github.event.inputs.modo || 'normal' }}
+          PROVAS: ${{ github.event.inputs.provas || '' }}
+        run: |
+          if [ -n "$PROVAS" ]; then
+            node scripts/check-status.js --id="$PROVAS" --verbose --dry-run
+          elif [ "$MODO" = "diagnostico" ]; then
+            node scripts/check-status.js --diagnostico --verbose
+          else
+            node scripts/check-status.js
+          fi
 
       - name: Validar dados
         run: python3 tools/atualizar_paises.py

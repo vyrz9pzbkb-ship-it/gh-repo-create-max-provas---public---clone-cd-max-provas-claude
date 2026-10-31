@@ -8,11 +8,13 @@
     "data": "2026-11-06",
     "dataConfirmada": true,
     "distancia": "Evento de 6 a 8/11",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://ucigranfondoworldseries.com/en/granfondo-antalya-2026/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/granfondo-antalya-2026/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

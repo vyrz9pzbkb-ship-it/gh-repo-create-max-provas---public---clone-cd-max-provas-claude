@@ -157,7 +157,7 @@ function partition() {
     else upcoming.push(r);
   }
   // Inscrições abertas primeiro; depois por data (sem data fica sempre no fim, em `undated`).
-  const openFirst = (a, b) => (b.statusInscricao === 'aberta') - (a.statusInscricao === 'aberta');
+  const openFirst = (a, b) => (statusOf(b) === 'aberta') - (statusOf(a) === 'aberta');
   upcoming.sort((a, b) => openFirst(a, b) || a._date - b._date);
   past.sort((a, b) => b._date - a._date);
   undated.sort((a, b) => openFirst(a, b) || String(a.nome).localeCompare(String(b.nome), 'pt'));
@@ -165,6 +165,11 @@ function partition() {
 }
 
 /* ---------- Componentes ---------- */
+
+// statusManual (ajuste à mão) tem prioridade sobre o status lido pelo robô.
+function statusOf(r) {
+  return r.statusManual || r.statusInscricao;
+}
 
 // verificadoEm: "YYYY-MM-DD" (verificação manual) ou "YYYY-MM-DDTHH:MM:SSZ" (script automático).
 function parseStamp(s) {
@@ -189,16 +194,25 @@ function checkedAgo(r) {
 
 // Badge de estado. Com statusMotivo, é um botão que mostra a frase encontrada na página.
 function badge(r) {
-  const status = r.statusInscricao;
+  const status = statusOf(r);
   const s = STATUS[status];
-  const inner = s ? `<span aria-hidden="true">${s.emoji}</span>${s.label}` : 'Inscrições: ver site';
+  let label = s && s.label;
+  if (status === 'nao_verificado' && r.falhaDesde) {
+    const days = daysBetween(parseDate(r.falhaDesde), today());
+    label = `Não verificado há ${days} ${days === 1 ? 'dia' : 'dias'}`;
+  }
+  const inner = s ? `<span aria-hidden="true">${s.emoji}</span>${label}` : 'Inscrições: ver site';
   const cls = `badge ${s ? status : 'unknown'}`;
   if (!r.statusMotivo) return `<span class="${cls}">${inner}</span>`;
   return `<button type="button" class="${cls}" data-motivo aria-expanded="false" title="Ver o que foi encontrado na página">${inner} <span class="info" aria-hidden="true">ⓘ</span></button>`;
 }
 
 function statusDetails(r) {
-  const ago = checkedAgo(r);
+  let ago = r.statusManual ? 'definido manualmente' : checkedAgo(r);
+  // Falha recente (menos de 3 dias): mostra o último status confirmado e avisa da falha.
+  if (!r.statusManual && r.falhaDesde && r.statusInscricao !== 'nao_verificado') {
+    ago = `${ago ? `${ago} · ` : ''}última tentativa falhou`;
+  }
   return `
     ${ago ? `<p class="checked">${esc(ago)}</p>` : ''}
     ${r.statusMotivo ? `<p class="motivo" hidden>“${esc(r.statusMotivo)}”</p>` : ''}`;
@@ -263,7 +277,8 @@ function pastCard(r) {
   }
   return `
     <article class="card past">
-      ${r.serie ? `<div class="card-top">${serieTag(r)}</div>` : ''}
+      ${statusOf(r) || r.serie ? `<div class="card-top">${statusOf(r) ? badge(r) : ''}${serieTag(r)}</div>` : ''}
+      ${r.statusMotivo ? `<p class="motivo" hidden>“${esc(r.statusMotivo)}”</p>` : ''}
       <h2>${esc(r.nome)}</h2>
       ${metaLine(r)}
       ${result}

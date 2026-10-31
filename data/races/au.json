@@ -8,12 +8,14 @@
     "data": "2026-11-22",
     "dataConfirmada": true,
     "distancia": "Média distância, olímpico, sprint e supersprint",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
     "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-canberra/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   },
   {
     "id": "t100-gold-coast-2027",
@@ -41,11 +43,13 @@
     "data": "2027-08-29",
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": null,
+    "statusMotivo": null,
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.worldmarathonmajors.com/races",
     "urlInscricao": "https://www.worldmarathonmajors.com/races",
     "fonte": "https://www.worldmarathonmajors.com/races",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]

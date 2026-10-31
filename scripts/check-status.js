@@ -7,13 +7,16 @@
  * Abre a página com o Chromium do Playwright (para sites que dependem de JavaScript),
  * procura palavras-chave em PT, ES, EN, FR, IT e DE e grava em cada prova:
  *   statusInscricao, statusMotivo (frase encontrada, máx. 100 caracteres), verificadoEm.
- * Erro, timeout, captcha, robots.txt ou página ambígua → "nao_verificado" (nunca um palpite).
+ * Erro, timeout, captcha, robots.txt ou página ambígua → a verificação falhou: mantém-se o último
+ * status confirmado, e só ao fim de 3 dias seguidos de falha a prova passa a "nao_verificado".
+ * Com "statusManual" preenchido, o robô não altera o status dessa prova.
  *
  * Uso:
  *   node scripts/check-status.js              # verifica tudo e grava
  *   node scripts/check-status.js --dry-run    # só mostra o resultado
  *   node scripts/check-status.js --pais=pt,es # só alguns países
  *   node scripts/check-status.js --id=ironman-703-cascais --verbose   # uma prova, com detalhe
+ *   node scripts/check-status.js --diagnostico  # só as não verificadas: URL, HTTP, motivo e trecho (não grava)
  *
  * Regra de edições: quando a data de uma prova já passou, ela fica no Histórico e, se ainda não
  * existir, é criado o registo da próxima edição (data null = "Próxima edição a anunciar").
@@ -33,14 +36,18 @@ const RACES_DIR = path.join(ROOT, 'data', 'races');
 const LOG_FILE = path.join(ROOT, 'data', 'status-log.json');
 
 const DELAY_MS = 3000;      // no máximo 1 pedido a cada 3 segundos
-const TIMEOUT_MS = 20000;   // tempo máximo por página
+const TIMEOUT_MS = 45000;   // tempo máximo por página (com uma nova tentativa em caso de timeout)
+const FAIL_DAYS = 3;        // dias seguidos de falha até mostrar "não verificado"
 const MOTIVO_MAX = 100;
 const REPO = process.env.GITHUB_REPOSITORY || 'max-provas';
 const USER_AGENT = `MaxProvasStatusBot/1.0 (+https://github.com/${REPO}; verificação diária de inscrições)`;
+// Só usado quando o site bloqueia o user-agent identificado (403/429/captcha).
+const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 const NTFY_TOPIC = process.env.NTFY_TOPIC || '';
 
 const args = process.argv.slice(2);
-const DRY_RUN = args.includes('--dry-run');
+const DIAGNOSTICO = args.includes('--diagnostico');
+const DRY_RUN = args.includes('--dry-run') || DIAGNOSTICO;
 const ONLY = (args.find((a) => a.startsWith('--pais=')) || '').slice(7).split(',').filter(Boolean);
 const ONLY_IDS = (args.find((a) => a.startsWith('--id=')) || '').slice(5).split(',').filter(Boolean);
 const VERBOSE = args.includes('--verbose');
@@ -189,70 +196,121 @@ async function robotsRules(origin, throttle) {
 
 /* ---------- Verificação de uma página ---------- */
 
-async function checkUrl(context, url, throttle) {
-  let parsed;
-  try {
-    parsed = new URL(url);
-  } catch {
-    return { status: 'nao_verificado', motivo: 'URL inválido' };
-  }
-  const rules = await robotsRules(parsed.origin, throttle);
-  if (!robotsAllows(rules, parsed.pathname + parsed.search)) {
-    return { status: 'nao_verificado', motivo: 'Página excluída pelo robots.txt do site' };
-  }
+// Trecho útil do texto da página para o diagnóstico: à volta da primeira menção a inscrições.
+function excerpt(text) {
+  const flat = text.replace(/\s+/g, ' ').trim();
+  const m = /inscri|regist|entr(y|ies)|anmeld|iscri|ticket|bib|dorsal/i.exec(flat);
+  const from = m ? Math.max(0, m.index - 40) : 0;
+  return clip(flat.slice(from, from + 160), 160);
+}
 
+// Abre a página e lê o texto e os botões. Devolve também o código HTTP e o URL final.
+async function loadPage(context, url, throttle) {
   const page = await context.newPage();
   const started = Date.now();
   try {
     await throttle();
     const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
-    if (!res) return { status: 'nao_verificado', motivo: 'Sem resposta do servidor' };
-    if (res.status() >= 400) return { status: 'nao_verificado', motivo: `Erro HTTP ${res.status()}` };
-    // Espera o carregamento completo (JavaScript e pedidos da página), sem passar dos 20 s no total.
+    const http = res ? res.status() : null;
+    if (!res || http >= 400) return { http, finalUrl: page.url(), text: '', labels: [] };
+    // Espera o carregamento completo (JavaScript e pedidos da página), dentro do limite.
     const left = TIMEOUT_MS - (Date.now() - started);
     if (left > 0) await page.waitForLoadState('networkidle', { timeout: left }).catch(() => {});
-    const read = async () => {
-      const { text, labels } = await page.evaluate(() => {
-        const sel = 'button, a, [role="button"], input[type="submit"], input[type="button"], '
-          + '[class*="badge" i], [class*="status" i], [class*="pill" i], [class*="tag" i], [class*="label" i]';
-        const labels = new Set();
-        for (const el of document.querySelectorAll(sel)) {
-          for (const t of [el.innerText, el.value, el.getAttribute('aria-label'), el.getAttribute('title')]) {
-            const v = (t || '').replace(/\s+/g, ' ').trim();
-            if (v && v.length <= 60) labels.add(v);
-          }
+    const read = () => page.evaluate(() => {
+      const sel = 'button, a, [role="button"], input[type="submit"], input[type="button"], '
+        + '[class*="badge" i], [class*="status" i], [class*="pill" i], [class*="tag" i], [class*="label" i]';
+      const labels = new Set();
+      for (const el of document.querySelectorAll(sel)) {
+        for (const t of [el.innerText, el.value, el.getAttribute('aria-label'), el.getAttribute('title')]) {
+          const v = (t || '').replace(/\s+/g, ' ').trim();
+          if (v && v.length <= 60) labels.add(v);
         }
-        return { text: document.body ? document.body.innerText : '', labels: [...labels] };
-      });
-      const blocked = classify(text || '');
-      if (blocked.motivo.startsWith('Página de verificação')) return { ...blocked, labels, text };
-      return { ...(classifyButtons(labels) || classify(text || '')), labels, text };
-    };
-    let result = await read();
+      }
+      return { text: document.body ? document.body.innerText : '', labels: [...labels] };
+    });
+    let content = await read();
     // Páginas que só escrevem o conteúdo depois de carregar: espera um pouco e volta a ler.
     const remaining = TIMEOUT_MS - (Date.now() - started);
-    if (result.motivo.startsWith('Nenhuma palavra-chave') && remaining > 1000) {
-      await sleep(Math.min(remaining - 500, 4000));
-      result = await read();
+    if (!classifyButtons(content.labels) && classify(content.text).motivo.startsWith('Nenhuma palavra-chave') && remaining > 1000) {
+      await sleep(Math.min(remaining - 500, 5000));
+      content = await read();
     }
-    const { labels, text, ...out } = result;
-    if (VERBOSE) {
-      console.log(`  URL aberta: ${url}${page.url() !== url ? ` → ${page.url()}` : ''} (HTTP ${res.status()})`);
-      console.log(`  Botões/badges (${labels.length}): ${labels.slice(0, 15).map((l) => `“${l}”`).join(', ')}`);
-      console.log(`  Texto (início): ${clip(text.replace(/\s+/g, ' ').trim(), 300)}`);
-    }
-    return out;
-  } catch (err) {
-    const msg = String(err.message || err).split('\n')[0];
-    if (VERBOSE) console.log(`  URL aberta: ${url} — falhou: ${msg}`);
-    return {
-      status: 'nao_verificado',
-      motivo: clip(/timeout/i.test(msg) ? 'Timeout (20 s)' : `Erro: ${msg}`),
-      redeFalhou: /net::ERR_(TUNNEL|PROXY|NAME_NOT_RESOLVED|INTERNET_DISCONNECTED|NETWORK|ADDRESS_UNREACHABLE)/.test(msg)
-    };
+    return { http, finalUrl: page.url(), ...content };
   } finally {
     await page.close().catch(() => {});
   }
+}
+
+function categorize(result) {
+  const m = result.motivo;
+  if (result.status !== 'nao_verificado') return 'ok';
+  if (/robots\.txt/.test(m)) return 'robots.txt';
+  if (/^Timeout/.test(m)) return 'timeout';
+  if (/captcha/i.test(m)) return 'captcha';
+  if (/HTTP (403|429)/.test(m)) return 'bloqueio';
+  if (/HTTP 404/.test(m)) return 'link errado (404)';
+  if (/HTTP/.test(m)) return 'erro HTTP';
+  if (/^Ambíguo/.test(m)) return 'ambíguo';
+  if (/^Nenhuma palavra-chave/.test(m)) return 'sem palavra-chave';
+  return 'erro';
+}
+
+// Verifica uma página: até 45 s; em timeout tenta mais uma vez; se o site bloquear o
+// user-agent identificado (403/429/captcha), tenta uma vez como navegador normal.
+async function checkUrl(contexts, url, throttle) {
+  const ctxs = contexts.bot ? contexts : { bot: contexts, browser: contexts };
+  let parsed;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return { status: 'nao_verificado', motivo: 'URL inválido', categoria: 'erro', http: null, trecho: '' };
+  }
+  const rules = await robotsRules(parsed.origin, throttle);
+  if (!robotsAllows(rules, parsed.pathname + parsed.search)) {
+    return { status: 'nao_verificado', motivo: 'Página excluída pelo robots.txt do site', categoria: 'robots.txt', http: null, trecho: '' };
+  }
+
+  const attempt = async (context) => {
+    try {
+      const page = await loadPage(context, url, throttle);
+      if (page.http === null) return { status: 'nao_verificado', motivo: 'Sem resposta do servidor', ...page };
+      if (page.http >= 400) return { status: 'nao_verificado', motivo: `Erro HTTP ${page.http}`, ...page };
+      const blocked = classify(page.text);
+      const result = blocked.motivo.startsWith('Página de verificação') ? blocked
+        : (classifyButtons(page.labels) || blocked);
+      return { ...result, ...page };
+    } catch (err) {
+      const msg = String(err.message || err).split('\n')[0];
+      return {
+        status: 'nao_verificado',
+        motivo: clip(/timeout/i.test(msg) ? `Timeout (${TIMEOUT_MS / 1000} s)` : `Erro: ${msg}`),
+        http: null, finalUrl: url, text: '', labels: [],
+        redeFalhou: /net::ERR_(TUNNEL|PROXY|NAME_NOT_RESOLVED|INTERNET_DISCONNECTED|NETWORK|ADDRESS_UNREACHABLE)/.test(msg)
+      };
+    }
+  };
+
+  let r = await attempt(ctxs.bot);
+  let tentativa = 'bot';
+  if (categorize(r) === 'timeout') {
+    r = await attempt(ctxs.bot);
+    tentativa = 'bot (2.ª tentativa)';
+  }
+  if (['bloqueio', 'captcha'].includes(categorize(r))) {
+    r = await attempt(ctxs.browser);
+    tentativa = 'navegador';
+  }
+  const { text, labels, ...out } = r;
+  out.categoria = categorize(r);
+  out.trecho = excerpt(text || '');
+  out.tentativa = tentativa;
+  if (VERBOSE) {
+    console.log(`  URL: ${url}${out.finalUrl && out.finalUrl !== url ? ` → ${out.finalUrl}` : ''} (HTTP ${out.http ?? '—'}, ${tentativa})`);
+    console.log(`  Botões/badges (${labels.length}): ${labels.slice(0, 15).map((l) => `“${l}”`).join(', ')}`);
+    console.log(`  Trecho: ${out.trecho}`);
+    console.log(`  Texto (até 1500 caracteres): ${clip((text || '').replace(/\s+/g, ' ').trim(), 1500)}`);
+  }
+  return out;
 }
 
 /* ---------- Dados ---------- */
@@ -303,7 +361,10 @@ function matchIronman(links, r) {
 }
 
 async function findIronmanEventUrl(context, r, throttle) {
-  return matchIronman(await ironmanCalendar(context, throttle), r);
+  const links = await ironmanCalendar(context, throttle);
+  const found = matchIronman(links, r);
+  console.log(`  Calendário IRONMAN (${IRONMAN_CALENDAR}): ${links.length} links lidos → ${found || 'nenhum candidato único'}`);
+  return found;
 }
 
 // Página a verificar. Nas provas IRONMAN, a página oficial do evento em ironman.com tem prioridade;
@@ -384,6 +445,24 @@ async function notify(race, status) {
   }
 }
 
+function daysBetween(a, b) {
+  return Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86400000);
+}
+
+// Tabela das verificações que falharam: no terminal, no resumo do GitHub Actions e em linhas DIAG (JSON).
+function printDiagnostics(rows) {
+  if (!rows.length) return;
+  const cell = (v) => String(v ?? '—').replace(/\|/g, '/').replace(/\s+/g, ' ');
+  const lines = ['| País | Prova | URL usada | HTTP | Motivo | Detalhe | Trecho da página |', '|---|---|---|---|---|---|---|'];
+  for (const d of rows) {
+    lines.push(`| ${d.pais} | ${cell(d.nome)} | ${cell(d.url)} | ${cell(d.http)} | ${cell(d.categoria)} | ${cell(d.motivo)} | ${cell(d.trecho)} |`);
+    console.log(`DIAG\t${JSON.stringify({ pais: d.pais, nome: d.nome, url: d.url, finalUrl: d.finalUrl, http: d.http, categoria: d.categoria, motivo: d.motivo, tentativa: d.tentativa, trecho: d.trecho })}`);
+  }
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Verificações que falharam (${rows.length})\n\n${lines.join('\n')}\n`);
+  }
+}
+
 async function main() {
   const today = todayIn('Europe/Madrid');
   const nowIso = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
@@ -392,10 +471,15 @@ async function main() {
 
   const proxy = process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined;
   const browser = await chromium.launch({ proxy });
-  const context = await browser.newContext({ userAgent: USER_AGENT, locale: 'pt-PT' });
-  // Só o HTML/JS: imagens, vídeos e fontes não são precisos e poupam o servidor.
-  await context.route('**/*', (route) =>
-    ['image', 'media', 'font'].includes(route.request().resourceType()) ? route.abort() : route.continue());
+  const newContext = async (userAgent) => {
+    const ctx = await browser.newContext({ userAgent, locale: 'pt-PT', viewport: { width: 1280, height: 900 } });
+    // Só o HTML/JS: imagens, vídeos e fontes não são precisos e poupam o servidor.
+    await ctx.route('**/*', (route) =>
+      ['image', 'media', 'font'].includes(route.request().resourceType()) ? route.abort() : route.continue());
+    return ctx;
+  };
+  const contexts = { bot: await newContext(USER_AGENT), browser: await newContext(BROWSER_UA) };
+  const context = contexts.bot;
 
   let last = 0;
   const throttle = async () => {
@@ -406,7 +490,8 @@ async function main() {
 
   const byUrl = new Map(); // páginas partilhadas por várias provas são abertas uma vez
   const changes = [];
-  const counts = { aberta: 0, aguardando: 0, esgotada: 0, nao_verificado: 0 };
+  const counts = { aberta: 0, aguardando: 0, esgotada: 0, nao_verificado: 0, sem_status: 0, manual: 0 };
+  const diag = []; // verificações que falharam (diagnóstico)
   const alerts = [];
   const pending = []; // ficheiros a gravar no fim (só se houve rede)
   let networkFailures = 0;
@@ -420,29 +505,46 @@ async function main() {
     for (const r of races) {
       if (ONLY_IDS.length && !ONLY_IDS.includes(r.id)) continue;
       if (r.data && r.data < today) continue; // prova já passou: fica no Histórico
+      if (DIAGNOSTICO && r.statusInscricao !== 'nao_verificado' && !r.falhaDesde) continue;
+      if (r.statusManual) {
+        counts.manual++;
+        console.log(`${pais}  ${'✋ Manual: ' + r.statusManual}`.padEnd(28) + ` ${r.nome} — statusManual tem prioridade, não verificado`);
+        continue;
+      }
       if (!r.urlInscricao && !/^IRONMAN/i.test(r.serie || '')) continue;
       const url = await urlToCheck(context, r, throttle, changes, pais);
       if (!url) continue;
 
       if (VERBOSE) console.log(`\n${pais}  ${r.nome} (${r.id})`);
-      if (!byUrl.has(url)) byUrl.set(url, await checkUrl(context, url, throttle));
-      const { status, motivo, redeFalhou } = byUrl.get(url);
+      if (!byUrl.has(url)) byUrl.set(url, await checkUrl(contexts, url, throttle));
+      const res = byUrl.get(url);
+      const { status, motivo, redeFalhou } = res;
       if (redeFalhou) networkFailures++;
-      counts[status]++;
-      console.log(`${pais}  ${STATUS_LABEL[status].padEnd(24)} ${r.nome} — ${motivo}`);
-
+      if (status === 'nao_verificado') diag.push({ pais, nome: r.nome, url, ...res });
       const before = r.statusInscricao ?? null;
-      if (before !== status) changes.push({ id: r.id, pais, prova: r.nome, de: before, para: status, motivo });
 
       if (status !== 'nao_verificado') {
         // Compara com o último estado lido de facto, para não alertar por falhas pontuais do site.
         const baseline = r.ultimoStatusVerificado ?? (before !== 'nao_verificado' ? before : null);
         if (r.favorita && baseline !== status) alerts.push([r, status]);
         r.ultimoStatusVerificado = status;
+        r.statusInscricao = status;
+        r.statusMotivo = motivo;
+        r.verificadoEm = nowIso;
+        delete r.falhaDesde;
+        delete r.falhaMotivo;
+      } else {
+        // Falhou: mantém o último status confirmado; só ao fim de 3 dias seguidos mostra "não verificado".
+        r.falhaDesde = r.falhaDesde || today;
+        r.falhaMotivo = motivo;
+        const failingDays = daysBetween(r.falhaDesde, today) + 1;
+        const kept = r.ultimoStatusVerificado ?? (before !== 'nao_verificado' ? before : null);
+        r.statusInscricao = failingDays >= FAIL_DAYS ? 'nao_verificado' : kept;
       }
-      r.statusInscricao = status;
-      r.statusMotivo = motivo;
-      r.verificadoEm = nowIso;
+      const now = r.statusInscricao ?? null;
+      counts[now ?? 'sem_status']++;
+      console.log(`${pais}  ${(now ? STATUS_LABEL[now] : '— sem status').padEnd(24)} ${r.nome} — ${status === 'nao_verificado' ? `falhou (${res.categoria}): ` : ''}${motivo}`);
+      if (before !== now) changes.push({ id: r.id, pais, prova: r.nome, de: before, para: now, motivo });
       touched = true;
     }
 
@@ -451,7 +553,7 @@ async function main() {
   await browser.close();
 
   // Sem rede nenhuma (ex.: firewall, falha do runner): gravar "não verificado" em tudo seria um palpite.
-  const checked = Object.values(counts).reduce((a, b) => a + b, 0);
+  const checked = Object.entries(counts).filter(([k]) => k !== 'manual').reduce((a, [, b]) => a + b, 0);
   const noNetwork = checked > 0 && networkFailures === checked;
   if (noNetwork) {
     console.warn(`\n⚠️  Nenhuma página respondeu (${networkFailures} falhas de rede). Nenhum status foi alterado.`);
@@ -481,8 +583,12 @@ async function main() {
     }
   }
 
-  console.log('\nResumo:');
-  for (const [s, n] of Object.entries(counts)) console.log(`  ${STATUS_LABEL[s].padEnd(24)} ${n}`);
+  printDiagnostics(diag);
+
+  console.log('\nResumo (status após esta execução):');
+  const label = { ...STATUS_LABEL, sem_status: '— Sem status', manual: '✋ statusManual' };
+  for (const [s, n] of Object.entries(counts)) console.log(`  ${label[s].padEnd(24)} ${n}`);
+  console.log(`  Verificações que falharam hoje: ${diag.length}`);
   console.log(`  Páginas abertas: ${byUrl.size} · mudanças: ${changes.length} · alertas: ${alerts.length}${NTFY_TOPIC ? '' : ' (sem NTFY_TOPIC, não enviados)'}`);
 
   if (process.env.GITHUB_OUTPUT) {

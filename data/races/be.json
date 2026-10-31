@@ -8,11 +8,13 @@
     "data": "2027-04-03",
     "dataConfirmada": true,
     "distancia": "80, 130, 160 ou 240 km",
-    "statusInscricao": "nao_verificado",
-    "statusMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.rondevanvlaanderen.be/en",
     "urlInscricao": "https://www.rondevanvlaanderen.be/en",
     "fonte": "https://www.rondevanvlaanderen.be/en/news/registrations-for-we-ride-flanders-2027-are-open",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-30"
   }
 ]
