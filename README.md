@@ -78,6 +78,8 @@ Cada ficheiro `data/races/{pais}.json` é uma lista (`[...]`) de provas:
 | `dataConfirmada` | `true` / `false` | `false` mostra a etiqueta **"data prevista"**. |
 | `distancia` | texto ou `null` | Texto livre. |
 | `statusInscricao` | `"aberta"` \| `"aguardando"` \| `"esgotada"` \| `"nao_verificado"` \| `null` | 🟢 / 🟡 / 🔴 / ⚪ / "ver site". Atualizado pelo robô diário. |
+| `statusManual` | `"aberta"` \| `"aguardando"` \| `"esgotada"` (opcional) | **Ajuste manual.** Quando preenchido tem prioridade sobre `statusInscricao` e o robô não verifica nem altera essa prova. Apague o campo para voltar ao automático. |
+| `falhaDesde` / `falhaMotivo` | data / texto | Escritos pelo robô quando a verificação falha; apagados quando volta a funcionar. |
 | `statusMotivo` | texto ou `null` | Frase encontrada na página (máx. 100 caracteres). Aparece ao tocar no status. Escrito pelo robô. |
 | `ultimoStatusVerificado` | texto | Último estado lido com sucesso; serve para não alertar por falhas pontuais. Escrito pelo robô. |
 | `favorita` | `true` (opcional) | Mostra ⭐, entra no filtro "Favoritas" e gera alertas no telemóvel quando o status muda. |
@@ -115,7 +117,12 @@ O script [`scripts/check-status.js`](scripts/check-status.js) (Node + Playwright
 | 🟡 `aguardando` | coming soon, em breve, próximamente, opens on |
 | ⚪ `nao_verificado` | erro, timeout, captcha, bloqueio por robots.txt, nenhuma palavra-chave ou palavras de mais de um estado |
 
-Espera o carregamento completo da página (`networkidle`, até 20 s) e lê **primeiro os botões e badges** (ex.: "Sold Out", "Waitlist", "Registration Closed", "Register"); só se não forem conclusivos usa o texto da página. Nas provas **IRONMAN**, a página oficial do evento em ironman.com é a fonte prioritária: se a prova ainda não tiver esse link, o script procura-o no calendário oficial (`ironman.com/races`) e grava-o. O script nunca escolhe um estado quando a página é ambígua, e **se nenhuma página responder (sem rede) não grava nenhum status**. É gentil com os sites: no máximo 1 pedido a cada 3 segundos, user-agent `MaxProvasStatusBot/1.0`, timeout de 20 s, respeita o `robots.txt`, não descarrega imagens nem vídeos, e páginas partilhadas por várias provas são abertas uma única vez. As mudanças do dia ficam em `data/status-log.json` (prova, de → para).
+Espera o carregamento completo da página (`networkidle`, até 20 s) e lê **primeiro os botões e badges** (ex.: "Sold Out", "Waitlist", "Registration Closed", "Register"); só se não forem conclusivos usa o texto da página. Nas provas **IRONMAN**, a página oficial do evento em ironman.com é a fonte prioritária: se a prova ainda não tiver esse link, o script procura-o no calendário oficial (`ironman.com/races`) e grava-o. O script nunca escolhe um estado quando a página é ambígua, e **se nenhuma página responder (sem rede) não grava nenhum status**.
+
+- **Timeout**: 45 s por página, com uma segunda tentativa.
+- **Bloqueio (403/429/captcha)**: nova tentativa com user-agent de navegador real e carregamento completo.
+- **Não perde informação**: se a verificação falhar, a prova mantém o último status confirmado (o card diz "última tentativa falhou"); só ao fim de **3 dias seguidos** de falha passa a **⚪ Não verificado há X dias**.
+- **Diagnóstico**: `node scripts/check-status.js --diagnostico` (ou **Run workflow → modo: diagnostico**) lista só as provas com falha: URL usada, código HTTP, motivo (timeout, bloqueio, captcha, link errado, sem palavra-chave…) e um trecho da página. No GitHub, a tabela aparece no resumo da execução. É gentil com os sites: no máximo 1 pedido a cada 3 segundos, user-agent `MaxProvasStatusBot/1.0`, timeout de 20 s, respeita o `robots.txt`, não descarrega imagens nem vídeos, e páginas partilhadas por várias provas são abertas uma única vez. As mudanças do dia ficam em `data/status-log.json` (prova, de → para).
 
 ```bash
 npm install && npx playwright install chromium
