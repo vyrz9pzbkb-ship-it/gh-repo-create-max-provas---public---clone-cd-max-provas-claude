@@ -377,6 +377,46 @@ async function findIronmanEventUrl(context, r, throttle) {
   return found;
 }
 
+// Sem página própria: lê o card da prova no calendário oficial filtrado pelo país
+// (ex.: https://www.ironman.com/races?facet%5B0%5D=country%3APT) e classifica só esse bloco de texto.
+async function checkIronmanCalendar(context, r, pais, throttle) {
+  const url = `${IRONMAN_CALENDAR}?facet%5B0%5D=country%3A${pais.toUpperCase()}`;
+  const page = await context.newPage();
+  try {
+    await throttle();
+    const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+    const http = res ? res.status() : null;
+    if (!res || http >= 400) return { status: 'nao_verificado', motivo: `Erro HTTP ${http}`, http, url, categoria: 'erro HTTP', trecho: '' };
+    await page.waitForLoadState('networkidle', { timeout: TIMEOUT_MS }).catch(() => {});
+    const text = await page.evaluate(() => (document.body ? document.body.innerText : ''));
+    const is703 = /70\.3/.test(r.serie || r.nome);
+    const place = normalize(r.local || '').split(/[^a-z]+/).find((w) => w.length > 3) || '';
+    // Bloco do card: linhas à volta da menção ao local, do tipo certo (70.3 ou full).
+    const lines = text.split('\n').map((l) => l.trim()).filter(Boolean);
+    let block = '';
+    for (let i = 0; i < lines.length; i++) {
+      const l = normalize(lines[i]);
+      if (place && l.includes(place) && (/70\.3/.test(l) === is703)) {
+        block = lines.slice(Math.max(0, i - 3), i + 6).join('\n');
+        break;
+      }
+    }
+    if (VERBOSE) {
+      console.log(`  URL: ${url} (HTTP ${http}, calendário oficial)`);
+      console.log(`  Card encontrado: ${block ? block.replace(/\n/g, ' | ') : '(nenhum)'}`);
+      if (!block) console.log(`  Texto (até 1500 caracteres): ${clip(text.replace(/\s+/g, ' ').trim(), 1500)}`);
+    }
+    if (!block) return { status: 'nao_verificado', motivo: 'Prova não encontrada no calendário oficial', http, url, categoria: 'sem palavra-chave', trecho: excerpt(text) };
+    const result = classify(block);
+    return { ...result, motivo: result.status === 'nao_verificado' ? result.motivo : clip(`[calendário ironman.com] ${result.motivo}`), http, url, categoria: categorize(result), trecho: clip(block.replace(/\n/g, ' | '), 160) };
+  } catch (err) {
+    const msg = String(err.message || err).split('\n')[0];
+    return { status: 'nao_verificado', motivo: clip(/timeout/i.test(msg) ? `Timeout (${TIMEOUT_MS / 1000} s)` : `Erro: ${msg}`), http: null, url, categoria: 'erro', trecho: '' };
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
 // Página a verificar. Nas provas IRONMAN, a página oficial do evento em ironman.com tem prioridade;
 // se ainda não a temos, procura-a no calendário oficial.
 async function urlToCheck(context, r, throttle, changes, pais) {
@@ -526,11 +566,15 @@ async function main() {
       if (!url) continue;
 
       if (VERBOSE) console.log(`\n${pais}  ${r.nome} (${r.id})`);
-      if (!byUrl.has(url)) byUrl.set(url, await checkUrl(contexts, url, throttle));
-      const res = byUrl.get(url);
+      const ironmanSemPagina = /^IRONMAN/i.test(r.serie || '') && !isIronmanHost(url);
+      const key = ironmanSemPagina ? `ironman-cal:${pais}:${r.id}` : url;
+      if (!byUrl.has(key)) {
+        byUrl.set(key, ironmanSemPagina ? await checkIronmanCalendar(contexts.browser, r, pais, throttle) : await checkUrl(contexts, url, throttle));
+      }
+      const res = byUrl.get(key);
       const { status, motivo, redeFalhou } = res;
       if (redeFalhou) networkFailures++;
-      if (status === 'nao_verificado') diag.push({ pais, nome: r.nome, url, ...res });
+      if (status === 'nao_verificado') diag.push({ pais, nome: r.nome, url: res.url || url, ...res });
       const before = r.statusInscricao ?? null;
 
       if (status !== 'nao_verificado') {
