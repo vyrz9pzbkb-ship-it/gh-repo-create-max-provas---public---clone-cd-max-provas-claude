@@ -366,9 +366,43 @@ function matchIronman(links, r) {
   return candidates.size === 1 ? [...candidates][0] : null;
 }
 
+// Formato dos links "SEE RACE DETAILS" do calendário (ex.: https://www.ironman.com/races/im703-turkiye):
+// a partir dele testa as páginas candidatas da prova. Só aceita se ironman.com responder 200
+// e o texto da página mencionar o local da prova — nunca um link adivinhado sem confirmação.
+async function probeIronmanEventPage(context, r, links, throttle) {
+  const sample = links.map((l) => l.href).find((h) => /ironman\.com\/races\/im(703)?-[a-z0-9-]+\/?$/i.test(h));
+  if (!sample) return null;
+  const base = sample.replace(/\/races\/.*$/, '/races/');
+  const prefix = /70\.3/.test(r.serie || r.nome) ? 'im703-' : 'im-';
+  const words = normalize(r.nome).replace(/ironman|70\.3/g, ' ').split(/[^a-z0-9]+/).filter(Boolean);
+  const place = normalize(r.local || '').split(/[^a-z]+/).find((w) => w.length > 3) || words[words.length - 1];
+  const slugs = [...new Set([words.join('-'), place, words[0]].filter(Boolean))];
+  for (const slug of slugs) {
+    const url = `${base}${prefix}${slug}`;
+    const page = await context.newPage();
+    try {
+      await throttle();
+      const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+      const ok = res && res.status() === 200;
+      const text = ok ? await page.evaluate(() => (document.body ? document.body.innerText : '')) : '';
+      if (VERBOSE) console.log(`    candidata: ${url} → HTTP ${res ? res.status() : '—'}`);
+      if (ok && normalize(text).includes(place)) return url;
+    } catch (err) {
+      if (VERBOSE) console.log(`    candidata: ${url} → ${String(err.message || err).split('\n')[0]}`);
+    } finally {
+      await page.close().catch(() => {});
+    }
+  }
+  return null;
+}
+
 async function findIronmanEventUrl(context, r, throttle) {
   const links = await ironmanCalendar(context, throttle);
-  const found = matchIronman(links, r);
+  if (VERBOSE) {
+    const races = links.map((l) => l.href).filter((h) => /\/races\/[^?#]+/.test(h));
+    console.log(`    exemplos de links de provas: ${[...new Set(races)].slice(0, 6).join(' , ') || '(nenhum)'}`);
+  }
+  const found = matchIronman(links, r) || await probeIronmanEventPage(context, r, links, throttle);
   console.log(`  Calendário IRONMAN (${IRONMAN_CALENDAR}): ${links.length} links lidos → ${found || 'nenhum candidato único'}`);
   if (VERBOSE) {
     const words = normalize(`${r.nome} ${r.local || ''}`).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && w !== 'ironman');
