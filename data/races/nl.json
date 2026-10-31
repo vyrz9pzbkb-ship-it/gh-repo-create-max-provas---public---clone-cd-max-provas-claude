@@ -8,14 +8,13 @@
     "data": "2027-03-14",
     "dataConfirmada": false,
     "distancia": "21,1 km",
-    "statusInscricao": null,
-    "statusMotivo": null,
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] REGISTER",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://nnmarathonrotterdam.nl/en/register/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/register/",
     "fonte": "https://nnmarathonrotterdam.nl/en/register/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "marathon-rotterdam-2027",
@@ -27,12 +26,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "aberta",
-    "statusMotivo": "e to secure a race entry. Pre-registration is open until November 3 at 10:00 AM!",
+    "statusMotivo": "[botão] REGISTER",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://nnmarathonrotterdam.nl/en/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/",
     "fonte": "https://nnmarathonrotterdam.nl/nn-marathon-rotterdam-2027-zet-in-op-meer-rotterdammers-en-opent-gratis-pre-registratie/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "challenge-almere-amsterdam-2027",
@@ -43,14 +42,13 @@
     "data": "2027-09-11",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
-    "statusMotivo": null,
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] REGISTER",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "marathon-amsterdam-2027",

@@ -32,7 +32,7 @@
     "urlOficial": "https://www.philadelphiamarathon.com/races/marathon/",
     "urlInscricao": "https://www.philadelphiamarathon.com/races/marathon/",
     "fonte": "https://www.philadelphiamarathon.com/2026-philadelphia-marathon-and-half-marathon-sell-out-in-record-time-2/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "honolulu-marathon-2026",
@@ -49,7 +49,7 @@
     "urlOficial": "https://www.honolulumarathon.org/",
     "urlInscricao": "https://www.honolulumarathon.org/",
     "fonte": "https://www.honolulumarathon.org/our-events/jal-honolulu-marathon",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "la-marathon-2027",
@@ -61,12 +61,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "aberta",
-    "statusMotivo": "REGISTER NOW",
+    "statusMotivo": "[botão] Register",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.lamarathon.com/",
     "urlInscricao": "https://www.lamarathon.com/",
     "fonte": "https://www.lamarathon.com/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "nyc-half-2027",
@@ -114,12 +114,12 @@
     "dataConfirmada": true,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida) · evento de 5 a 6/06",
     "statusInscricao": "aberta",
-    "statusMotivo": "REGISTER NOW",
+    "statusMotivo": "[botão] REGISTER NOW",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "chicago-marathon-2027",
@@ -130,14 +130,13 @@
     "data": "2027-10-10",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
-    "statusMotivo": null,
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "esgotada",
+    "statusMotivo": "The application window for the 2027 Bank of America Chicago Marathon is closed. Entries are availab…",
+    "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://www.chicagomarathon.com/",
     "urlInscricao": "https://www.chicagomarathon.com/",
     "fonte": "https://cdn.chicagomarathon.com/app/uploads/2026/09/14202638/091526_BACM-BAHM-BASS_2027-Event-Annmt-1.pdf",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "marine-corps-marathon-2027",
@@ -148,13 +147,12 @@
     "data": "2027-10-31",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
-    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Erro HTTP 404",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] REGISTER",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.marinemarathon.com/",
     "urlInscricao": "https://www.marinemarathon.com/",
     "fonte": "https://www.marinemarathon.com/event/marine-corps-marathon/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   }
 ]

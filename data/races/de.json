@@ -8,14 +8,13 @@
     "data": "2027-04-04",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": null,
-    "statusMotivo": null,
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] Anmelden",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.generali-berliner-halbmarathon.de/",
     "urlInscricao": "https://www.generali-berliner-halbmarathon.de/",
     "fonte": "https://www.generali-berliner-halbmarathon.de/en/registration/registration-information",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "marathon-hamburg-2027",
@@ -27,12 +26,12 @@
     "dataConfirmada": true,
     "distancia": "42,195 km",
     "statusInscricao": "esgotada",
-    "statusMotivo": "Haspa Marathon Hamburg 2027 komplett ausverkauft",
+    "statusMotivo": "[botão] Haspa Marathon Hamburg 2027 komplett ausverkauft",
     "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://haspa-marathon-hamburg.de/",
     "urlInscricao": "https://haspa-marathon-hamburg.de/",
     "fonte": "https://haspa-marathon-hamburg.de/haspa-marathon/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "challenge-roth-2027",
@@ -43,14 +42,13 @@
     "data": "2027-07-04",
     "dataConfirmada": true,
     "distancia": "Distância longa (3,8 km · 180 km · 42,2 km)",
-    "statusInscricao": null,
-    "statusMotivo": null,
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] SIGN UP",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "berlin-marathon-2027",

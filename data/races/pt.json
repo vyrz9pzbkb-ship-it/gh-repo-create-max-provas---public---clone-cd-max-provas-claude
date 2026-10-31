@@ -33,7 +33,7 @@
     "urlOficial": "https://www.discoveries-half-marathon.com/pt/home.html",
     "urlInscricao": "https://www.discoveries-half-marathon.com/pt/inscricoes.html",
     "fonte": "https://www.discoveries-half-marathon.com/pt/home.html",
-    "verificadoEm": "2026-10-31T08:28:21Z",
+    "verificadoEm": "2026-10-31T09:25:46Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -47,13 +47,13 @@
     "data": "2026-12-26",
     "dataConfirmada": true,
     "distancia": "10 km",
-    "statusInscricao": "aberta",
-    "statusMotivo": "INSCRIÇÕES ABERTAS",
-    "ultimoStatusVerificado": "aberta",
+    "statusInscricao": "esgotada",
+    "statusMotivo": "[botão] Esgotado",
+    "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://www.saosilvestredelisboa.com/site/?ln=pt",
     "urlInscricao": "https://www.saosilvestredelisboa.com/site/?local=registration",
     "fonte": "https://www.saosilvestredelisboa.com/site/?local=regulations",
-    "verificadoEm": "2026-10-31T08:28:21Z",
+    "verificadoEm": "2026-10-31T09:25:46Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -73,7 +73,7 @@
     "urlOficial": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "urlInscricao": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "fonte": "https://www.meiamaratonadecascais.pt/site/?ln=en",
-    "verificadoEm": "2026-10-31T08:28:21Z",
+    "verificadoEm": "2026-10-31T09:25:46Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -92,7 +92,9 @@
     "urlOficial": "https://maratonaclubedeportugal.com/",
     "urlInscricao": "https://maratonaclubedeportugal.com/",
     "fonte": "https://maratonaclubedeportugal.com/wp-content/uploads/REGULAMENTO_EDP_MEIA-_MARATONA_DE-LISBOA_2027_PT-.docx.pdf",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T08:28:21Z",
+    "falhaDesde": "2026-10-31",
+    "falhaMotivo": "Ambíguo (esgotada + aberta): “WAITING LIST RESULTADOS 2026” / “INSCREVA-SE AQUI!”"
   },
   {
     "id": "setubal-triathlon",
@@ -110,7 +112,7 @@
     "urlOficial": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "urlInscricao": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "fonte": "https://www.setubaltriathlon.pt/site/?ln=en",
-    "verificadoEm": "2026-10-31T08:28:21Z",
+    "verificadoEm": "2026-10-31T09:25:46Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -143,8 +145,8 @@
     "dataConfirmada": true,
     "distancia": "70.3 mi (1,9 km natação · 90 km ciclismo · 21,1 km corrida)",
     "statusInscricao": "esgotada",
-    "statusManual": "esgotada",
     "statusMotivo": "Edição de 17/10/2026 esgotada (indicado pelo utilizador)",
+    "statusManual": "esgotada",
     "urlOficial": "https://www.ironman.com/races/im703-cascais",
     "urlInscricao": null,
     "fonte": "https://www.facebook.com/IRONMANPortugal/videos/ironman-ironman-703-portugal-cascais-2026-have-officially-started-the-ironman-vi/29126556363698153/",
@@ -163,9 +165,9 @@
     "dataConfirmada": true,
     "distancia": "70.3 mi (1,9 km natação · 90 km ciclismo · 21,1 km corrida)",
     "statusInscricao": "esgotada",
-    "statusManual": "esgotada",
     "statusMotivo": "REGISTRATION SOLD OUT",
     "ultimoStatusVerificado": "esgotada",
+    "statusManual": "esgotada",
     "urlOficial": "https://www.ironman.com/races/im703-cascais",
     "urlInscricao": "https://www.ironman.com/races/im703-cascais",
     "fonte": "https://www.ironman.com/races/im703-cascais",
@@ -189,7 +191,7 @@
     "urlOficial": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "urlInscricao": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "fonte": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
-    "verificadoEm": "2026-10-31T08:28:21Z",
+    "verificadoEm": "2026-10-31T09:25:46Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -203,12 +205,12 @@
     "dataConfirmada": false,
     "distancia": "42,195 km",
     "statusInscricao": "aberta",
-    "statusMotivo": "REGISTER NOW",
+    "statusMotivo": "[botão] REGISTER NOW",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://maratonaclubedeportugal.com/en/",
     "urlInscricao": "https://maratonaclubedeportugal.com/en/",
     "fonte": "https://maratonaclubedeportugal.com/en/",
-    "verificadoEm": "2026-10-31T08:28:21Z"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   },
   {
     "id": "t100-sines",

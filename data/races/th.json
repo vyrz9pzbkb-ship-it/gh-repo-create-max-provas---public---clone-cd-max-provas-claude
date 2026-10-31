@@ -11,7 +11,7 @@
     "statusInscricao": null,
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Erro HTTP 404",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
     "urlInscricao": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
     "fonte": "https://oceanmanswim.com/temporadas/2026/",

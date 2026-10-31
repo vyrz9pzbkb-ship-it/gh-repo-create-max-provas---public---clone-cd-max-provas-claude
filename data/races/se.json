@@ -9,12 +9,11 @@
     "dataConfirmada": true,
     "distancia": "3 km (rio)",
     "statusInscricao": "aberta",
-    "statusMotivo": "Status da pesquisa manual de 30/10/2026",
-    "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
+    "statusMotivo": "[botão] ANMÄL DIG HÄR",
+    "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://vansbrosimningen.se/",
     "urlInscricao": "https://vansbrosimningen.se/",
     "fonte": "https://vansbrosimningen.se/vara-lopp/vansbrosimningen/",
-    "verificadoEm": "2026-10-30"
+    "verificadoEm": "2026-10-31T09:25:46Z"
   }
 ]

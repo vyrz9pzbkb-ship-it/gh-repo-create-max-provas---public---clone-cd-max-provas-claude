@@ -65,7 +65,7 @@
     "statusInscricao": null,
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Erro HTTP 403",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
     "urlInscricao": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
     "fonte": "https://www.maratondebuenosaires.com/medio-maraton-de-buenos-aires-21k.html",
