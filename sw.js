@@ -1,6 +1,6 @@
 // Service worker do Max Provas.
 // Ao alterar ficheiros da app (HTML/CSS/JS/ícones), incremente CACHE_VERSION.
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const CACHE = `max-provas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -10,6 +10,7 @@ const APP_SHELL = [
   'js/config.js',
   'js/app.js',
   'js/coach.js',
+  'js/chat.js',
   'data/countries.json',
   'data/races/pt.json',
   'manifest.json',

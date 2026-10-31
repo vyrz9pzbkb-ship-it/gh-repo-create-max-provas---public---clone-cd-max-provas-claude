@@ -14,6 +14,16 @@ const COACH_EXEMPLOS = [
 const USER_KEY = 'maxprovas.usuario';
 const MAX_CANDIDATOS = 30;
 
+const MODO_KEY = 'maxprovas.coachModo';
+let coachModo = readJSON(MODO_KEY, 'chat') === 'busca' ? 'busca' : 'chat';
+
+// Seletor dos dois modos da aba Coach: conversa (js/chat.js) e busca de provas (este ficheiro).
+function coachModeSwitch() {
+  const b = (modo, texto) =>
+    `<button type="button" role="tab" data-coach-modo="${modo}" aria-selected="${coachModo === modo}">${texto}</button>`;
+  return `<div class="seg" role="tablist" aria-label="Modo do Coach">${b('chat', '💬 Conversar')}${b('busca', '🔎 Buscar provas')}</div>`;
+}
+
 const coach = { pedido: '', estado: 'inicio', passo: '', erro: '', resumo: '', opcoes: [], restantes: null, origem: '' };
 
 function coachApi() {
@@ -218,6 +228,7 @@ function coachCard(o, i) {
 }
 
 function renderCoach(view, sub) {
+  if (coachModo === 'chat') return renderChat(view, sub);
   sub.textContent = 'Descreva a prova e o Coach procura por si';
   const configured = Boolean(coachApi());
   let resultados = '';
@@ -235,6 +246,7 @@ function renderCoach(view, sub) {
   }
 
   view.innerHTML = `
+    ${coachModeSwitch()}
     <form class="coach-box" data-coach-form>
       <label for="coach-pedido" class="coach-label">O que você procura?</label>
       <div class="coach-input">
@@ -258,6 +270,12 @@ document.addEventListener('submit', (e) => {
 });
 
 document.addEventListener('click', (e) => {
+  const modo = e.target.closest('[data-coach-modo]');
+  if (modo) {
+    coachModo = modo.dataset.coachModo;
+    writeJSON(MODO_KEY, coachModo);
+    return render();
+  }
   const exemplo = e.target.closest('[data-coach-exemplo]');
   if (exemplo && coach.estado !== 'carregando') return coachSearch(exemplo.dataset.coachExemplo);
   const fav = e.target.closest('[data-coach-fav]');

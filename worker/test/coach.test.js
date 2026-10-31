@@ -5,7 +5,7 @@ import { validarOpcoesWeb, recolherFontes, validarFiltros } from '../src/coach.j
 
 const ORIGEM = 'https://exemplo.github.io';
 const env = (kv = new Map()) => ({
-  ALLOWED_ORIGINS: ORIGEM,
+  ALLOWED_ORIGIN: ORIGEM,
   COACH_KV: { get: async (k) => kv.get(k) ?? null, put: async (k, v) => { kv.set(k, v); } }
 });
 const pedido = (body, user = 'u1') => new Request('https://w.dev/coach', {

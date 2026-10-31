@@ -7,7 +7,7 @@ HTML + CSS + JavaScript vanilla, sem build, pronto para o GitHub Pages.
 - **Filtro de país**: toque em 🌍 para escolher os países. Só aparecem países com provas, com bandeira e número de provas (ex.: 🇫🇷 França · 6). A app só descarrega os ficheiros dos países escolhidos, e a escolha fica guardada.
 - **Filtro de série** (opcional): faixa de chips por cima dos resultados.
 - **Temporada**: linha do tempo com as semanas entre provas; intervalos com menos de 4 semanas ficam a laranja.
-- **Coach**: escreva o que procura ("meia maratona plana na Europa em março") e o Coach encontra provas — primeiro na base do app, depois nos sites oficiais. Ver [Coach](#-coach-busca-em-linguagem-natural).
+- **Coach** (dois modos): **💬 Conversar** com um treinador de IA só de triathlon, natação, corrida e ciclismo; e **🔎 Buscar provas** em linguagem natural ("meia maratona plana na Europa em março"). Ver [Coach de IA](#-coach-de-ia-chat) e [Coach: busca](#-coach-busca-em-linguagem-natural).
 - **Histórico**: provas que já passaram, com o resultado (e se o objetivo foi cumprido).
 - Funciona offline (os países já consultados ficam em cache) e pode ser instalada na Tela de Início do iPhone.
 
@@ -141,6 +141,15 @@ O workflow [`.github/workflows/check-status.yml`](.github/workflows/check-status
 
 ---
 
+## 💬 Coach de IA (chat)
+
+Na aba **Coach → 💬 Conversar** há um chat com o **Coach Max Provas**, que responde **somente** sobre triathlon, natação, corrida e ciclismo (treinos, planilhas, ritmo/zonas, técnica, transições, equipamento, nutrição e hidratação, preparação para provas e recuperação). Perguntas fora do tema são recusadas educadamente; para dor ou lesão dá só orientação geral e recomenda médico/fisioterapeuta.
+
+- **Front** (`js/chat.js`): histórico, campo de texto, botão Enviar (Enter envia, Shift+Enter muda de linha), indicador "a escrever", erro amigável com **Tentar de novo**, **Limpar conversa**. O histórico fica no `localStorage` do telemóvel (`maxprovas.chat`).
+- **Worker** (`worker/src/chat.js`, rota `POST /chat`): proxy para `POST https://api.anthropic.com/v1/messages` com `anthropic-version: 2023-06-01`, modelo **`claude-haiku-5-5`**, `max_tokens: 1024`. O **system prompt** e a **chave** ficam só no Worker.
+- **Limites**: só as **últimas 10 mensagens** vão para a API; **20 mensagens por hora por IP** (Cloudflare KV); 2000 caracteres por mensagem.
+- **CORS**: só a origem em `ALLOWED_ORIGIN` (o seu GitHub Pages) pode chamar o Worker.
+
 ## 🧭 Coach: busca em linguagem natural
 
 Na aba **Coach**, o campo **"O que você procura?"** aceita pedidos livres, com exemplos clicáveis por baixo.
@@ -160,26 +169,40 @@ Regras que o Worker aplica (não dependem só do modelo):
 
 **Favoritas**: ficam guardadas no próprio telemóvel (`localStorage`). Uma prova da web favoritada é gravada também como prova local (`maxprovas.racesLocais`), marcada **"adicionada pela busca"**, e passa a aparecer em Provas/Temporada. (Os alertas ntfy do robô continuam a usar o campo `"favorita": true` dos ficheiros `data/races`, porque o robô corre no GitHub e não vê o telemóvel.)
 
-### Publicar o Worker (Cloudflare)
+### Publicar o Worker (Cloudflare) — chat e busca
 
-Precisa de uma conta Cloudflare (o plano grátis chega) e de uma chave da [Claude API](https://platform.claude.com/).
+O mesmo Worker serve o chat (`/chat`) e a busca (`/coach`). Precisa de uma conta Cloudflare (o plano grátis chega), de Node.js 20+ e de uma chave da [Claude API](https://platform.claude.com/).
 
-```bash
-cd worker
-npm install
-npx wrangler login
-npx wrangler kv namespace create COACH_KV     # copie o id para wrangler.toml
-npx wrangler secret put ANTHROPIC_API_KEY      # cole a chave (fica só na Cloudflare)
-npm test                                       # testes com cliente simulado (não gastam API)
-npx wrangler deploy
-```
+1. **Instalar o wrangler** (fica como dependência da pasta `worker/`):
+   ```bash
+   cd worker
+   npm install
+   ```
+2. **Login na Cloudflare** (abre o navegador):
+   ```bash
+   npx wrangler login
+   ```
+3. **Criar o KV** usado pelos limites de uso:
+   ```bash
+   npx wrangler kv namespace create COACH_KV
+   ```
+   Copie o `id` que aparecer para `worker/wrangler.toml`, em `[[kv_namespaces]]`, no lugar de `COLE_AQUI_O_ID_DO_KV`.
+4. **Origem autorizada**: em `worker/wrangler.toml`, confira `ALLOWED_ORIGIN` — o endereço do seu GitHub Pages, sem barra nem caminho no fim (ex.: `https://vyrz9pzbkb-ship-it.github.io`). Para testar localmente, acrescente `,http://localhost:8000`.
+5. **Guardar a chave da API como secret** (cole a chave quando pedir; ela fica só na Cloudflare):
+   ```bash
+   npx wrangler secret put ANTHROPIC_API_KEY
+   ```
+6. **Testar e publicar**:
+   ```bash
+   npm test              # testes com respostas simuladas (não gastam API)
+   npx wrangler deploy
+   ```
+   No fim aparece o endereço do Worker, ex.: `https://max-provas-coach.<a-sua-conta>.workers.dev`.
+7. **Colar a URL no app**: abra [`js/config.js`](js/config.js) e preencha `coachApi` com esse endereço (sem barra no fim). Faça commit e push; o GitHub Pages republica em ~1 minuto.
 
-Depois:
+Para ver erros em tempo real: `npx wrangler tail`.
 
-1. Em `worker/wrangler.toml`, `ALLOWED_ORIGINS` deve ter o endereço do site (já vem `https://vyrz9pzbkb-ship-it.github.io`; acrescente `http://localhost:8000` para testar localmente) e volte a fazer `npx wrangler deploy` se mudar.
-2. Em [`js/config.js`](js/config.js), preencha `coachApi` com o endereço que o deploy mostrou (ex.: `https://max-provas-coach.<conta>.workers.dev`) e faça commit.
-
-Cada busca custa chamadas à Claude API (2 pedidos; 3 quando vai à web, mais o custo da busca na web).
+Custos: cada mensagem do chat é 1 pedido ao Claude Haiku 5.5 (barato); cada busca de provas são 2 pedidos ao Claude Opus 5.5 (3 quando vai à web, mais o custo da busca na web).
 
 ---
 
@@ -225,9 +248,10 @@ python3 -m http.server 8000
 ├── .nojekyll
 ├── css/styles.css        # estilos (claro/escuro, safe-area)
 ├── js/app.js             # lógica: ecrãs, filtros, contagem regressiva, .ics
-├── js/coach.js           # aba Coach (busca em linguagem natural)
+├── js/coach.js           # aba Coach: modos e busca em linguagem natural
+├── js/chat.js            # aba Coach: chat com o Coach de IA
 ├── js/config.js          # endereço do Worker do Coach
-├── worker/               # Cloudflare Worker do Coach (Claude API + web search)
+├── worker/               # Cloudflare Worker do Coach: /chat (Haiku) e /coach (busca)
 ├── data/countries.json   # países com provas (gerado pelo script)
 ├── data/races/*.json     # ← provas, um ficheiro por país
 ├── tools/atualizar_paises.py  # valida dados e recalcula contagens

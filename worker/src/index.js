@@ -1,5 +1,9 @@
-// Worker do Coach do Max Provas: busca de provas em linguagem natural.
+// Worker do Coach do Max Provas.
 //
+// POST /chat   { messages: [{ role: "user" | "assistant", content }] }
+//   → { resposta, cortada, restantesNaHora }   Chat do Coach (Claude Haiku 5.5), ver src/chat.js.
+//
+// Busca de provas em linguagem natural:
 // POST /coach  { etapa: "filtros", pedido, paises: [{ codigo, pais, continente }] }
 //   → { filtros }
 // POST /coach  { etapa: "opcoes", pedido, filtros, candidatos: [{ chave, nome, data, ... }] }
@@ -7,7 +11,8 @@
 //   Com 3 ou mais candidatas da base, a IA escolhe e explica entre elas (sem web).
 //   Com menos de 3, faz uma busca na web (web_search) limitada a 10 por utilizador por dia.
 //
-// Variáveis: ANTHROPIC_API_KEY (secret), ALLOWED_ORIGINS (lista separada por vírgulas), COACH_KV (KV).
+// Variáveis: ANTHROPIC_API_KEY (secret), ALLOWED_ORIGIN (origem do site; aceita várias separadas
+// por vírgulas), COACH_KV (KV, para os limites de uso).
 
 import Anthropic from '@anthropic-ai/sdk';
 import {
@@ -16,6 +21,7 @@ import {
   SYSTEM_FILTROS, SYSTEM_ESCOLHA_BASE, SYSTEM_PESQUISA_WEB, SYSTEM_ESTRUTURA_WEB,
   promptFiltros, validarFiltros, validarEscolhaBase, recolherFontes, errosPesquisa, validarOpcoesWeb, lerJson
 } from './coach.js';
+import { responderChat, ErroChat } from './chat.js';
 
 const MAX_PEDIDO = 300;
 const MAX_CANDIDATOS = 30;
@@ -32,7 +38,7 @@ const hojeMadrid = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Ma
 
 function corsHeaders(request, env) {
   const origin = request.headers.get('Origin') || '';
-  const allowed = String(env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const allowed = [env.ALLOWED_ORIGIN, env.ALLOWED_ORIGINS].join(',').split(',').map((s) => s.trim()).filter(Boolean);
   const ok = allowed.includes('*') || allowed.includes(origin);
   return {
     ...(ok ? { 'Access-Control-Allow-Origin': origin || '*' } : {}),
@@ -148,12 +154,26 @@ export async function pesquisarNaWeb(client, { pedido, filtros }) {
 
 /* ---------- HTTP ---------- */
 
-export async function handle(request, env, { client } = {}) {
+export async function handle(request, env, { client, fetchImpl = fetch } = {}) {
   const cors = corsHeaders(request, env);
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
   const url = new URL(request.url);
-  if (url.pathname !== '/coach' || request.method !== 'POST') return json({ erro: 'Não encontrado' }, 404, cors);
+  if (!['/coach', '/chat'].includes(url.pathname) || request.method !== 'POST') return json({ erro: 'Não encontrado' }, 404, cors);
   if (!cors['Access-Control-Allow-Origin']) return json({ erro: 'Origem não autorizada' }, 403, cors);
+
+  if (url.pathname === '/chat') {
+    try {
+      const body = await request.json().catch(() => {
+        throw new ErroChat(400, 'JSON inválido');
+      });
+      const ip = request.headers.get('CF-Connecting-IP') || 'sem-ip';
+      return json(await responderChat(body, env, ip, fetchImpl), 200, cors);
+    } catch (err) {
+      if (err instanceof ErroChat) return json({ erro: err.message }, err.status, cors);
+      console.error(err);
+      return json({ erro: 'Erro inesperado no Coach.' }, 500, cors);
+    }
+  }
 
   try {
     let body;

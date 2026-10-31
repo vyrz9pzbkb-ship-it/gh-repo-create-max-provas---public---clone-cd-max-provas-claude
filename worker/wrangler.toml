@@ -5,10 +5,11 @@ compatibility_date = "2026-10-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-# Origens autorizadas a chamar o Worker (o site no GitHub Pages; acrescente http://localhost:8000 para testes).
-ALLOWED_ORIGINS = "https://vyrz9pzbkb-ship-it.github.io"
+# Origem autorizada a chamar o Worker: o domínio do site no GitHub Pages (sem barra no fim).
+# Para testar localmente, acrescente separado por vírgula: "https://…github.io,http://localhost:8000"
+ALLOWED_ORIGIN = "https://vyrz9pzbkb-ship-it.github.io"
 
-# Contador das buscas na web por utilizador e por dia.
+# Limites de uso: mensagens do chat por IP/hora e buscas na web por utilizador/dia.
 # Crie com: npx wrangler kv namespace create COACH_KV  — e cole aqui o id devolvido.
 [[kv_namespaces]]
 binding = "COACH_KV"
