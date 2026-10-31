@@ -1,0 +1,17 @@
+{
+  "name": "max-provas-coach",
+  "private": true,
+  "description": "Worker do Coach do Max Provas: busca de provas em linguagem natural (Claude API + web search).",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
+  }
+}

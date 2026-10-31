@@ -1,0 +1,17 @@
+# Worker do Coach do Max Provas — instruções de deploy no README principal.
+name = "max-provas-coach"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Origens autorizadas a chamar o Worker (o site no GitHub Pages; acrescente http://localhost:8000 para testes).
+ALLOWED_ORIGINS = "https://vyrz9pzbkb-ship-it.github.io"
+
+# Contador das buscas na web por utilizador e por dia.
+# Crie com: npx wrangler kv namespace create COACH_KV  — e cole aqui o id devolvido.
+[[kv_namespaces]]
+binding = "COACH_KV"
+id = "COLE_AQUI_O_ID_DO_KV"
+
+# Secret (não fica no repositório): npx wrangler secret put ANTHROPIC_API_KEY

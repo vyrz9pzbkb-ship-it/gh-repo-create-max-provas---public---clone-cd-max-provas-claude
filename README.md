@@ -7,6 +7,7 @@ HTML + CSS + JavaScript vanilla, sem build, pronto para o GitHub Pages.
 - **Filtro de país**: toque em 🌍 para escolher os países. Só aparecem países com provas, com bandeira e número de provas (ex.: 🇫🇷 França · 6). A app só descarrega os ficheiros dos países escolhidos, e a escolha fica guardada.
 - **Filtro de série** (opcional): faixa de chips por cima dos resultados.
 - **Temporada**: linha do tempo com as semanas entre provas; intervalos com menos de 4 semanas ficam a laranja.
+- **Coach**: escreva o que procura ("meia maratona plana na Europa em março") e o Coach encontra provas — primeiro na base do app, depois nos sites oficiais. Ver [Coach](#-coach-busca-em-linguagem-natural).
 - **Histórico**: provas que já passaram, com o resultado (e se o objetivo foi cumprido).
 - Funciona offline (os países já consultados ficam em cache) e pode ser instalada na Tela de Início do iPhone.
 
@@ -140,6 +141,48 @@ O workflow [`.github/workflows/check-status.yml`](.github/workflows/check-status
 
 ---
 
+## 🧭 Coach: busca em linguagem natural
+
+Na aba **Coach**, o campo **"O que você procura?"** aceita pedidos livres, com exemplos clicáveis por baixo.
+
+1. O Worker (`worker/`) pede à Claude API (`claude-opus-5-5`, saída JSON estruturada) que extraia os filtros: modalidade, distância, países/região, período, nível e preferências.
+2. A app procura na base (`data/races`) com esses filtros.
+3. Com **3 ou mais** provas na base, a IA escolhe até 5 e explica porque combinam (sem web).
+   Com **menos de 3**, o Worker usa a ferramenta de busca na web da Anthropic (`web_search_20250305`), priorizando sites oficiais (agregadores de calendários ficam bloqueados), e devolve até 5 opções.
+4. Os resultados aparecem como cards com **📚 da base** ou **🌐 da web**, a fonte de cada um e os botões **⭐ Favoritar** e **Inscrever-me**.
+
+Regras que o Worker aplica (não dependem só do modelo):
+
+- **Links**: `urlOficial` e `fonte` só são aceites se vieram dos resultados reais da busca; uma opção sem fonte verificável é descartada.
+- **Datas**: só aparecem se uma citação da busca contiver o trecho com a data; caso contrário o card mostra **"data a confirmar"**.
+- **Limite**: 10 buscas na web por utilizador por dia (e 30 por IP), contadas no Worker (Cloudflare KV). As escolhas feitas só na base não contam.
+- **Recusas**: o pedido usa o fallback do lado do servidor (`fallbacks: "default"`), por isso se o modelo recusar um pedido a API tenta outro modelo automaticamente.
+
+**Favoritas**: ficam guardadas no próprio telemóvel (`localStorage`). Uma prova da web favoritada é gravada também como prova local (`maxprovas.racesLocais`), marcada **"adicionada pela busca"**, e passa a aparecer em Provas/Temporada. (Os alertas ntfy do robô continuam a usar o campo `"favorita": true` dos ficheiros `data/races`, porque o robô corre no GitHub e não vê o telemóvel.)
+
+### Publicar o Worker (Cloudflare)
+
+Precisa de uma conta Cloudflare (o plano grátis chega) e de uma chave da [Claude API](https://platform.claude.com/).
+
+```bash
+cd worker
+npm install
+npx wrangler login
+npx wrangler kv namespace create COACH_KV     # copie o id para wrangler.toml
+npx wrangler secret put ANTHROPIC_API_KEY      # cole a chave (fica só na Cloudflare)
+npm test                                       # testes com cliente simulado (não gastam API)
+npx wrangler deploy
+```
+
+Depois:
+
+1. Em `worker/wrangler.toml`, `ALLOWED_ORIGINS` deve ter o endereço do site (já vem `https://vyrz9pzbkb-ship-it.github.io`; acrescente `http://localhost:8000` para testar localmente) e volte a fazer `npx wrangler deploy` se mudar.
+2. Em [`js/config.js`](js/config.js), preencha `coachApi` com o endereço que o deploy mostrou (ex.: `https://max-provas-coach.<conta>.workers.dev`) e faça commit.
+
+Cada busca custa chamadas à Claude API (2 pedidos; 3 quando vai à web, mais o custo da busca na web).
+
+---
+
 ## 🚀 Deploy no GitHub Pages
 
 1. Faça push deste repositório para o GitHub (o repositório tem de ser público, ou ter um plano que permita Pages em privados).
@@ -182,6 +225,9 @@ python3 -m http.server 8000
 ├── .nojekyll
 ├── css/styles.css        # estilos (claro/escuro, safe-area)
 ├── js/app.js             # lógica: ecrãs, filtros, contagem regressiva, .ics
+├── js/coach.js           # aba Coach (busca em linguagem natural)
+├── js/config.js          # endereço do Worker do Coach
+├── worker/               # Cloudflare Worker do Coach (Claude API + web search)
 ├── data/countries.json   # países com provas (gerado pelo script)
 ├── data/races/*.json     # ← provas, um ficheiro por país
 ├── tools/atualizar_paises.py  # valida dados e recalcula contagens

@@ -5,6 +5,8 @@
 const COUNTRIES_URL = 'data/countries.json';
 const raceFileUrl = (codigo) => `data/races/${codigo}.json`;
 const STORE_KEY = 'maxprovas.filtro';
+const FAV_KEY = 'maxprovas.favoritas';        // chaves das provas favoritadas neste telemóvel
+const LOCAL_RACES_KEY = 'maxprovas.racesLocais'; // provas da web guardadas pela busca do Coach
 const DEFAULT_COUNTRY = 'pt';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const SHORT_GAP_DAYS = 28; // intervalos < 4 semanas são destacados
@@ -127,22 +129,77 @@ async function loadCountries() {
   return list.filter((c) => c.provas > 0);
 }
 
-// Carrega apenas os ficheiros dos países escolhidos (com cache em memória).
-async function loadSelected() {
-  const lists = await Promise.all(selected.map(async (codigo) => {
-    if (!fileCache.has(codigo)) {
-      const list = await fetchJSON(raceFileUrl(codigo));
-      fileCache.set(codigo, list.map((r) => ({ ...r, _pais: codigo, _key: `${codigo}:${r.id}`, _date: parseDate(r.data) })));
-    }
-    return fileCache.get(codigo);
+/* ---------- Dados locais do utilizador (localStorage) ---------- */
+
+function readJSON(key, fallback) {
+  try {
+    const v = JSON.parse(localStorage.getItem(key));
+    return v ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeJSON(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Favoritas escolhidas neste telemóvel: { chave: true | false }. Sobrepõe-se ao campo "favorita" dos dados.
+const favPrefs = (() => {
+  const v = readJSON(FAV_KEY, {});
+  return v && typeof v === 'object' && !Array.isArray(v) ? v : {};
+})();
+
+function isFav(r) {
+  return r._key in favPrefs ? favPrefs[r._key] : Boolean(r.favorita);
+}
+
+function setFav(key, on) {
+  favPrefs[key] = on;
+  writeJSON(FAV_KEY, favPrefs);
+}
+
+// Provas encontradas na web pelo Coach e guardadas ao favoritar ("races.json local").
+function localRaces() {
+  return readJSON(LOCAL_RACES_KEY, []).map((r) => ({
+    ...r, _pais: r.codigoPais || 'xx', _key: `local:${r.id}`, _date: parseDate(r.data), _local: true
   }));
-  races = lists.flat();
+}
+
+function saveLocalRace(race) {
+  const list = readJSON(LOCAL_RACES_KEY, []).filter((r) => r.id !== race.id);
+  list.push(race);
+  return writeJSON(LOCAL_RACES_KEY, list);
+}
+
+function removeLocalRace(id) {
+  writeJSON(LOCAL_RACES_KEY, readJSON(LOCAL_RACES_KEY, []).filter((r) => r.id !== id));
+}
+
+// Lê (e guarda em memória) as provas de um país.
+async function loadCountryFile(codigo) {
+  if (!fileCache.has(codigo)) {
+    const list = await fetchJSON(raceFileUrl(codigo));
+    fileCache.set(codigo, list.map((r) => ({ ...r, _pais: codigo, _key: `${codigo}:${r.id}`, _date: parseDate(r.data) })));
+  }
+  return fileCache.get(codigo);
+}
+
+// Carrega apenas os ficheiros dos países escolhidos, mais as provas guardadas pela busca.
+async function loadSelected() {
+  const lists = await Promise.all(selected.map(loadCountryFile));
+  races = lists.flat().concat(localRaces());
   if (serieFilter && serieFilter !== FAVORITES && !races.some((r) => r.serie === serieFilter)) serieFilter = '';
-  if (serieFilter === FAVORITES && !races.some((r) => r.favorita)) serieFilter = '';
+  if (serieFilter === FAVORITES && !races.some(isFav)) serieFilter = '';
 }
 
 function visible() {
-  if (serieFilter === FAVORITES) return races.filter((r) => r.favorita);
+  if (serieFilter === FAVORITES) return races.filter(isFav);
   return serieFilter ? races.filter((r) => r.serie === serieFilter) : races;
 }
 
@@ -254,7 +311,8 @@ function upcomingCard(r, t) {
     <article class="card">
       <div class="card-top">${badge(r)}${serieTag(r)}</div>
       ${statusDetails(r)}
-      <h2>${r.favorita ? '<span class="fav" title="Favorita">⭐</span> ' : ''}${esc(r.nome)}</h2>
+      ${r.adicionadaPelaBusca ? '<p class="added-tag">🌐 adicionada pela busca</p>' : ''}
+      <h2>${isFav(r) ? '<span class="fav" title="Favorita">⭐</span> ' : ''}${esc(r.nome)}</h2>
       ${countdown}
       ${metaLine(r)}
       ${r.objetivoTempo ? `<p class="goal">🎯 Objetivo: <strong>${esc(r.objetivoTempo)}</strong></p>` : ''}
@@ -399,7 +457,7 @@ function filterBar() {
   const counts = new Map();
   for (const r of races) if (r.serie) counts.set(r.serie, (counts.get(r.serie) || 0) + 1);
   const series = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  const favs = races.filter((r) => r.favorita).length;
+  const favs = races.filter(isFav).length;
   const chip = (value, text) =>
     `<button type="button" class="chip" data-serie="${esc(value)}" aria-pressed="${serieFilter === value}">${text}</button>`;
 
