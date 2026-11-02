@@ -14,7 +14,7 @@
     "urlOficial": "https://www.generali-berliner-halbmarathon.de/",
     "urlInscricao": "https://www.generali-berliner-halbmarathon.de/",
     "fonte": "https://www.generali-berliner-halbmarathon.de/en/registration/registration-information",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "marathon-hamburg-2027",
@@ -31,7 +31,7 @@
     "urlOficial": "https://haspa-marathon-hamburg.de/",
     "urlInscricao": "https://haspa-marathon-hamburg.de/",
     "fonte": "https://haspa-marathon-hamburg.de/haspa-marathon/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "challenge-roth-2027",
@@ -48,7 +48,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "berlin-marathon-2027",
@@ -59,7 +59,7 @@
     "data": "2027-09-26",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Ambíguo (aberta + aguardando): “Registration open from today” / “Registration opens for GENERALI BE…",
@@ -77,7 +77,7 @@
     "data": "2027-10-31",
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Erro HTTP 403",

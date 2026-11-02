@@ -1,318 +1,334 @@
 {
-  "data": "2026-10-31",
-  "geradoEm": "2026-10-31T09:25:46Z",
+  "data": "2026-11-02",
+  "geradoEm": "2026-11-02T15:00:48Z",
   "mudancas": [
     {
-      "id": "challenge-sir-bani-yas-2027",
+      "id": "ugfws-abu-dhabi-2026",
       "pais": "ae",
-      "prova": "Challenge Sir Bani Yas",
+      "prova": "AD Ports Group Gran Fondo Abu Dhabi",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "challenge-kaiserwinkl-walchsee-2027",
+      "id": "ugfws-villa-la-angostura-2026",
+      "pais": "ar",
+      "prova": "Gran Fondo Villa La Angostura",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-cordoba-2027",
+      "pais": "ar",
+      "prova": "OCEANMAN Córdoba",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "maraton-buenos-aires-2027",
+      "pais": "ar",
+      "prova": "Maratón de Buenos Aires",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "medio-maraton-buenos-aires-2027",
+      "pais": "ar",
+      "prova": "Medio Maratón de Buenos Aires",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oetztaler-radmarathon-2027",
       "pais": "at",
-      "prova": "Challenge Kaiserwinkl-Walchsee",
+      "prova": "Ötztaler Radmarathon",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "challenge-canberra-2026",
+      "id": "sydney-marathon-2027",
       "pais": "au",
-      "prova": "Challenge Canberra",
+      "prova": "TCS Sydney Marathon",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "challenge-florianopolis-2026",
+      "id": "ugfws-brazil-2026",
       "pais": "br",
-      "prova": "Challenge Florianópolis",
+      "prova": "Granfondo Brazil",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "maratona-rio-2027",
+      "id": "meia-maratona-rio-2027",
       "pais": "br",
-      "prova": "Maratona do Rio (42K)",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] INSCREVA-SE AQUI."
-    },
-    {
-      "id": "ottawa-half-2027",
-      "pais": "ca",
-      "prova": "Tamarack Ottawa Half Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER FOR 2027! (opens in new tab)"
-    },
-    {
-      "id": "ottawa-marathon-2027",
-      "pais": "ca",
-      "prova": "Tamarack Ottawa International Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER FOR 2027! (opens in new tab)"
-    },
-    {
-      "id": "challenge-quebec-2027",
-      "pais": "ca",
-      "prova": "Challenge Québec",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-montreal-2027",
-      "pais": "ca",
-      "prova": "Challenge Montréal",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "toronto-waterfront-half-2027",
-      "pais": "ca",
-      "prova": "TCS Toronto Waterfront Half Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Register"
-    },
-    {
-      "id": "toronto-waterfront-marathon-2027",
-      "pais": "ca",
-      "prova": "TCS Toronto Waterfront Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Register"
-    },
-    {
-      "id": "challenge-xiamen-2026",
-      "pais": "cn",
-      "prova": "Challenge Xiamen",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
-    },
-    {
-      "id": "berliner-halbmarathon-2027",
-      "pais": "de",
-      "prova": "GENERALI Berliner Halbmarathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Anmelden"
-    },
-    {
-      "id": "challenge-roth-2027",
-      "pais": "de",
-      "prova": "DATEV Challenge Roth",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
-    },
-    {
-      "id": "challenge-mogan-gran-canaria-2027",
-      "pais": "es",
-      "prova": "Challenge Mogán-Gran Canaria",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "mallorca-312-2027",
-      "pais": "es",
-      "prova": "Mallorca 312",
-      "de": null,
-      "para": "esgotada",
-      "motivo": "[botão] Waiting list"
-    },
-    {
-      "id": "challenge-salou-2027",
-      "pais": "es",
-      "prova": "Challenge Salou-Costa Daurada",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "quebrantahuesos-2027",
-      "pais": "es",
-      "prova": "Quebrantahuesos",
-      "de": null,
-      "para": "aberta",
-      "motivo": "REGISTRATRATION IS NOW OPEN"
-    },
-    {
-      "id": "challenge-peguera-mallorca-2027",
-      "pais": "es",
-      "prova": "Challenge Peguera-Mallorca",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "medio-maraton-valencia-2027",
-      "pais": "es",
-      "prova": "Medio Maratón Valencia Trinidad Alfonso Zurich",
-      "de": null,
-      "para": "esgotada",
-      "motivo": "[botão] FAQ Waiting list"
-    },
-    {
-      "id": "challenge-vieux-boucau-2027",
-      "pais": "fr",
-      "prova": "Challenge Vieux-Boucau",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "brighton-marathon-2027",
-      "pais": "gb",
-      "prova": "Brighton Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Enter Now"
-    },
-    {
-      "id": "london-marathon-2027",
-      "pais": "gb",
-      "prova": "TCS London Marathon",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Enter now"
-    },
-    {
-      "id": "big-half-2027",
-      "pais": "gb",
-      "prova": "The Big Half",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Enter Now"
-    },
-    {
-      "id": "great-north-run-2027",
-      "pais": "gb",
-      "prova": "AJ Bell Great North Run",
-      "de": null,
-      "para": "esgotada",
-      "motivo": "erships for 2027-2028 are now sold out."
-    },
-    {
-      "id": "challenge-israman-2027",
-      "pais": "il",
-      "prova": "Israman",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-cesenatico-2027",
-      "pais": "it",
-      "prova": "Challenge Cesenatico",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "cpc-den-haag-2027",
-      "pais": "nl",
-      "prova": "NN CPC Loop Den Haag",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-almere-amsterdam-2027",
-      "pais": "nl",
-      "prova": "Challenge Almere-Amsterdam",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-wanaka-2027",
-      "pais": "nz",
-      "prova": "Challenge Wānaka",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-gdansk-2027",
-      "pais": "pl",
-      "prova": "Challenge Gdańsk",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "sao-silvestre-lidl",
-      "pais": "pt",
-      "prova": "Lidl São Silvestre de Lisboa",
-      "de": "aberta",
-      "para": "esgotada",
-      "motivo": "[botão] Esgotado"
-    },
-    {
-      "id": "t100-qatar-2026",
-      "pais": "qa",
-      "prova": "Qatar T100 Triathlon World Championship Final",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER NOW"
-    },
-    {
-      "id": "the-championship-2027",
-      "pais": "sk",
-      "prova": "The Championship (Challenge Family)",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "challenge-taiwan-2027",
-      "pais": "tw",
-      "prova": "Challenge Taiwan",
-      "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
-    },
-    {
-      "id": "chicago-marathon-2027",
-      "pais": "us",
-      "prova": "Bank of America Chicago Marathon",
-      "de": null,
-      "para": "esgotada",
-      "motivo": "The application window for the 2027 Bank of America Chicago Marathon is closed. Entries are availab…"
-    },
-    {
-      "id": "marine-corps-marathon-2027",
-      "pais": "us",
-      "prova": "Marine Corps Marathon",
+      "prova": "Maratona do Rio — Meia Maratona (21K)",
       "de": "aguardando",
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "challenge-samarkand-2027",
-      "pais": "uz",
-      "prova": "Challenge Samarkand",
+      "id": "ugfws-hainan-2026",
+      "pais": "cn",
+      "prova": "UCI Gran Fondo Hainan",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] REGISTER"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "cape-town-marathon-2027",
-      "pais": "za",
-      "prova": "Sanlam Cape Town Marathon",
+      "id": "ugfws-colombia-2026",
+      "pais": "co",
+      "prova": "Granfondo Colombia",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] Run for CharityENTRIES OPEN"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-guanacaste-2026",
+      "pais": "cr",
+      "prova": "OCEANMAN Guanacaste",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "berlin-marathon-2027",
+      "pais": "de",
+      "prova": "GENERALI Berlin-Marathon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (aberta + aguardando): “Registration open from today” / “Registration opens for GENERALI BE…"
+    },
+    {
+      "id": "frankfurt-marathon-2027",
+      "pais": "de",
+      "prova": "Mainova Frankfurt Marathon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Erro HTTP 403"
+    },
+    {
+      "id": "oceanman-wfc-miches-2026",
+      "pais": "do",
+      "prova": "OCEANMAN World Final Championship",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "ugfws-ecuador-2026",
+      "pais": "ec",
+      "prova": "Granfondo Ecuador",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "ugfws-la-nucia-2026",
+      "pais": "es",
+      "prova": "Gran Fondo La Nucía",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "medio-maraton-madrid-2027",
+      "pais": "es",
+      "prova": "Movistar Madrid Medio Maratón",
+      "de": "aberta",
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "ugfws-guadeloupe-2026",
+      "pais": "fr",
+      "prova": "Granfondo La Guadeloupe",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "etape-du-tour-2027",
+      "pais": "fr",
+      "prova": "L'Étape du Tour de France",
+      "de": "aguardando",
+      "para": "nao_verificado",
+      "motivo": "Erro: page.goto: net::ERR_CERT_DATE_INVALID at https://www.letapebytourdefrance.com/"
+    },
+    {
+      "id": "ugf-world-championships-2027",
+      "pais": "fr",
+      "prova": "UCI Gran Fondo World Championships",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "manchester-marathon-2027",
+      "pais": "gb",
+      "prova": "adidas Manchester Marathon",
+      "de": "esgotada",
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "ugfws-greece-2027",
+      "pais": "gr",
+      "prova": "Gran Fondo Greece",
+      "de": "edição de 2026-11-01 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "firenze-marathon-2026",
+      "pais": "it",
+      "prova": "Estra Firenze Marathon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (esgotada + aberta): “42nd ESTRA Firenze Marathon SOLD OUT” / “REGISTRATION OPEN”"
+    },
+    {
+      "id": "oceanman-lago-dorta-2027",
+      "pais": "it",
+      "prova": "OCEANMAN Lago d'Orta",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "tokyo-marathon-2027",
+      "pais": "jp",
+      "prova": "Tokyo Marathon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-maafushi-2027",
+      "pais": "mv",
+      "prova": "OCEANMAN Maafushi",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "marathon-amsterdam-2027",
+      "pais": "nl",
+      "prova": "TCS Amsterdam Marathon",
+      "de": "aguardando",
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-lima-2027",
+      "pais": "pe",
+      "prova": "OCEANMAN Lima",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "maratona-porto-2026",
+      "pais": "pt",
+      "prova": "EDP Maratona do Porto",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "meia-maratona-lisboa-2027",
+      "pais": "pt",
+      "prova": "EDP Meia Maratona de Lisboa",
+      "de": "aberta",
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (esgotada + aberta): “WAITING LIST RESULTADOS 2026” / “INSCREVA-SE AQUI!”"
+    },
+    {
+      "id": "oceanman-algarve-2027",
+      "pais": "pt",
+      "prova": "OCEANMAN Algarve",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "t100-sines",
+      "pais": "pt",
+      "prova": "Sines Triathlon",
+      "de": "aguardando",
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "triton-lisboa",
+      "pais": "pt",
+      "prova": "TRITON 1 Lisboa",
+      "de": "aguardando",
+      "para": "nao_verificado",
+      "motivo": "Erro HTTP 404"
+    },
+    {
+      "id": "t100-singapore-2027",
+      "pais": "sg",
+      "prova": "Singapore T100 Triathlon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (aberta + aguardando): “REGISTER NOW” / “COMING SOON”"
+    },
+    {
+      "id": "oceanman-phang-nga-2026",
+      "pais": "th",
+      "prova": "OCEANMAN Phang-Nga",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-krabi-2027",
+      "pais": "th",
+      "prova": "OCEANMAN Krabi",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "ugfws-antalya-2026",
+      "pais": "tr",
+      "prova": "Granfondo Antalya",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "nyc-marathon-2027",
+      "pais": "us",
+      "prova": "TCS New York City Marathon",
+      "de": "edição de 2026-11-01 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "nyc-half-2027",
+      "pais": "us",
+      "prova": "United Airlines NYC Half",
+      "de": "aberta",
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "boston-marathon-2027",
+      "pais": "us",
+      "prova": "Boston Marathon",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     }
   ]
 }

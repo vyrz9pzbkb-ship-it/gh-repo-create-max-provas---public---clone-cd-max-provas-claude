@@ -46,7 +46,7 @@
     "pais": "Grécia",
     "continente": "Europa",
     "bandeira": "🇬🇷",
-    "provas": 1
+    "provas": 2
   },
   {
     "codigo": "it",
@@ -158,7 +158,7 @@
     "pais": "Estados Unidos",
     "continente": "América do Norte",
     "bandeira": "🇺🇸",
-    "provas": 9
+    "provas": 10
   },
   {
     "codigo": "do",

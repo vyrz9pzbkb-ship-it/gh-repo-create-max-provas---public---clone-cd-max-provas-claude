@@ -8,7 +8,7 @@
     "data": "2026-11-08",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -33,7 +33,7 @@
     "urlOficial": "https://www.discoveries-half-marathon.com/pt/home.html",
     "urlInscricao": "https://www.discoveries-half-marathon.com/pt/inscricoes.html",
     "fonte": "https://www.discoveries-half-marathon.com/pt/home.html",
-    "verificadoEm": "2026-10-31T09:25:46Z",
+    "verificadoEm": "2026-11-02T15:00:48Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -53,7 +53,7 @@
     "urlOficial": "https://www.saosilvestredelisboa.com/site/?ln=pt",
     "urlInscricao": "https://www.saosilvestredelisboa.com/site/?local=registration",
     "fonte": "https://www.saosilvestredelisboa.com/site/?local=regulations",
-    "verificadoEm": "2026-10-31T09:25:46Z",
+    "verificadoEm": "2026-11-02T15:00:48Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -73,7 +73,7 @@
     "urlOficial": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "urlInscricao": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "fonte": "https://www.meiamaratonadecascais.pt/site/?ln=en",
-    "verificadoEm": "2026-10-31T09:25:46Z",
+    "verificadoEm": "2026-11-02T15:00:48Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -86,7 +86,7 @@
     "data": "2027-03-07",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "aberta",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "INSCREVA-SE AQUI!",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://maratonaclubedeportugal.com/",
@@ -112,7 +112,7 @@
     "urlOficial": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "urlInscricao": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "fonte": "https://www.setubaltriathlon.pt/site/?ln=en",
-    "verificadoEm": "2026-10-31T09:25:46Z",
+    "verificadoEm": "2026-11-02T15:00:48Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -125,7 +125,7 @@
     "data": "2027-06-06",
     "dataConfirmada": true,
     "distancia": "Evento de 4 a 6/06 · OCEANMAN a 6/06",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -191,7 +191,7 @@
     "urlOficial": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "urlInscricao": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "fonte": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
-    "verificadoEm": "2026-10-31T09:25:46Z",
+    "verificadoEm": "2026-11-02T15:00:48Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -210,7 +210,7 @@
     "urlOficial": "https://maratonaclubedeportugal.com/en/",
     "urlInscricao": "https://maratonaclubedeportugal.com/en/",
     "fonte": "https://maratonaclubedeportugal.com/en/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "t100-sines",
@@ -222,7 +222,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "100 km (2 km natação · 80 km ciclismo · 18 km corrida)",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "Status da pesquisa manual de 30/10/2026",
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -243,7 +243,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "Sprint, Middle ou Long",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "Status da pesquisa manual de 30/10/2026",
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Erro HTTP 404",

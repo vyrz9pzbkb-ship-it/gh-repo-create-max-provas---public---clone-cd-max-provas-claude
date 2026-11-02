@@ -14,7 +14,7 @@
     "urlOficial": "https://nnmarathonrotterdam.nl/en/register/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/register/",
     "fonte": "https://nnmarathonrotterdam.nl/en/register/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "marathon-rotterdam-2027",
@@ -31,7 +31,7 @@
     "urlOficial": "https://nnmarathonrotterdam.nl/en/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/",
     "fonte": "https://nnmarathonrotterdam.nl/nn-marathon-rotterdam-2027-zet-in-op-meer-rotterdammers-en-opent-gratis-pre-registratie/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "challenge-almere-amsterdam-2027",
@@ -48,7 +48,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "marathon-amsterdam-2027",
@@ -59,7 +59,7 @@
     "data": "2027-10-31",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "Status da pesquisa manual de 30/10/2026",
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",

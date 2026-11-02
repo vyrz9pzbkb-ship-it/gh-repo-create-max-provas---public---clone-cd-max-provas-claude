@@ -8,7 +8,7 @@
     "data": "2026-11-08",
     "dataConfirmada": true,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -32,7 +32,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
     "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-florianopolis/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "meia-sp-2027",
@@ -49,7 +49,7 @@
     "urlOficial": "https://www.yescom.com.br/meiasp/2027/index.asp",
     "urlInscricao": "https://www.yescom.com.br/meiasp/2027/index.asp",
     "fonte": "https://www.yescom.com.br/meiasp/2027/img/Regulamento_20aMeiaMaratonaIntldeSP2027_atualizadoem_05-10-2026.pdf",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "maratona-sp-2027",
@@ -66,7 +66,7 @@
     "urlOficial": "https://www.yescom.com.br/maratonasp/2027/index.asp",
     "urlInscricao": "https://www.yescom.com.br/maratonasp/2027/index.asp",
     "fonte": "https://www.yescom.com.br/maratonasp/2027/img/Regulamento_31aMaratonaSP2027_atualizadoem05-10-2026.pdf",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "meia-maratona-rio-2027",
@@ -77,7 +77,7 @@
     "data": "2027-05-29",
     "dataConfirmada": true,
     "distancia": "21,1 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "Status da pesquisa manual de 30/10/2026",
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -101,7 +101,7 @@
     "urlOficial": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "urlInscricao": "https://maratonadorio.com.br/pt/corrida/42k-2027",
     "fonte": "https://static.maratonadorio.com.br/media/upload/documento/a74b987c047b40a88a20461744586bd6.pdf",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "travessia-mar-grande-salvador",

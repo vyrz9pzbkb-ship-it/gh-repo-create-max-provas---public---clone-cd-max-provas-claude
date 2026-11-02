@@ -8,7 +8,7 @@
     "data": "2027-04-08",
     "dataConfirmada": false,
     "distancia": "Evento de 8 a 10/04",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",

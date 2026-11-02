@@ -14,7 +14,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "oetztaler-radmarathon-2027",
@@ -25,7 +25,7 @@
     "data": "2027-08-29",
     "dataConfirmada": false,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",

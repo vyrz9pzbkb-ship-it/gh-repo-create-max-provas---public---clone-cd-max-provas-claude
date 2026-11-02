@@ -14,7 +14,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
     "fonte": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "ugfws-hainan-2026",
@@ -25,7 +25,7 @@
     "data": "2026-12-18",
     "dataConfirmada": true,
     "distancia": "Evento de 18 a 20/12",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",

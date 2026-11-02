@@ -8,7 +8,7 @@
     "data": "2026-11-29",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Ambíguo (esgotada + aberta): “42nd ESTRA Firenze Marathon SOLD OUT” / “REGISTRATION OPEN”",
@@ -32,7 +32,7 @@
     "urlOficial": "https://romaostia.it/",
     "urlInscricao": "https://romaostia.it/",
     "fonte": "https://romaostia.it/regolamento/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "maratona-roma-2027",
@@ -49,7 +49,7 @@
     "urlOficial": "https://www.runromethemarathon.com/en/home-2025-en-2/",
     "urlInscricao": "https://www.runromethemarathon.com/en/home-2025-en-2/",
     "fonte": "https://www.runromethemarathon.com/wp-content/uploads/2026/04/RRTM27-regolamento-italiano-23-4-2026.pdf",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "milano-marathon-2027",
@@ -66,7 +66,7 @@
     "urlOficial": "https://www.milanomarathon.it/en/",
     "urlInscricao": "https://www.milanomarathon.it/en/",
     "fonte": "https://www.milanomarathon.it/en/marathon/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "challenge-cesenatico-2027",
@@ -83,7 +83,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "nove-colli-2027",
@@ -100,7 +100,7 @@
     "urlOficial": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
     "urlInscricao": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
     "fonte": "https://www.novecolli.it/it-IT/evento/nove-colli-2027-iscrizioni-aperte-dal-5-dicembre",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   },
   {
     "id": "oceanman-lago-dorta-2027",
@@ -111,7 +111,7 @@
     "data": "2027-06-13",
     "dataConfirmada": true,
     "distancia": "Sprint a 12/06 · OCEANMAN a 13/06",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
     "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
@@ -135,6 +135,6 @@
     "urlOficial": "https://www.maratona.it/en/",
     "urlInscricao": "https://www.maratona.it/en/",
     "fonte": "https://www.maratona.it/en/conditionsofentry-2027",
-    "verificadoEm": "2026-10-31T09:25:46Z"
+    "verificadoEm": "2026-11-02T15:00:48Z"
   }
 ]

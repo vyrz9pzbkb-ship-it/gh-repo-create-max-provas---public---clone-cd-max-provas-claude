@@ -16,5 +16,23 @@
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "ugfws-greece-2027",
+    "nome": "Gran Fondo Greece",
+    "local": "Loutraki",
+    "modalidade": "Ciclismo",
+    "serie": "UCI Gran Fondo World Series",
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": null,
+    "statusInscricao": null,
+    "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
+    "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
+    "fonte": null,
+    "verificadoEm": "2026-11-02",
+    "edicaoAnterior": "ugfws-greece-2026",
+    "falhaDesde": "2026-11-02",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página"
   }
 ]
