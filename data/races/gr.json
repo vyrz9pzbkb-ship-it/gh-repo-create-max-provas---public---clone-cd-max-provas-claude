@@ -26,7 +26,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": null,
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "urlOficial": "https://ucigranfondoworldseries.com/en/calendar/",
     "urlInscricao": "https://ucigranfondoworldseries.com/en/calendar/",
     "fonte": null,
