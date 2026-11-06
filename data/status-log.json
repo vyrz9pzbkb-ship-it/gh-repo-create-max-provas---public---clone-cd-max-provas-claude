@@ -1,30 +1,22 @@
 {
-  "data": "2026-11-04",
-  "geradoEm": "2026-11-04T13:55:40Z",
+  "data": "2026-11-06",
+  "geradoEm": "2026-11-06T13:53:33Z",
   "mudancas": [
     {
-      "id": "marato-barcelona-2027",
-      "pais": "es",
-      "prova": "Zurich Marató Barcelona",
+      "id": "cpc-den-haag-2027",
+      "pais": "nl",
+      "prova": "NN CPC Loop Den Haag",
       "de": "aberta",
-      "para": "nao_verificado",
-      "motivo": "Ambíguo (esgotada + aberta): “SOLD OUT” / “Inscripciones abiertas de la Zurich Marató de Barcelona”"
-    },
-    {
-      "id": "ugfws-greece-2027",
-      "pais": "gr",
-      "prova": "Gran Fondo Greece",
-      "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+      "para": "esgotada",
+      "motivo": "Sold out"
     },
     {
       "id": "nyc-marathon-2027",
       "pais": "us",
       "prova": "TCS New York City Marathon",
-      "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+      "de": "nao_verificado",
+      "para": "aberta",
+      "motivo": "[botão] Sign Up"
     }
   ]
 }
