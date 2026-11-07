@@ -1,22 +1,14 @@
 {
-  "data": "2026-11-06",
-  "geradoEm": "2026-11-06T13:53:33Z",
+  "data": "2026-11-07",
+  "geradoEm": "2026-11-07T12:38:07Z",
   "mudancas": [
     {
-      "id": "cpc-den-haag-2027",
-      "pais": "nl",
-      "prova": "NN CPC Loop Den Haag",
-      "de": "aberta",
-      "para": "esgotada",
-      "motivo": "Sold out"
-    },
-    {
-      "id": "nyc-marathon-2027",
-      "pais": "us",
-      "prova": "TCS New York City Marathon",
-      "de": "nao_verificado",
-      "para": "aberta",
-      "motivo": "[botão] Sign Up"
+      "id": "ugfws-antalya-2027",
+      "pais": "tr",
+      "prova": "Granfondo Antalya",
+      "de": "edição de 2026-11-06 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
     }
   ]
 }
