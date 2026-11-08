@@ -33,5 +33,23 @@
     "urlInscricao": "https://ucigranfondoworldseries.com/en/hainan-2026/",
     "fonte": "https://ucigranfondoworldseries.com/en/calendar-update-two-date-changes-and-one-new-event-added-to-the-2026-uci-gran-fondo-world-series/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "challenge-xiamen-2027",
+    "nome": "Challenge Xiamen",
+    "local": "Xiamen",
+    "modalidade": "Triatlo",
+    "serie": "Challenge Family",
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "Média distância, olímpico, sprint e duatlo",
+    "statusInscricao": "aberta",
+    "statusMotivo": "[botão] SIGN UP",
+    "ultimoStatusVerificado": "aberta",
+    "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-xiamen/",
+    "fonte": null,
+    "verificadoEm": "2026-11-08T12:55:14Z",
+    "edicaoAnterior": "challenge-xiamen-2026"
   }
 ]
