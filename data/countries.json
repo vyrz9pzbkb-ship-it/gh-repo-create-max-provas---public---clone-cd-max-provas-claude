@@ -39,7 +39,7 @@
     "pais": "França",
     "continente": "Europa",
     "bandeira": "🇫🇷",
-    "provas": 8
+    "provas": 9
   },
   {
     "codigo": "gr",
@@ -74,7 +74,7 @@
     "pais": "Portugal",
     "continente": "Europa",
     "bandeira": "🇵🇹",
-    "provas": 13
+    "provas": 14
   },
   {
     "codigo": "gb",
@@ -109,7 +109,7 @@
     "pais": "Brasil",
     "continente": "América do Sul",
     "bandeira": "🇧🇷",
-    "provas": 7
+    "provas": 8
   },
   {
     "codigo": "cl",

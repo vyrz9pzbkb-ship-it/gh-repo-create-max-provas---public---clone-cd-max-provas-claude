@@ -33,7 +33,7 @@
     "urlOficial": "https://www.discoveries-half-marathon.com/pt/home.html",
     "urlInscricao": "https://www.discoveries-half-marathon.com/pt/inscricoes.html",
     "fonte": "https://www.discoveries-half-marathon.com/pt/home.html",
-    "verificadoEm": "2026-11-08T12:55:14Z",
+    "verificadoEm": "2026-11-09T15:30:06Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -53,7 +53,7 @@
     "urlOficial": "https://www.saosilvestredelisboa.com/site/?ln=pt",
     "urlInscricao": "https://www.saosilvestredelisboa.com/site/?local=registration",
     "fonte": "https://www.saosilvestredelisboa.com/site/?local=regulations",
-    "verificadoEm": "2026-11-08T12:55:14Z",
+    "verificadoEm": "2026-11-09T15:30:06Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -73,7 +73,7 @@
     "urlOficial": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "urlInscricao": "https://www.meiamaratonadecascais.pt/site/?ln=pt",
     "fonte": "https://www.meiamaratonadecascais.pt/site/?ln=en",
-    "verificadoEm": "2026-11-08T12:55:14Z",
+    "verificadoEm": "2026-11-09T15:30:06Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -112,7 +112,7 @@
     "urlOficial": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "urlInscricao": "https://www.setubaltriathlon.pt/site/?ln=pt",
     "fonte": "https://www.setubaltriathlon.pt/site/?ln=en",
-    "verificadoEm": "2026-11-08T12:55:14Z",
+    "verificadoEm": "2026-11-09T15:30:06Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -191,7 +191,7 @@
     "urlOficial": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "urlInscricao": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
     "fonte": "https://atriatlocaminha.pt/triatlo-longo-caminha/",
-    "verificadoEm": "2026-11-08T12:55:14Z",
+    "verificadoEm": "2026-11-09T15:30:06Z",
     "objetivoTempo": null,
     "resultado": null
   },
@@ -210,7 +210,7 @@
     "urlOficial": "https://maratonaclubedeportugal.com/en/",
     "urlInscricao": "https://maratonaclubedeportugal.com/en/",
     "fonte": "https://maratonaclubedeportugal.com/en/",
-    "verificadoEm": "2026-11-08T12:55:14Z"
+    "verificadoEm": "2026-11-09T15:30:06Z"
   },
   {
     "id": "t100-sines",
@@ -253,5 +253,23 @@
     "verificadoEm": "2026-10-30",
     "objetivoTempo": null,
     "resultado": null
+  },
+  {
+    "id": "maratona-porto-2027",
+    "nome": "EDP Maratona do Porto",
+    "local": "Porto",
+    "modalidade": "Corrida",
+    "serie": null,
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "42,195 km",
+    "statusInscricao": null,
+    "urlOficial": "https://www.runporto.com/pt/novidades/calendario-de-provas-2026/",
+    "urlInscricao": "https://www.runporto.com/pt/novidades/calendario-de-provas-2026/",
+    "fonte": null,
+    "verificadoEm": "2026-11-09",
+    "edicaoAnterior": "maratona-porto-2026",
+    "falhaDesde": "2026-11-09",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página"
   }
 ]

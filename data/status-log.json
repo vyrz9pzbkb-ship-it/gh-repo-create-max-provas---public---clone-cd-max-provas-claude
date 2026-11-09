@@ -1,38 +1,46 @@
 {
-  "data": "2026-11-08",
-  "geradoEm": "2026-11-08T12:55:14Z",
+  "data": "2026-11-09",
+  "geradoEm": "2026-11-09T15:30:06Z",
   "mudancas": [
     {
-      "id": "challenge-xiamen-2027",
-      "pais": "cn",
-      "prova": "Challenge Xiamen",
-      "de": "edição de 2026-11-07 (Histórico)",
+      "id": "ugfws-brazil-2027",
+      "pais": "br",
+      "prova": "Granfondo Brazil",
+      "de": "edição de 2026-11-08 (Histórico)",
       "para": "próxima edição a anunciar",
       "motivo": "A data da prova já passou"
     },
     {
-      "id": "challenge-xiamen-2027",
-      "pais": "cn",
-      "prova": "Challenge Xiamen",
+      "id": "marathon-nice-cannes-2027",
+      "pais": "fr",
+      "prova": "Marathon des Alpes-Maritimes Nice-Cannes",
+      "de": "edição de 2026-11-08 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "marathon-nice-cannes-2027",
+      "pais": "fr",
+      "prova": "Marathon des Alpes-Maritimes Nice-Cannes",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
+      "para": "aguardando",
+      "motivo": "REGISTRATION FOR 2027 OPENS ON THURSDAY, NOVEMBER 12 AT 12AM!"
     },
     {
-      "id": "ugfws-la-nucia-2027",
-      "pais": "es",
-      "prova": "Gran Fondo La Nucía",
-      "de": "edição de 2026-11-07 (Histórico)",
+      "id": "maratona-porto-2027",
+      "pais": "pt",
+      "prova": "EDP Maratona do Porto",
+      "de": "edição de 2026-11-08 (Histórico)",
       "para": "próxima edição a anunciar",
       "motivo": "A data da prova já passou"
     },
     {
-      "id": "marathon-rotterdam-2027",
-      "pais": "nl",
-      "prova": "NN Marathon Rotterdam",
-      "de": "aberta",
+      "id": "ugfws-antalya-2027",
+      "pais": "tr",
+      "prova": "Granfondo Antalya",
+      "de": null,
       "para": "nao_verificado",
-      "motivo": "Ambíguo (esgotada + aberta): “46TH EDITION OF THE NN MARATHON ROTTERDAM SOLD OUT” / “REGISTRATION F…"
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     }
   ]
 }
