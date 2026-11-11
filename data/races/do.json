@@ -16,5 +16,23 @@
     "urlInscricao": "https://welcomeparade.oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/temporadas/2026/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "oceanman-wfc-miches-2027",
+    "nome": "OCEANMAN World Final Championship",
+    "local": "Miches",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "Evento de 10 a 15/11",
+    "statusInscricao": null,
+    "urlOficial": "https://welcomeparade.oceanmanswim.com/",
+    "urlInscricao": "https://welcomeparade.oceanmanswim.com/",
+    "fonte": null,
+    "verificadoEm": "2026-11-11",
+    "edicaoAnterior": "oceanman-wfc-miches-2026",
+    "falhaDesde": "2026-11-11",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página"
   }
 ]

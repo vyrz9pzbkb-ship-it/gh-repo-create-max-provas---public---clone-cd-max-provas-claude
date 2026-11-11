@@ -14,7 +14,7 @@
     "urlOficial": "https://www.generali-berliner-halbmarathon.de/",
     "urlInscricao": "https://www.generali-berliner-halbmarathon.de/",
     "fonte": "https://www.generali-berliner-halbmarathon.de/en/registration/registration-information",
-    "verificadoEm": "2026-11-10T14:30:08Z"
+    "verificadoEm": "2026-11-11T13:45:09Z"
   },
   {
     "id": "marathon-hamburg-2027",
@@ -31,7 +31,7 @@
     "urlOficial": "https://haspa-marathon-hamburg.de/",
     "urlInscricao": "https://haspa-marathon-hamburg.de/",
     "fonte": "https://haspa-marathon-hamburg.de/haspa-marathon/",
-    "verificadoEm": "2026-11-10T14:30:08Z"
+    "verificadoEm": "2026-11-11T13:45:09Z"
   },
   {
     "id": "challenge-roth-2027",
@@ -48,7 +48,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/challenge-roth/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-11-10T14:30:08Z"
+    "verificadoEm": "2026-11-11T13:45:09Z"
   },
   {
     "id": "berlin-marathon-2027",
@@ -80,7 +80,7 @@
     "statusInscricao": "nao_verificado",
     "statusMotivo": null,
     "falhaDesde": "2026-10-31",
-    "falhaMotivo": "Erro HTTP 403",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página",
     "urlOficial": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
     "urlInscricao": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
     "fonte": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",

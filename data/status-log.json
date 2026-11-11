@@ -1,11 +1,27 @@
 {
-  "data": "2026-11-10",
-  "geradoEm": "2026-11-10T14:30:08Z",
+  "data": "2026-11-11",
+  "geradoEm": "2026-11-11T13:45:09Z",
   "mudancas": [
     {
-      "id": "ugfws-la-nucia-2027",
-      "pais": "es",
-      "prova": "Gran Fondo La Nucía",
+      "id": "ugfws-brazil-2027",
+      "pais": "br",
+      "prova": "Granfondo Brazil",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "oceanman-wfc-miches-2027",
+      "pais": "do",
+      "prova": "OCEANMAN World Final Championship",
+      "de": "edição de 2026-11-10 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "maratona-porto-2027",
+      "pais": "pt",
+      "prova": "EDP Maratona do Porto",
       "de": null,
       "para": "nao_verificado",
       "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
