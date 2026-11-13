@@ -9,12 +9,12 @@
     "dataConfirmada": false,
     "distancia": "21,1 km",
     "statusInscricao": "esgotada",
-    "statusMotivo": "Sold out",
+    "statusMotivo": "SOLD OUT",
     "ultimoStatusVerificado": "esgotada",
     "urlOficial": "https://nnmarathonrotterdam.nl/en/register/",
     "urlInscricao": "https://nnmarathonrotterdam.nl/en/register/",
     "fonte": "https://nnmarathonrotterdam.nl/en/register/",
-    "verificadoEm": "2026-11-11T13:45:09Z"
+    "verificadoEm": "2026-11-13T14:06:36Z"
   },
   {
     "id": "marathon-rotterdam-2027",
@@ -50,7 +50,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-11-11T13:45:09Z"
+    "verificadoEm": "2026-11-13T14:06:36Z"
   },
   {
     "id": "marathon-amsterdam-2027",

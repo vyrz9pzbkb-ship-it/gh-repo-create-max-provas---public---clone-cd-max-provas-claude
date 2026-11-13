@@ -1,28 +1,28 @@
 {
-  "data": "2026-11-11",
-  "geradoEm": "2026-11-11T13:45:09Z",
+  "data": "2026-11-13",
+  "geradoEm": "2026-11-13T14:06:36Z",
   "mudancas": [
     {
-      "id": "ugfws-brazil-2027",
-      "pais": "br",
-      "prova": "Granfondo Brazil",
+      "id": "oceanman-wfc-miches-2027",
+      "pais": "do",
+      "prova": "OCEANMAN World Final Championship",
       "de": null,
       "para": "nao_verificado",
       "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "oceanman-wfc-miches-2027",
-      "pais": "do",
-      "prova": "OCEANMAN World Final Championship",
-      "de": "edição de 2026-11-10 (Histórico)",
-      "para": "próxima edição a anunciar",
-      "motivo": "A data da prova já passou"
+      "id": "marato-barcelona-2027",
+      "pais": "es",
+      "prova": "Zurich Marató Barcelona",
+      "de": "nao_verificado",
+      "para": "aberta",
+      "motivo": "[botão] Inscripciones abiertas de la Zurich Marató de Barcelona"
     },
     {
-      "id": "maratona-porto-2027",
-      "pais": "pt",
-      "prova": "EDP Maratona do Porto",
-      "de": null,
+      "id": "maratona-dles-dolomites-2027",
+      "pais": "it",
+      "prova": "Maratona dles Dolomites",
+      "de": "aberta",
       "para": "nao_verificado",
       "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     }
