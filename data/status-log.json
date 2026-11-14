@@ -1,30 +1,30 @@
 {
-  "data": "2026-11-13",
-  "geradoEm": "2026-11-13T14:06:36Z",
+  "data": "2026-11-14",
+  "geradoEm": "2026-11-14T13:08:21Z",
   "mudancas": [
     {
-      "id": "oceanman-wfc-miches-2027",
-      "pais": "do",
-      "prova": "OCEANMAN World Final Championship",
+      "id": "t100-dubai-2027",
+      "pais": "ae",
+      "prova": "Dubai T100 Triathlon",
+      "de": "edição de 2026-11-13 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "t100-dubai-2027",
+      "pais": "ae",
+      "prova": "Dubai T100 Triathlon",
       "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
-    },
-    {
-      "id": "marato-barcelona-2027",
-      "pais": "es",
-      "prova": "Zurich Marató Barcelona",
-      "de": "nao_verificado",
       "para": "aberta",
-      "motivo": "[botão] Inscripciones abiertas de la Zurich Marató de Barcelona"
+      "motivo": "[botão] REGISTER NOW"
     },
     {
-      "id": "maratona-dles-dolomites-2027",
-      "pais": "it",
-      "prova": "Maratona dles Dolomites",
-      "de": "aberta",
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+      "id": "philadelphia-marathon-2026",
+      "pais": "us",
+      "prova": "TIAA Philadelphia Marathon",
+      "de": "esgotada",
+      "para": "aguardando",
+      "motivo": "[botão] Search Results (2026) - Coming Soon!"
     }
   ]
 }
