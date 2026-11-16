@@ -49,7 +49,7 @@
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/triathlon-world-tour-announces-31-more-races-for-2027/",
-    "verificadoEm": "2026-11-15T13:37:23Z"
+    "verificadoEm": "2026-11-16T15:08:07Z"
   },
   {
     "id": "etape-du-tour-2027",
@@ -102,7 +102,7 @@
     "urlOficial": "https://www.challenge-family.com/challenge-family/races/",
     "urlInscricao": "https://www.challenge-family.com/challenge-family/races/",
     "fonte": "https://www.challenge-family.com/race-promo/",
-    "verificadoEm": "2026-11-15T13:37:23Z"
+    "verificadoEm": "2026-11-16T15:08:07Z"
   },
   {
     "id": "marathon-paris-2027",
@@ -143,7 +143,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": "aguardando",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "REGISTRATION FOR 2027 OPENS ON THURSDAY, NOVEMBER 12 AT 12AM!",
     "ultimoStatusVerificado": "aguardando",
     "urlOficial": "https://www.marathon06.com/2026/AN/",

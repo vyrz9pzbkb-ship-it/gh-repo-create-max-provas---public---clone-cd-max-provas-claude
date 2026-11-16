@@ -1,14 +1,14 @@
 {
-  "data": "2026-11-15",
-  "geradoEm": "2026-11-15T13:37:23Z",
+  "data": "2026-11-16",
+  "geradoEm": "2026-11-16T15:08:07Z",
   "mudancas": [
     {
-      "id": "ugfws-ecuador-2027",
-      "pais": "ec",
-      "prova": "Granfondo Ecuador",
-      "de": "edição de 2026-11-14 (Histórico)",
-      "para": "próxima edição a anunciar",
-      "motivo": "A data da prova já passou"
+      "id": "marathon-nice-cannes-2027",
+      "pais": "fr",
+      "prova": "Marathon des Alpes-Maritimes Nice-Cannes",
+      "de": "aguardando",
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (esgotada + aguardando): “Chaque année, l'événement est SOLD OUT plus de 6 mois avant ! Rés…"
     }
   ]
 }
