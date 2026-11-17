@@ -1,14 +1,14 @@
 {
-  "data": "2026-11-16",
-  "geradoEm": "2026-11-16T15:08:07Z",
+  "data": "2026-11-17",
+  "geradoEm": "2026-11-17T15:39:13Z",
   "mudancas": [
     {
-      "id": "marathon-nice-cannes-2027",
-      "pais": "fr",
-      "prova": "Marathon des Alpes-Maritimes Nice-Cannes",
-      "de": "aguardando",
+      "id": "ugfws-ecuador-2027",
+      "pais": "ec",
+      "prova": "Granfondo Ecuador",
+      "de": null,
       "para": "nao_verificado",
-      "motivo": "Ambíguo (esgotada + aguardando): “Chaque année, l'événement est SOLD OUT plus de 6 mois avant ! Rés…"
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     }
   ]
 }
