@@ -1,14 +1,22 @@
 {
-  "data": "2026-11-17",
-  "geradoEm": "2026-11-17T15:39:13Z",
+  "data": "2026-11-22",
+  "geradoEm": "2026-11-22T14:15:28Z",
   "mudancas": [
     {
-      "id": "ugfws-ecuador-2027",
-      "pais": "ec",
-      "prova": "Granfondo Ecuador",
-      "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+      "id": "ugfws-villa-la-angostura-2027",
+      "pais": "ar",
+      "prova": "Gran Fondo Villa La Angostura",
+      "de": "edição de 2026-11-21 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
+    },
+    {
+      "id": "oceanman-phang-nga-2027",
+      "pais": "th",
+      "prova": "OCEANMAN Phang-Nga",
+      "de": "edição de 2026-11-21 (Histórico)",
+      "para": "próxima edição a anunciar",
+      "motivo": "A data da prova já passou"
     }
   ]
 }

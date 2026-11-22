@@ -34,5 +34,23 @@
     "urlInscricao": "https://oceanmanswim.com/",
     "fonte": "https://oceanmanswim.com/",
     "verificadoEm": "2026-10-30"
+  },
+  {
+    "id": "oceanman-phang-nga-2027",
+    "nome": "OCEANMAN Phang-Nga",
+    "local": "Phang-Nga",
+    "modalidade": "Natação",
+    "serie": "Oceanman",
+    "data": null,
+    "dataConfirmada": false,
+    "distancia": "Evento de 21 a 22/11",
+    "statusInscricao": null,
+    "urlOficial": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
+    "urlInscricao": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
+    "fonte": null,
+    "verificadoEm": "2026-11-22",
+    "edicaoAnterior": "oceanman-phang-nga-2026",
+    "falhaDesde": "2026-11-22",
+    "falhaMotivo": "Nenhuma palavra-chave de inscrição encontrada na página"
   }
 ]
