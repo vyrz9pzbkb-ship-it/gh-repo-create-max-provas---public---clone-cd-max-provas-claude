@@ -1,20 +1,28 @@
 {
-  "data": "2026-11-22",
-  "geradoEm": "2026-11-22T14:15:28Z",
+  "data": "2026-11-23",
+  "geradoEm": "2026-11-23T17:37:11Z",
   "mudancas": [
     {
-      "id": "ugfws-villa-la-angostura-2027",
-      "pais": "ar",
-      "prova": "Gran Fondo Villa La Angostura",
-      "de": "edição de 2026-11-21 (Histórico)",
+      "id": "challenge-canberra-2027",
+      "pais": "au",
+      "prova": "Challenge Canberra",
+      "de": "edição de 2026-11-22 (Histórico)",
       "para": "próxima edição a anunciar",
       "motivo": "A data da prova já passou"
     },
     {
-      "id": "oceanman-phang-nga-2027",
-      "pais": "th",
-      "prova": "OCEANMAN Phang-Nga",
-      "de": "edição de 2026-11-21 (Histórico)",
+      "id": "challenge-canberra-2027",
+      "pais": "au",
+      "prova": "Challenge Canberra",
+      "de": null,
+      "para": "aberta",
+      "motivo": "[botão] SIGN UP"
+    },
+    {
+      "id": "philadelphia-marathon-2027",
+      "pais": "us",
+      "prova": "TIAA Philadelphia Marathon",
+      "de": "edição de 2026-11-22 (Histórico)",
       "para": "próxima edição a anunciar",
       "motivo": "A data da prova já passou"
     }
