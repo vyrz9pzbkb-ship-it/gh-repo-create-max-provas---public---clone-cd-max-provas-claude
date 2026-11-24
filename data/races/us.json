@@ -51,7 +51,7 @@
     "urlOficial": "https://www.honolulumarathon.org/",
     "urlInscricao": "https://www.honolulumarathon.org/",
     "fonte": "https://www.honolulumarathon.org/our-events/jal-honolulu-marathon",
-    "verificadoEm": "2026-11-23T17:37:11Z"
+    "verificadoEm": "2026-11-24T17:07:58Z"
   },
   {
     "id": "la-marathon-2027",
@@ -68,7 +68,7 @@
     "urlOficial": "https://www.lamarathon.com/",
     "urlInscricao": "https://www.lamarathon.com/",
     "fonte": "https://www.lamarathon.com/",
-    "verificadoEm": "2026-11-23T17:37:11Z"
+    "verificadoEm": "2026-11-24T17:07:58Z"
   },
   {
     "id": "nyc-half-2027",
@@ -121,7 +121,7 @@
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-11-23T17:37:11Z"
+    "verificadoEm": "2026-11-24T17:07:58Z"
   },
   {
     "id": "chicago-marathon-2027",
@@ -138,7 +138,7 @@
     "urlOficial": "https://www.chicagomarathon.com/",
     "urlInscricao": "https://www.chicagomarathon.com/",
     "fonte": "https://cdn.chicagomarathon.com/app/uploads/2026/09/14202638/091526_BACM-BAHM-BASS_2027-Event-Annmt-1.pdf",
-    "verificadoEm": "2026-11-23T17:37:11Z"
+    "verificadoEm": "2026-11-24T17:07:58Z"
   },
   {
     "id": "marine-corps-marathon-2027",
@@ -149,7 +149,7 @@
     "data": "2027-10-31",
     "dataConfirmada": true,
     "distancia": "42,195 km",
-    "statusInscricao": "aberta",
+    "statusInscricao": "nao_verificado",
     "statusMotivo": "[botão] REGISTER",
     "ultimoStatusVerificado": "aberta",
     "urlOficial": "https://www.marinemarathon.com/",
@@ -174,7 +174,7 @@
     "urlOficial": "https://www.nyrr.org/tcsnycmarathon",
     "urlInscricao": "https://www.nyrr.org/tcsnycmarathon",
     "fonte": null,
-    "verificadoEm": "2026-11-23T17:37:11Z",
+    "verificadoEm": "2026-11-24T17:07:58Z",
     "edicaoAnterior": "nyc-marathon-2026"
   },
   {

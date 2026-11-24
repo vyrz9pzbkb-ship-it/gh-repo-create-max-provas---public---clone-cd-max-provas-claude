@@ -1,30 +1,30 @@
 {
-  "data": "2026-11-23",
-  "geradoEm": "2026-11-23T17:37:11Z",
+  "data": "2026-11-24",
+  "geradoEm": "2026-11-24T17:07:58Z",
   "mudancas": [
     {
-      "id": "challenge-canberra-2027",
-      "pais": "au",
-      "prova": "Challenge Canberra",
-      "de": "edição de 2026-11-22 (Histórico)",
-      "para": "próxima edição a anunciar",
-      "motivo": "A data da prova já passou"
-    },
-    {
-      "id": "challenge-canberra-2027",
-      "pais": "au",
-      "prova": "Challenge Canberra",
+      "id": "ugfws-villa-la-angostura-2027",
+      "pais": "ar",
+      "prova": "Gran Fondo Villa La Angostura",
       "de": null,
-      "para": "aberta",
-      "motivo": "[botão] SIGN UP"
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
     },
     {
-      "id": "philadelphia-marathon-2027",
+      "id": "oceanman-phang-nga-2027",
+      "pais": "th",
+      "prova": "OCEANMAN Phang-Nga",
+      "de": null,
+      "para": "nao_verificado",
+      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
+    },
+    {
+      "id": "marine-corps-marathon-2027",
       "pais": "us",
-      "prova": "TIAA Philadelphia Marathon",
-      "de": "edição de 2026-11-22 (Histórico)",
-      "para": "próxima edição a anunciar",
-      "motivo": "A data da prova já passou"
+      "prova": "Marine Corps Marathon",
+      "de": "aberta",
+      "para": "nao_verificado",
+      "motivo": "Ambíguo (esgotada + aberta + aguardando): “Registration closed on November 21, 2026” / “REGISTRATIO…"
     }
   ]
 }

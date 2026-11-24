@@ -44,7 +44,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "Evento de 21 a 22/11",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "urlOficial": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
     "urlInscricao": "https://oceanmanswim.com/races/phang-nga-%C2%B7-thailand/",
     "fonte": null,
