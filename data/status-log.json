@@ -1,30 +1,14 @@
 {
-  "data": "2026-11-24",
-  "geradoEm": "2026-11-24T17:07:58Z",
+  "data": "2026-11-25",
+  "geradoEm": "2026-11-25T16:55:57Z",
   "mudancas": [
     {
-      "id": "ugfws-villa-la-angostura-2027",
-      "pais": "ar",
-      "prova": "Gran Fondo Villa La Angostura",
-      "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
-    },
-    {
-      "id": "oceanman-phang-nga-2027",
-      "pais": "th",
-      "prova": "OCEANMAN Phang-Nga",
-      "de": null,
-      "para": "nao_verificado",
-      "motivo": "Nenhuma palavra-chave de inscrição encontrada na página"
-    },
-    {
-      "id": "marine-corps-marathon-2027",
+      "id": "philadelphia-marathon-2027",
       "pais": "us",
-      "prova": "Marine Corps Marathon",
-      "de": "aberta",
+      "prova": "TIAA Philadelphia Marathon",
+      "de": null,
       "para": "nao_verificado",
-      "motivo": "Ambíguo (esgotada + aberta + aguardando): “Registration closed on November 21, 2026” / “REGISTRATIO…"
+      "motivo": "Ambíguo (aberta + aguardando): “2027 REGISTRATION NOW OPEN!” / “View Photos (2026) - Coming Soon!”"
     }
   ]
 }

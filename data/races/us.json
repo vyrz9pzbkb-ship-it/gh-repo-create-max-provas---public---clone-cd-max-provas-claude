@@ -51,7 +51,7 @@
     "urlOficial": "https://www.honolulumarathon.org/",
     "urlInscricao": "https://www.honolulumarathon.org/",
     "fonte": "https://www.honolulumarathon.org/our-events/jal-honolulu-marathon",
-    "verificadoEm": "2026-11-24T17:07:58Z"
+    "verificadoEm": "2026-11-25T16:55:57Z"
   },
   {
     "id": "la-marathon-2027",
@@ -68,7 +68,7 @@
     "urlOficial": "https://www.lamarathon.com/",
     "urlInscricao": "https://www.lamarathon.com/",
     "fonte": "https://www.lamarathon.com/",
-    "verificadoEm": "2026-11-24T17:07:58Z"
+    "verificadoEm": "2026-11-25T16:55:57Z"
   },
   {
     "id": "nyc-half-2027",
@@ -121,7 +121,7 @@
     "urlOficial": "https://t100triathlon.com/triathlon-world-tour/",
     "urlInscricao": "https://t100triathlon.com/triathlon-world-tour/",
     "fonte": "https://t100triathlon.com/media-releases/pto-and-world-triathlon-launch-triathlon-world-tour/",
-    "verificadoEm": "2026-11-24T17:07:58Z"
+    "verificadoEm": "2026-11-25T16:55:57Z"
   },
   {
     "id": "chicago-marathon-2027",
@@ -138,7 +138,7 @@
     "urlOficial": "https://www.chicagomarathon.com/",
     "urlInscricao": "https://www.chicagomarathon.com/",
     "fonte": "https://cdn.chicagomarathon.com/app/uploads/2026/09/14202638/091526_BACM-BAHM-BASS_2027-Event-Annmt-1.pdf",
-    "verificadoEm": "2026-11-24T17:07:58Z"
+    "verificadoEm": "2026-11-25T16:55:57Z"
   },
   {
     "id": "marine-corps-marathon-2027",
@@ -157,7 +157,7 @@
     "fonte": "https://www.marinemarathon.com/event/marine-corps-marathon/",
     "verificadoEm": "2026-11-17T15:39:13Z",
     "falhaDesde": "2026-11-22",
-    "falhaMotivo": "Ambíguo (esgotada + aberta + aguardando): “Registration closed on November 21, 2026” / “REGISTRATIO…"
+    "falhaMotivo": "Ambíguo (aberta + aguardando): “REGISTRATION NOW OPEN!” / “Registration opens on December 1, 2026”"
   },
   {
     "id": "nyc-marathon-2027",
@@ -174,7 +174,7 @@
     "urlOficial": "https://www.nyrr.org/tcsnycmarathon",
     "urlInscricao": "https://www.nyrr.org/tcsnycmarathon",
     "fonte": null,
-    "verificadoEm": "2026-11-24T17:07:58Z",
+    "verificadoEm": "2026-11-25T16:55:57Z",
     "edicaoAnterior": "nyc-marathon-2026"
   },
   {
@@ -186,7 +186,7 @@
     "data": null,
     "dataConfirmada": false,
     "distancia": "42,195 km",
-    "statusInscricao": null,
+    "statusInscricao": "nao_verificado",
     "urlOficial": "https://www.philadelphiamarathon.com/races/marathon/",
     "urlInscricao": "https://www.philadelphiamarathon.com/races/marathon/",
     "fonte": null,
